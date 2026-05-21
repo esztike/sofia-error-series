@@ -1,0 +1,385 @@
+/* ============================================================ */
+/* SOFIA ERROR SERIES — HOMEPAGE                               */
+/* Page-specific styles for the hub page.                      */
+/* Imports globals.css which imports tokens.css.               */
+/* ============================================================ */
+
+/* ── Imports ── */
+
+@import "./globals.css";
+
+/* ── Page background ── */
+/* Wave image spans the full page. Warm off-white overlay at ~80% opacity. */
+/* Image path: /assets/images/wave-bg.jpg (AdobeStock_502209232)           */
+
+.home-page {
+  position: relative;
+  min-height: 100vh;
+  background-image: url("/assets/images/sofia-bg-image.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.home-page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-color: var(--color-bg-light);
+  opacity: 0.82;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.home-page > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Hero ── */
+
+/* ── Nav overrides ── */
+
+.nav-wordmark {
+  font-family: var(--font-heading);
+  font-size: var(--text-base);
+  font-weight: var(--weight-regular);
+  letter-spacing: var(--tracking-normal);
+}
+
+.nav-hub-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  background-color: var(--color-accent);
+  color: #fff;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-wide);
+  border-radius: 100px;
+}
+
+
+/* ── Hero ── */
+
+.hero {
+  padding: var(--space-6) var(--gutter) var(--space-8);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-6);
+  align-items: end;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.hero-heading {
+  font-family: var(--font-heading);
+  font-size: var(--text-3xl);
+  font-weight: var(--weight-semibold);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-text-on-light);
+}
+
+.hero-heading em {
+  display: block;
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-weight: var(--weight-semibold);
+  color: var(--color-accent);
+}
+
+.hero-right {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.hero-body {
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  color: var(--color-text-on-light);
+}
+
+.hero-tags {
+  display: flex;
+  gap: var(--space-4);
+  align-items: center;
+}
+
+.hero-tags .tag + .tag::before {
+  content: "·";
+  margin-right: var(--space-4);
+  color: var(--color-inactive);
+}
+
+/* ── Cards shared ── */
+
+.card {
+  padding: var(--space-6);
+  border-radius: var(--radius-md);
+}
+
+/* ── Foundation cards ── */
+
+.foundation-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.card--dark {
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-on-dark);
+  border-radius: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  box-shadow: 0px 4px 16px 4px rgba(24, 25, 26, 0.25);
+}
+
+.card--dark h2,
+.card--dark h3,
+.card--dark p,
+.card--dark a {
+  color: var(--color-text-on-dark);
+}
+
+.card--dark .tag {
+  color: var(--color-tag-on-dark);
+}
+
+.card-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: var(--weight-semibold);
+  line-height: var(--leading-snug);
+}
+
+.card-body {
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  flex: 1;
+}
+
+.card-cta {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  letter-spacing: var(--tracking-wide);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.card--dark .card-cta {
+  color: var(--color-text-on-dark);
+}
+
+/* ── Episode cards ── */
+
+.episodes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.card--light {
+  background-color: var(--color-bg-light);
+  color: var(--color-text-on-light);
+  border: 1px solid var(--glass-border);
+  border-radius: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.card--light .tag {
+  color: var(--color-tag-on-light);
+}
+
+.card--inactive {
+  background-color: var(--color-bg-light);
+  border: 1px solid #9a9590;
+  border-radius: 0;
+  padding: var(--space-6);
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.card--inactive .tag {
+  color: var(--color-inactive);
+}
+
+/* ── Nav dropdown ── */
+
+.nav-dropdown-wrapper {
+  position: relative;
+}
+
+.nav-dropdown-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-wide);
+  color: var(--color-text-on-light);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--space-1) var(--space-2);
+  transition: color var(--transition-fast);
+}
+
+.nav-dropdown-trigger:hover {
+  color: var(--color-accent);
+}
+
+.nav-dropdown-chevron {
+  display: inline-flex;
+  align-items: center;
+}
+
+.nav-dropdown-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 98;
+}
+
+.nav-dropdown-panel {
+  position: absolute;
+  top: calc(100% + var(--space-3));
+  right: 0;
+  min-width: 260px;
+  background: var(--glass-bg-light);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-3);
+  z-index: 110;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.nav-dropdown-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.nav-dropdown-group + .nav-dropdown-group {
+  border-top: 1px solid var(--glass-border);
+  padding-top: var(--space-2);
+  margin-top: var(--space-1);
+}
+
+.nav-dropdown-label {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--color-inactive);
+  padding: 0 var(--space-2);
+  margin-bottom: var(--space-1);
+}
+
+.nav-dropdown-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-text-on-light);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+  transition:
+    background var(--transition-fast),
+    color var(--transition-fast);
+  text-decoration: none;
+}
+
+.nav-dropdown-item:hover {
+  background: rgba(141, 132, 122, 0.12);
+  color: var(--color-accent);
+}
+
+.nav-dropdown-item--inactive {
+  color: var(--color-inactive);
+  pointer-events: none;
+  cursor: default;
+}
+
+/* ── Section wrappers ── */
+
+.section--dark {
+  background-color: var(--color-bg-dark);
+}
+
+.episodes-section {
+  background-color: var(--color-bg-light);
+}
+
+/* ── Card tag row ── */
+
+.card-tag-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+
+/* ── Card badge (red icon pill) ── */
+
+.card-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  background-color: var(--color-accent);
+  color: #fff;
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
+}
+
+
+/* ── Active episode card border ── */
+
+.card--episode-active {
+  border: 4px solid var(--color-text-on-light) !important;
+  box-shadow: 0px 4px 16px 4px rgba(24, 25, 26, 0.15);
+}
+
+
+/* ── Card title inactive ── */
+
+.card-title--inactive {
+  color: var(--color-inactive);
+}
+
+
+/* ── Coming soon label ── */
+
+.coming-soon-label {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wide);
+  color: var(--color-inactive);
+}
