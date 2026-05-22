@@ -191,7 +191,7 @@
 
 .card--inactive {
   background-color: var(--color-bg-light);
-  border: 1px solid #9a9590;
+  border: 1px solid var(--color-inactive);
   border-radius: 0;
   padding: var(--space-6);
   pointer-events: none;
@@ -335,7 +335,7 @@
   width: 20px;
   height: 20px;
   background-color: var(--color-accent);
-  color: #fff;
+  color: var(--color-light);
   border-radius: var(--radius-sm);
   flex-shrink: 0;
 }
