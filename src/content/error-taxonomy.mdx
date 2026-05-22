@@ -1,0 +1,246 @@
+export const pageHeader = {
+  eyebrow: "AGENTIC AI UX · SOFIA ERROR SERIES",
+  title: "The Error Taxonomy",
+  description: "A designer's map of how agentic AI fails, and what each failure demands from the interface.",
+  tags: ["REFERENCE", "RESEARCH"]
+}
+
+export const cardHint = "Click any card to expand"
+
+export const introSection = {
+  heading: "Why errors in agentic AI are different",
+  paragraphs: [
+    "For most of the history of software design, errors were bounded. The system attempted one thing, it either succeeded or it didn't, and the user could see exactly where things stood. Error design was largely a communication problem: how do you tell someone what went wrong, and what they should do next?",
+    "AI-assisted systems made errors more complex. A system could be working as intended while still not serving the user's actual needs. That gap generated a field response: frameworks for explainability (XAI), transparency, and calibrated trust. Google's People + AI Guidebook (2019), Microsoft's Guidelines for Human-AI Interaction (Amershi et al., 2019), and a growing body of XAI research gave designers tools for communicating uncertainty, setting expectations, and building appropriate reliance.",
+    "Agentic AI systems change the problem again, more fundamentally than is widely understood.",
+    "An agent does not return a result. It takes action. It pursues a goal across multiple steps, using tools, accessing external systems, and producing effects in the world that may be difficult or impossible to reverse. When a recommendation system fails, the user gets a bad suggestion. When an agentic system fails, people are already affected before the user knows anything went wrong.",
+    "This shift, from AI as advisor to AI as actor, reframes the design problem entirely. Errors in agentic systems are not merely informational failures. They are consequential events with state, scope, and downstream effects. They affect not only the person who delegated the task but potentially many others who had no interaction with the system at all. And they unfold over time: a task that fails at step three has already changed the world in ways that step one and step two set in motion.",
+    "Existing research on AI failure modes has grown rapidly since 2023. Empirical taxonomies have produced rigorous classifications of how agentic systems fail at a technical level. Industry frameworks from Microsoft, OWASP, and others have mapped failure modes from security and reliability perspectives.",
+    "What remains largely unaddressed is the design question: when an agentic system fails, what does the user experience, and what does a designer need to build in response?",
+    "This taxonomy is an attempt to answer that question. It does not intend to replace the technical literature. It translates from it. The six error classes described here are organised not around which system component failed, but around the human experience of the failure: what went wrong from the user's perspective, what the consequences are, and what recovery requires. It is a designer's taxonomy, built for designers, grounded in research but oriented toward practice."
+  ]
+}
+
+export const howItWorksSection = {
+  heading: "How this taxonomy works",
+  paragraphs: [
+    "Most existing taxonomies of agentic AI failure are organised around causation: which component of the system broke, which module produced the wrong output, which integration failed. That framing is useful for engineers debugging systems, but less telling for designers building the experiences users encounter when something goes wrong.",
+    "This taxonomy is organised differently. Each error class is defined by the user's experience of the failure: what went wrong from the perspective of the person who delegated the task, what the consequences are in their world, and what recovery requires from a design standpoint. Two failures may belong to the same class regardless of their technical cause, and two failures with the same technical cause may belong to different classes if their consequences and recovery paths diverge.",
+    "The distinction is deliberate. From an error recovery perspective, a designer does not need to know whether a failure originated in the language model's context window or in an API timeout. They need to know: did the task complete? Were external parties already affected? Was the failure foreseeable? Can it be undone? Those are the questions that determine what to build."
+  ],
+  subsections: [
+    {
+      heading: "Research foundations and gaps",
+      paragraphs: [
+        "Five of the six classes have clear precedent in existing research, named under different terminology across different frameworks. One, Partial Completion, occupies territory the literature observes but does not name as a distinct design problem. That gap is not incidental. Existing frameworks were built for technical and security purposes, not for the design of recovery experiences. This taxonomy makes pragmatic choices where the research leaves open questions, optimised for designer usability rather than taxonomic precision."
+      ]
+    },
+    {
+      heading: "How to use it",
+      paragraphs: [
+        "Each error class is presented as a card with a consistent structure: a definition, a real scenario grounded in the Sofia case study, the user impact, a design opportunity, and a prevention vs recovery note. The design opportunity section is the most important for practice. It identifies the design responsibilities each error type generates: what the system owes the user, what information needs to be surfaced, and what recovery requires. It does not prescribe specific UI solutions. Those are developed in the design principles and prototype sections of this case study.",
+        "Each card also notes where design responsibility lies primarily in prevention or in recovery. These are not the same design problem. They require different interventions at different points in the task lifecycle. Most error classes require both, and knowing which is primary changes where you intervene.",
+        "This taxonomy is part of a larger argument and provides the foundation. The design principles that follow define the design response. The Sofia scenario, a real-world walkthrough of a partial completion failure and its recovery, is the demonstration. Together they make the case that designing for agentic AI error is not an edge case or an afterthought. On the contrary. It is a core competency for anyone building systems where AI acts on behalf of people."
+      ]
+    }
+  ]
+}
+
+export const failurePropertiesSection = {
+  heading: "Two failure properties: cascading and silent",
+  intro: "Not every failure pattern belongs in the card grid. Two patterns appear throughout the research literature and are worth naming here — not as error classes but as properties. They describe not what went wrong, but how far it reached and whether anyone knew.",
+  properties: [
+    {
+      heading: "Cascading failure",
+      paragraphs: [
+        "A cascading failure occurs when one error triggers a chain of downstream actions that compound the original mistake at scale. The initiating failure may have been minor. The cascade is not. Each step in the chain was executed correctly given the state the previous step left behind. The error propagates not despite the agent working as intended, but partly because of it.",
+        "Any of the six error classes can cascade. A misread intent that triggers a bulk operation. A tool failure mid-sequence that leaves partial state, which the next step builds on incorrectly. A scope exceeded action that proliferates across connected systems. The cascade is not the root failure — it is what the root failure becomes when the system has no circuit breaker.",
+        "This is why cascading failure is not a card in this taxonomy. Placing it alongside Misread Intent or Tool Failure would imply it answers the same question: what went wrong? It does not. It answers a different question: how far did it go? That distinction matters for design. The root class tells you what intervention to build. The cascading property tells you how much blast radius that intervention needs to account for.",
+        "The research literature is unambiguous about the severity. Empirical analysis of multi-agent systems found error amplification of up to 17.2 times compared to single-agent baselines (arXiv:2603.04474, 2026). OWASP lists cascading failures among the highest-severity risk categories for agentic systems (ASI08, 2025). The design response — staged execution, blast radius previews, undo campaigns — is not optional friction. It is the primary protection available for any operation with a high multiplier."
+      ]
+    },
+    {
+      heading: "Silent failure",
+      paragraphs: [
+        "A silent failure occurs when an error happens and the user is never told. The task stalls, halts, or produces a wrong result, and nothing surfaces. The user's mental model of what the agent did diverges from reality, sometimes for hours or days, until an external signal (a colleague asking about an email that never arrived, a new hire wondering about a missing brief) forces the gap into view.",
+        "Like cascading, silent failure is a property rather than a class. Any of the six error classes can be silent. A tool failure that produces no notification. A partial completion that reports success. A wrong inference that acts confidently and logs nothing. The silence is a design failure layered on top of the original failure — and in many cases it is worse than the error itself, because it removes the user's ability to respond.",
+        "The design principle is absolute: errors must never be silent. The agent's obligation is not just to surface failures when they occur, but to surface them in a way that gives the user enough context to understand what happened, what the current state is, and what their options are. That obligation holds regardless of error class."
+      ]
+    }
+  ]
+}
+
+export const taxonomyCards = [
+  {
+    number: "01",
+    categoryBadge: "Intent",
+    title: "Misread Intent",
+    summary: "The agent misinterprets the goal and acts on that misinterpretation with confidence.",
+    scenario: "\"Clear out my calendar for next week so I can focus.\" The user meant: decline non-essential meetings and block deep work time. Sofia cancelled everything, including a quarterly review with the executive team and a one-to-one the user had been waiting three weeks to have.",
+    userImpact: "The user discovers the error after recipients have already been notified. The damage is social and professional, not just logistical. Undoing it requires individual outreach to each affected party.",
+    designOpportunity: "Before acting on any request with broad or ambiguous scope, the agent should surface its interpretation explicitly and invite correction. Not as a bureaucratic confirmation step, but as a natural part of taking on the task. \"I'm reading this as: decline all meetings under one hour and block mornings. Does that sound right?\" The cost of this friction is seconds. The cost of skipping it can be days.",
+    prevention: "Primary responsibility. Surface the agent's interpretation before any action is taken. Broad natural-language instructions always carry interpretive risk.",
+    recovery: "Harder, because actions have already affected others. Recovery must address the social dimension: not just undoing calendar events, but supporting communication to affected parties.",
+    relatedPrinciples: ["P2", "P8"],
+    isCaseStudy: false
+  },
+  {
+    number: "02",
+    categoryBadge: "System",
+    title: "Tool Failure",
+    summary: "An external tool or integration breaks mid-task, and the agent has no path forward.",
+    scenario: "Sofia is queuing a series of follow-up emails after a client meeting. The OAuth token for the email integration expires silently mid-sequence. Three emails send. Two do not. In a poorly designed system, nothing surfaces.",
+    userImpact: "If the failure is silent, the user believes the task completed. They discover the gap later, often from an external signal: a client who never heard back, a colleague asking about an email that never arrived. Silent tool failure is among the most trust-damaging error types because the user's mental model of what the agent did is simply wrong.",
+    designOpportunity: "Tool failures must never be silent. The agent should surface the failure immediately, with enough context for the user to understand what was attempted, what succeeded, and what did not. Partial work should be preserved and visible. The recovery path should distinguish between retryable failures and non-retryable ones, and offer appropriate options for each.",
+    prevention: "Limited. External integrations will fail. The design responsibility is to anticipate failure points and build detection into the execution flow.",
+    recovery: "Primary responsibility. State visibility, partial work preservation, and clear differentiation between retryable and non-retryable failures.",
+    relatedPrinciples: ["P1", "P5", "P8"],
+    isCaseStudy: false
+  },
+  {
+    number: "03",
+    categoryBadge: "Boundaries",
+    title: "Scope Exceeded",
+    summary: "The agent acts beyond what was authorised, pursuing the user's goal through means they did not sanction.",
+    scenario: "\"Help me get on top of my inbox.\" Sofia interprets this as permission to unsubscribe from mailing lists, archive threads older than 30 days, and delete duplicate messages. The user meant: flag what needs a response and draft replies to the three most urgent threads. An archived thread contained a contract needed that afternoon.",
+    userImpact: "Scope exceeded errors feel like a violation of trust in a way other error types do not. The user gave the agent a task. The agent rewrote the task. Even when the intent was well-meaning, the effect is unsettling: if it exceeded scope once without asking, when will it do so again?",
+    designOpportunity: "Before any action with broad or irreversible scope, the agent should present a preview of what it intends to do and require explicit confirmation. The preview should be specific enough to be meaningful: not \"I'll help organise your inbox\" but \"This will archive 847 threads, unsubscribe from 12 mailing lists, and delete 34 duplicate messages.\" Scope gates are not interruptions. They are part of the contract between the user and the agent.",
+    prevention: "Partly architectural. Permission design and access scoping determine what the agent can do without confirmation. Automation level calibration determines when it must ask.",
+    recovery: "Partly social. When scope exceeded errors affect others, recovery is not just technical restoration but communication management.",
+    relatedPrinciples: ["P4", "P6", "P8"],
+    isCaseStudy: false
+  },
+  {
+    number: "04",
+    categoryBadge: "Execution",
+    title: "Partial Completion",
+    summary: "A multi-step task stops mid-way, leaving the world in a state that is worse than if it had never started.",
+    scenario: "\"Set up onboarding for the four new hires starting Monday. Send them calendar invites for a 10am kickoff and attach the Q1 onboarding brief.\" Sofia creates the calendar events, sends the invites, then fails when a Drive permission error blocks external file sharing. The new hires have invites with no brief and no way to prepare. One of them emails to ask about the missing attachment.",
+    userImpact: "Partial completion places the user in a position that requires forensic work before recovery can begin. They must establish what was done, what was not, and what effects the completed steps have already produced. Third parties are affected before the user knows there is anything to fix.",
+    designOpportunity: "Three responses are essential. First, state visibility throughout execution: the user should be able to see which steps completed and which did not, not as a technical log but as a human-readable account of where things stand. Second, resume from step, not retry all: when a multi-step task fails, the recovery path should offer continuation from the point of failure. Third, third-party impact surfacing: when partial completion has affected people outside the immediate interaction, the system should name them and offer a path to communication management as part of the recovery flow.",
+    researchNote: "This is the most practically important gap in existing agentic AI design frameworks. No major UX framework, including Google's PAIR Guidebook, addresses partial completion as a distinct design problem. This class is the subject of the Sofia Episode 01 case study.",
+    prevention: "Pre-flight verification. Before executing steps with external effects, confirm that preconditions for all subsequent steps are met. In the onboarding scenario, checking file shareability before sending any invites would have prevented the partial state entirely. That is a design failure in the agent, not just an operational misfortune.",
+    recovery: "State restoration and trust repair. Resume sequencing, alternative paths, updated communications. The agent should acknowledge the impact of the incomplete state, not just report the technical failure. Informational explanation alone is insufficient; the expression of regret for the impact on the user and affected third parties is essential (Kox et al., 2021).",
+    relatedPrinciples: ["P1", "P3", "P5", "P6", "P8"],
+    isCaseStudy: true,
+    caseStudyHref: "/episode-01"
+  },
+  {
+    number: "05",
+    categoryBadge: "Timing",
+    title: "Stale Context",
+    summary: "The agent acts on information that was accurate when the task started but has since changed.",
+    scenario: "\"Book that flight for the London trip.\" The meeting the trip was built around was cancelled two hours ago. Sofia did not know. The non-refundable ticket is booked.",
+    userImpact: "Stale context errors generate a specific frustration distinct from other failure types: the agent did exactly what it was supposed to do, and it still caused harm. That technically correct quality makes recovery emotionally complicated. The user cannot straightforwardly blame the agent's reasoning. They may end up blaming themselves for not updating it.",
+    designOpportunity: "For any consequential, difficult-to-reverse action, the agent should surface a context timestamp. \"I'm basing this on your calendar as of 10:32am. Things may have changed. Do you want me to proceed?\" This is a small friction that prevents large regrets. Users should also be able to set staleness thresholds by action type: a calendar block has a high tolerance for stale context; a financial transaction has almost none.",
+    prevention: "Primary responsibility. Pre-action context verification, staleness warnings, and user-configurable freshness thresholds for high-stakes action types. These failures are foreseeable and therefore preventable.",
+    recovery: "Constrained by reversibility. Recovery design should be proportional to how irreversible the action was. The higher the stakes, the more friction prevention should have imposed.",
+    relatedPrinciples: ["P4", "P7", "P8"],
+    isCaseStudy: false
+  },
+  {
+    number: "06",
+    categoryBadge: "Assumption",
+    title: "Wrong Inference",
+    summary: "The agent resolves an ambiguous request silently, acts on the wrong interpretation, and does not flag the guess.",
+    scenario: "\"Draft a follow-up to the client meeting.\" Sofia reads the most recent meeting on the user's calendar. It was an internal standup, not the client meeting the user had in mind. The draft is addressed to the standup participants. The user approves it without reading carefully. It sends to the wrong people.",
+    userImpact: "Wrong inference errors are among the hardest to detect and the most damaging to long-term trust. The agent acted confidently. The user had no signal that anything was uncertain. The assumption was invisible until its consequences surfaced.",
+    designOpportunity: "The agent should surface its interpretive choices before acting, proportional to the stakes. Not an exhaustive disclosure of every inference, but a targeted statement of the assumptions most likely to be wrong and most costly if wrong. \"I'm basing this on your 2pm standup. Is that the meeting you meant?\" This is not a confirmation dialog. It is the agent demonstrating that it knows the difference between what it was told and what it inferred.",
+    prevention: "Primary responsibility. The agent needs a reliable sense of when to ask rather than guess. The calibration challenge: too many clarification requests and the agent becomes tedious; too few and it acts on silent assumptions with real consequences.",
+    recovery: "Complicated by late discovery. Wrong inference errors often surface after consequences have propagated. Recovery must support the audit trail: not just the immediate action but its downstream effects.",
+    relatedPrinciples: ["P2", "P5", "P8"],
+    isCaseStudy: false
+  }
+]
+
+export const conclusionSection = {
+  heading: "What this taxonomy tells us about the design problem",
+  paragraphs: [
+    "Taken together, the six classes reveal something that individual error analysis tends to obscure: agentic AI failure is not primarily a technical problem with a communication solution. It is a relationship problem with a design solution.",
+    "Each class exposes a different point of fragility in the relationship between a person and an agent acting on their behalf. Misread Intent and Wrong Inference break the shared understanding that delegation requires. Tool Failure and Partial Completion break the reliability that trust is built on. Scope Exceeded breaks the boundaries that make delegation feel safe. Stale Context breaks the situational awareness that consequential action demands.",
+    "The taxonomy also makes clear that prevention and recovery are not alternatives. They are design responsibilities at different points in the same arc. Prevention reduces the frequency and severity of failures. Recovery determines what those failures cost: in user effort, in trust, in downstream impact on people who never interacted with the agent at all. Designing only for prevention produces systems that fail without grace. Designing only for recovery produces systems that fail too often. Both are required, and for most error classes, both operate simultaneously: a well-designed step log prevents silent failure while also enabling faster recovery; a pre-action confirmation prevents scope creep while also establishing the evidence trail recovery may need.",
+    "A final observation: five of the six classes have precedent in the research literature, under various names and across different frameworks. One does not. Partial Completion is a failure mode that the existing literature measures and observes but does not yet name as a distinct design problem requiring a distinct design response. That gap is not a criticism of the research. It reflects the fact that the field of agentic AI UX is genuinely new, and the design frameworks available to practitioners were built for a different kind of system. The work of building those frameworks is underway. This taxonomy is one contribution to it."
+  ]
+}
+
+export const conclusionCards = [
+  {
+    heading: "A relationship problem, not a technical one",
+    body: "Agentic AI failure is not primarily a technical problem with a communication solution. It is a relationship problem with a design solution. The errors described in this taxonomy are not system glitches to be minimised and hidden. They are moments of breakdown in the relationship between a person and an agent acting on their behalf. Designing for them well requires understanding what that relationship depends on, and what each class of failure takes away from it."
+  },
+  {
+    heading: "Each failure breaks something different",
+    body: "Misread Intent and Wrong Inference break the shared understanding that delegation requires. Tool Failure and Partial Completion break the reliability that trust is built on. Scope Exceeded breaks the boundaries that make delegation feel safe. Stale Context breaks the situational awareness that consequential action demands. Knowing which dimension is broken tells you what the recovery experience needs to restore."
+  },
+  {
+    heading: "Prevention and recovery are not alternatives",
+    body: "They are design responsibilities at different points in the same arc. Prevention reduces the frequency and severity of failures. Recovery determines what those failures cost: in user effort, in trust, in downstream impact on people who never interacted with the agent at all. Designing only for prevention produces systems that fail without grace. Designing only for recovery produces systems that fail too often. Most error classes require both, and for many they operate simultaneously: a step log prevents silent failure while enabling faster recovery; a pre-action confirmation prevents scope creep while establishing the evidence trail recovery may need."
+  },
+  {
+    heading: "Named problems get designed for",
+    body: "Five of the six classes have precedent in the research literature, named under different terminology across different frameworks. Partial Completion does not. It is a failure mode the field observes and measures but has not yet named as a distinct design problem requiring a distinct design response. That gap is not a criticism of the research. It reflects the fact that existing frameworks were built for a different kind of system. Named problems get designed for. This taxonomy is a starting point."
+  }
+]
+
+export const closingSection = {
+  heading: "Conclusion",
+  paragraphs: [
+    "Taxonomies are not ends in themselves. A classification of failure modes is only useful if it changes what gets designed.",
+    "The value of naming these six classes is not academic. It is practical. When a designer can identify that a failure is a Partial Completion rather than a Tool Failure, they know that the recovery experience needs state visibility and resume logic, not just a retry button. When they recognise a Wrong Inference, they know the intervention point is before the action, not after it. Named problems get designed for. Unnamed ones get handled with generic error messages and a hope that users figure it out.",
+    "The six classes also establish something that matters beyond individual design decisions: a shared vocabulary. Teams building agentic systems need a way to talk about failure that is specific enough to drive design choices and accessible enough to cross the boundary between engineering, product, and UX. That vocabulary does not yet exist in any standardised form. This taxonomy is a starting point.",
+    "What follows in this case study builds directly on these foundations. The eight design principles translate the taxonomy into design positions: for each class, a principle that names what the system owes the user when that failure occurs. The Sofia scenario then demonstrates those principles in practice, through a real walkthrough of a Partial Completion failure and its recovery. And the prototype shows what the designed response looks like as an actual interface.",
+    "The argument across all three is the same one the taxonomy opens: errors in agentic AI are not edge cases to be minimised and hidden. They are a core part of the experience. Designing for them well is what separates a system users trust from one they eventually abandon."
+  ]
+}
+
+export const researchFoundations = {
+  heading: "Research foundations",
+  intro: "Sources cited directly in this document, organised by theme.",
+  groups: [
+    {
+      heading: "Agentic AI failure taxonomies",
+      sources: [
+        'Cemri, M., Pan, M. Z., Yang, S., et al. "Why Do Multi-Agent LLM Systems Fail?" (MAST). UC Berkeley, NeurIPS Datasets and Benchmarks spotlight, 2025. arXiv:2503.13657',
+        'Shah, et al. "Characterizing Faults in Agentic AI: A Taxonomy of Types, Symptoms, and Root Causes." 2026. arXiv:2603.06847',
+        'Microsoft AI Red Team. "Taxonomy of Failure Modes in Agentic AI Systems." Microsoft Security Blog, April 2025.',
+        'OWASP GenAI Security Project. "Top 10 for Agentic Applications 2026." December 2025. genai.owasp.org'
+      ]
+    },
+    {
+      heading: "Partial completion and cascading failure",
+      sources: [
+        'Xu, J., et al. "TheAgentCompany: Benchmarking LLM Agents on Consequential Real World Tasks." CMU, 2024. arXiv:2412.14161',
+        '"Atomix: Timely, Transactional Tool Use for Reliable Agentic Workflows." 2026. arXiv:2602.14849',
+        '"From Spark to Fire: Modeling and Mitigating Error Cascades in LLM-Based Multi-Agent Collaboration." 2026. arXiv:2603.04474'
+      ]
+    },
+    {
+      heading: "Wrong inference and underspecification",
+      sources: [
+        "Yang, et al. \"What Prompts Don't Say: Understanding and Managing Underspecification.\" CMU, 2025. arXiv:2505.13360",
+        'Kobalczyk, et al. "Active Task Disambiguation with LLMs." ICLR 2025 spotlight.'
+      ]
+    },
+    {
+      heading: "Trust repair",
+      sources: [
+        'Kox, E., et al. "Trust Repair in Human-Agent Teams: The Effectiveness of Explanations and Expressing Regret." Autonomous Agents and Multi-Agent Systems, Springer, 2021.'
+      ]
+    },
+    {
+      heading: "Transparency and explainability",
+      sources: [
+        'Arrieta, A. B., et al. "Explainable Artificial Intelligence (XAI): Concepts, Taxonomies, Opportunities and Challenges." Information Fusion, 2020. arXiv:1910.10045',
+        'Miller, T. "Explanation in Artificial Intelligence: Insights from the Social Sciences." Artificial Intelligence, 2019. arXiv:1706.07269',
+        'Liao, Q. V. and Vaughan, J. W. "AI Transparency in the Age of LLMs: A Human-Centered Research Roadmap." Harvard Data Science Review, 2023. arXiv:2306.01941'
+      ]
+    },
+    {
+      heading: "Design frameworks",
+      sources: [
+        'Amershi, S., et al. "Guidelines for Human-AI Interaction." CHI, 2019. Microsoft Research.',
+        'Google PAIR. "People + AI Guidebook." 2019, updated 2021. pair.withgoogle.com'
+      ]
+    }
+  ]
+}
