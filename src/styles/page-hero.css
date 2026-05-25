@@ -1,0 +1,24 @@
+/* ============================================================ */
+/* SOFIA ERROR SERIES — PAGE HERO IMAGE                        */
+/* Full-bleed hero image, optionally placed on inner pages.    */
+/* Import in globals.css so all inner pages get it for free.   */
+/* ============================================================ */
+
+.page-hero {
+  width: 100%;
+  height: 420px;
+  display: block;
+  object-fit: cover;
+}
+
+@media (max-width: 900px) {
+  .page-hero {
+    height: 280px;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-hero {
+    height: 180px;
+  }
+}

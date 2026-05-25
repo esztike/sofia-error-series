@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import '../styles/globals.css'
 import Nav from '../components/Nav'
+import PageHero from '../components/PageHero'
 import WalkthroughPanel from '../components/WalkthroughPanel'
 import {
   pageHeader,
@@ -27,6 +28,7 @@ export default function Episode01() {
   return (
     <div className="inner-page">
       <Nav />
+      <PageHero src={null} alt="" />
 
       {/* ── Page header ── */}
       <motion.section

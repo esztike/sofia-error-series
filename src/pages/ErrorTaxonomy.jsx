@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import '../styles/error-taxonomy.css'
 import Nav from '../components/Nav'
+import PageHero from '../components/PageHero'
 import TaxonomyGrid from '../components/TaxonomyGrid'
 import ConclusionCard from '../components/ConclusionCard'
 import {
@@ -30,6 +31,7 @@ export default function ErrorTaxonomy() {
   return (
     <div className="inner-page">
       <Nav />
+      <PageHero src={null} alt="" />
 
       {/* ── Page header ── */}
       <motion.section

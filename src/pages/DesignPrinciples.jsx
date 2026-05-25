@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import '../styles/design-principles.css'
 import Nav from '../components/Nav'
+import PageHero from '../components/PageHero'
 import PrincipleList from '../components/PrincipleList'
 import {
   pageHeader,
@@ -24,6 +25,7 @@ export default function DesignPrinciples() {
   return (
     <div className="inner-page">
       <Nav />
+      <PageHero src={null} alt="" />
 
       {/* ── Hero ── */}
       <motion.section
