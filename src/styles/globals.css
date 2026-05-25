@@ -342,3 +342,34 @@ em {
   color: var(--color-text-on-light);
   margin-bottom: var(--space-4);
 }
+
+
+/* ── Responsive ── */
+
+@media (max-width: 900px) {
+  :root {
+    --gutter: var(--space-6); /* 32px */
+  }
+
+  .page-header {
+    padding: var(--space-8) 0 var(--space-6);
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --gutter: var(--space-4); /* 16px */
+  }
+
+  .page-header {
+    padding: var(--space-6) 0 var(--space-5);
+  }
+
+  .page-title {
+    font-size: var(--text-2xl);
+  }
+
+  .section-heading {
+    font-size: var(--text-xl);
+  }
+}

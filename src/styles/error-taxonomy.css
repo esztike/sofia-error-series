@@ -380,3 +380,42 @@
   color: var(--color-text-on-light);
   opacity: 0.6;
 }
+
+
+/* ── Responsive ── */
+
+@media (max-width: 900px) {
+  .taxonomy-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .conclusion-strip__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .overlay-card {
+    padding: var(--space-6);
+  }
+
+  .overlay-prevention-recovery {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .taxonomy-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .conclusion-strip__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .overlay-panel-wrapper {
+    padding: var(--space-6) var(--gutter);
+  }
+
+  .overlay-card {
+    padding: var(--space-5);
+  }
+}

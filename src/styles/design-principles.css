@@ -260,3 +260,28 @@
   margin: 0 auto;
 }
 
+
+/* ── Responsive ── */
+
+@media (max-width: 900px) {
+  .dp-hero {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .dp-list-section {
+    padding: var(--space-6) var(--gutter) var(--space-8);
+  }
+}
+
+@media (max-width: 480px) {
+  .dp-hero__title {
+    font-size: var(--text-2xl);
+  }
+
+  .principle-card {
+    padding: var(--space-5);
+    gap: var(--space-4);
+  }
+}
+

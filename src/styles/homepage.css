@@ -364,3 +364,31 @@
   letter-spacing: var(--tracking-wide);
   color: var(--color-inactive);
 }
+
+
+/* ── Responsive ── */
+
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .foundation-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .episodes-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-heading {
+    font-size: var(--text-2xl);
+  }
+
+  .nav {
+    padding: 0 var(--gutter);
+  }
+}
