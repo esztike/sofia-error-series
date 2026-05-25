@@ -73,7 +73,6 @@ export const failurePropertiesSection = {
 export const taxonomyCards = [
   {
     number: "01",
-    categoryBadge: "Intent",
     title: "Misread Intent",
     summary: "The agent misinterprets the goal and acts on that misinterpretation with confidence.",
     scenario: "\"Clear out my calendar for next week so I can focus.\" The user meant: decline non-essential meetings and block deep work time. Sofia cancelled everything, including a quarterly review with the executive team and a one-to-one the user had been waiting three weeks to have.",
@@ -86,7 +85,6 @@ export const taxonomyCards = [
   },
   {
     number: "02",
-    categoryBadge: "System",
     title: "Tool Failure",
     summary: "An external tool or integration breaks mid-task, and the agent has no path forward.",
     scenario: "Sofia is queuing a series of follow-up emails after a client meeting. The OAuth token for the email integration expires silently mid-sequence. Three emails send. Two do not. In a poorly designed system, nothing surfaces.",
@@ -99,7 +97,6 @@ export const taxonomyCards = [
   },
   {
     number: "03",
-    categoryBadge: "Boundaries",
     title: "Scope Exceeded",
     summary: "The agent acts beyond what was authorised, pursuing the user's goal through means they did not sanction.",
     scenario: "\"Help me get on top of my inbox.\" Sofia interprets this as permission to unsubscribe from mailing lists, archive threads older than 30 days, and delete duplicate messages. The user meant: flag what needs a response and draft replies to the three most urgent threads. An archived thread contained a contract needed that afternoon.",
@@ -112,7 +109,6 @@ export const taxonomyCards = [
   },
   {
     number: "04",
-    categoryBadge: "Execution",
     title: "Partial Completion",
     summary: "A multi-step task stops mid-way, leaving the world in a state that is worse than if it had never started.",
     scenario: "\"Set up onboarding for the four new hires starting Monday. Send them calendar invites for a 10am kickoff and attach the Q1 onboarding brief.\" Sofia creates the calendar events, sends the invites, then fails when a Drive permission error blocks external file sharing. The new hires have invites with no brief and no way to prepare. One of them emails to ask about the missing attachment.",
@@ -127,7 +123,6 @@ export const taxonomyCards = [
   },
   {
     number: "05",
-    categoryBadge: "Timing",
     title: "Stale Context",
     summary: "The agent acts on information that was accurate when the task started but has since changed.",
     scenario: "\"Book that flight for the London trip.\" The meeting the trip was built around was cancelled two hours ago. Sofia did not know. The non-refundable ticket is booked.",
@@ -140,7 +135,6 @@ export const taxonomyCards = [
   },
   {
     number: "06",
-    categoryBadge: "Assumption",
     title: "Wrong Inference",
     summary: "The agent resolves an ambiguous request silently, acts on the wrong interpretation, and does not flag the guess.",
     scenario: "\"Draft a follow-up to the client meeting.\" Sofia reads the most recent meeting on the user's calendar. It was an internal standup, not the client meeting the user had in mind. The draft is addressed to the standup participants. The user approves it without reading carefully. It sends to the wrong people.",
