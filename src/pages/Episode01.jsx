@@ -1,3 +1,117 @@
+import { motion } from 'framer-motion'
+import '../styles/globals.css'
+import Nav from '../components/Nav'
+import WalkthroughPanel from '../components/WalkthroughPanel'
+import {
+  pageHeader,
+  section1,
+  section2,
+  section3,
+  walkthroughMeta,
+  unseenUserSection,
+  designersSection,
+  principlesReferenced,
+} from '../content/episode-01.mdx'
+
+const containerVariants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.1, delayChildren: 0.05 } },
+}
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.4, 0, 0.2, 1] } },
+}
+
 export default function Episode01() {
-  return <h1>/episode-01</h1>
+  return (
+    <div className="inner-page">
+      <Nav />
+
+      {/* ── Page header ── */}
+      <motion.section
+        className="page-header"
+        initial="hidden"
+        animate="visible"
+        variants={containerVariants}
+      >
+        <div className="prose-column">
+          <motion.p className="eyebrow" variants={itemVariants}>{pageHeader.eyebrow}</motion.p>
+          <motion.p className="eyebrow" variants={itemVariants}>{pageHeader.errorClass}</motion.p>
+          <motion.h1 className="page-title" variants={itemVariants}>{pageHeader.title}</motion.h1>
+          <motion.div className="page-tags" variants={itemVariants}>
+            {pageHeader.tags.map(tag => (
+              <span key={tag} className="tag">{tag}</span>
+            ))}
+          </motion.div>
+        </div>
+      </motion.section>
+
+      {/* ── This is not a button problem ── */}
+      <section className="prose-section">
+        <div className="prose-column">
+          <h2 className="section-heading">{section1.heading}</h2>
+          {section1.paragraphs.map((p, i) => <p key={i}>{p}</p>)}
+        </div>
+      </section>
+
+      {/* ── Transition / episode context ── */}
+      <section className="prose-section">
+        <div className="prose-column">
+          {section2.paragraphs.map((p, i) => <p key={i}>{p}</p>)}
+        </div>
+      </section>
+
+      {/* ── Sofia & Maya setup ── */}
+      <section className="prose-section">
+        <div className="prose-column">
+          {section3.paragraphs.map((p, i) => <p key={i}>{p}</p>)}
+        </div>
+      </section>
+
+      {/* ── Walkthrough ── */}
+      <section className="prose-section">
+        <div className="prose-column">
+          <h2 className="section-heading">{walkthroughMeta.heading}</h2>
+          <p className="eyebrow">{walkthroughMeta.subtitle}</p>
+        </div>
+        <WalkthroughPanel />
+      </section>
+
+      {/* ── The unseen user ── */}
+      <section className="prose-section">
+        <div className="prose-column">
+          <h2 className="section-heading">{unseenUserSection.heading}</h2>
+          {unseenUserSection.paragraphs.map((p, i) => <p key={i}>{p}</p>)}
+        </div>
+      </section>
+
+      {/* ── What this means for designers ── */}
+      <section className="prose-section">
+        <div className="prose-column">
+          <h2 className="section-heading">{designersSection.heading}</h2>
+          {designersSection.paragraphs.map((p, i) => <p key={i}>{p}</p>)}
+        </div>
+      </section>
+
+      {/* ── Principles referenced ── */}
+      <section className="prose-section">
+        <div className="prose-column">
+          <h2 className="section-heading">Principles referenced</h2>
+          {principlesReferenced.map(p => (
+            <div key={p.code} className="prose-subsection">
+              <h3 className="subsection-heading">
+                <span className="eyebrow">{p.code}</span> · {p.tab}
+              </h3>
+              <p>{p.body}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <footer className="site-footer">
+        <p>Sofia, an error series © 2026 Eszti Hollenback</p>
+      </footer>
+    </div>
+  )
 }

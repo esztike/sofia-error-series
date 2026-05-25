@@ -22,7 +22,7 @@ const itemVariants = {
 
 export default function DesignPrinciples() {
   return (
-    <div className="dp-page">
+    <div className="inner-page">
       <Nav />
 
       {/* ── Hero ── */}
@@ -49,9 +49,9 @@ export default function DesignPrinciples() {
       </motion.section>
 
       {/* ── How to use them ── */}
-      <section className="dp-prose-section">
-        <div className="dp-prose-inner">
-          <h2 className="dp-section-heading">{howToUseSection.heading}</h2>
+      <section className="prose-section">
+        <div className="prose-column">
+          <h2 className="section-heading">{howToUseSection.heading}</h2>
           {howToUseSection.paragraphs.map((p, i) => <p key={i}>{p}</p>)}
         </div>
       </section>
@@ -65,13 +65,13 @@ export default function DesignPrinciples() {
       </section>
 
       {/* ── Further considerations ── */}
-      <section className="dp-prose-section">
-        <div className="dp-prose-inner">
-          <h2 className="dp-section-heading">{furtherConsiderationsSection.heading}</h2>
+      <section className="prose-section">
+        <div className="prose-column">
+          <h2 className="section-heading">{furtherConsiderationsSection.heading}</h2>
           <p>{furtherConsiderationsSection.intro}</p>
           {furtherConsiderationsSection.subsections.map(sub => (
-            <div key={sub.heading} className="dp-subsection">
-              <h3 className="dp-subsection-heading">{sub.heading}</h3>
+            <div key={sub.heading} className="prose-subsection">
+              <h3 className="subsection-heading">{sub.heading}</h3>
               <p>{sub.body}</p>
             </div>
           ))}
@@ -80,8 +80,8 @@ export default function DesignPrinciples() {
 
       {/* ── Where the principles point ── */}
       <section className="dp-closing-section">
-        <div className="dp-closing-inner">
-          <h2 className="dp-closing-heading">{closingSection.heading}</h2>
+        <div className="prose-column">
+          <h2 className="section-heading">{closingSection.heading}</h2>
           {closingSection.paragraphs.map((p, i) => <p key={i}>{p}</p>)}
         </div>
       </section>

@@ -28,7 +28,7 @@ const itemVariants = {
 
 export default function ErrorTaxonomy() {
   return (
-    <div className="taxonomy-page">
+    <div className="inner-page">
       <Nav />
 
       {/* ── Page header ── */}

@@ -7,33 +7,6 @@
 @import "./globals.css";
 
 
-/* ── Page & background ── */
-
-.dp-page {
-  position: relative;
-  min-height: 100vh;
-  background-image: url("/assets/images/sofia-bg-image.jpeg");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-}
-
-.dp-page::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background-color: var(--color-bg-light);
-  opacity: 0.82;
-  z-index: 0;
-  pointer-events: none;
-}
-
-.dp-page > * {
-  position: relative;
-  z-index: 1;
-}
-
-
 /* ── Hero ── */
 
 .dp-hero {
@@ -93,53 +66,6 @@
   content: "·";
   margin-right: var(--space-4);
   color: var(--color-inactive);
-}
-
-
-/* ── Prose sections ── */
-
-.dp-prose-section {
-  padding: var(--space-8) var(--gutter);
-  border-top: 1px solid var(--glass-border);
-  max-width: var(--max-width);
-  margin: 0 auto;
-}
-
-.dp-prose-inner {
-  max-width: 740px;
-}
-
-.dp-prose-section > .dp-prose-inner > * + * {
-  margin-top: var(--space-5);
-}
-
-.dp-section-heading {
-  font-family: var(--font-heading);
-  font-size: var(--text-2xl);
-  font-weight: var(--weight-semibold);
-  line-height: var(--leading-snug);
-  letter-spacing: var(--tracking-tight);
-  color: var(--color-text-on-light);
-  margin-bottom: var(--space-5);
-}
-
-.dp-subsection {
-  margin-top: var(--space-6);
-  padding-top: var(--space-6);
-  border-top: 1px solid var(--glass-border);
-}
-
-.dp-subsection > * + * {
-  margin-top: var(--space-4);
-}
-
-.dp-subsection-heading {
-  font-family: var(--font-heading);
-  font-size: var(--text-xl);
-  font-weight: var(--weight-semibold);
-  line-height: var(--leading-snug);
-  color: var(--color-text-on-light);
-  margin-bottom: var(--space-3);
 }
 
 
@@ -334,20 +260,3 @@
   margin: 0 auto;
 }
 
-.dp-closing-inner {
-  max-width: 740px;
-}
-
-.dp-closing-inner > * + * {
-  margin-top: var(--space-5);
-}
-
-.dp-closing-heading {
-  font-family: var(--font-heading);
-  font-size: var(--text-2xl);
-  font-weight: var(--weight-semibold);
-  line-height: var(--leading-snug);
-  letter-spacing: var(--tracking-tight);
-  color: var(--color-text-on-light);
-  margin-bottom: var(--space-5);
-}

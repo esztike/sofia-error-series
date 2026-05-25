@@ -1,0 +1,181 @@
+export const pageHeader = {
+  eyebrow: "Sofia · Error Series · Episode 01",
+  errorClass: "Error class 04 · Partial completion",
+  title: "Partial completion",
+  tags: ["PARTIAL COMPLETION", "AGENTIC AI", "ERROR & RECOVERY", "UX CASE STUDY"],
+}
+
+export const section1 = {
+  heading: "This is not a button problem",
+  paragraphs: [
+    "There's a version of design history where everything gets simpler as it matures. Clearer affordances, better defaults, fewer sharp edges. Agentic AI is not that version.",
+    "When a system can act — not just respond, but actually do things on your behalf — the design surface doesn't just expand. It becomes invisible. The user issues a request and steps away. The agent interprets, decides, executes. And somewhere in that chain, without anyone watching, something can go wrong in a way that no amount of good button design prepares you for.",
+    "The question isn't whether agentic systems will fail. They will. The question is whether the designers building them have thought seriously about what failure looks like from the inside — and what it takes to recover without losing the trust that makes delegation possible in the first place.",
+    "Most haven't. That gap is what this series is about.",
+  ],
+}
+
+export const section2 = {
+  paragraphs: [
+    "This episode doesn't start from intuition. It's built on two prior artifacts: an error taxonomy that classifies how agentic systems fail, and a set of design principles for building systems that fail well. If you haven't read them, they're worth the time. If you have, you'll recognize them at work in what follows.",
+    "The taxonomy names six failure classes. This episode explores one: partial completion — a multi-step task that stops mid-way, leaving the world in an incomplete state. Not a crash. Not a visible error. A task that got halfway done and didn't tell anyone.",
+    "Until Sofia did.",
+  ],
+}
+
+export const section3 = {
+  paragraphs: [
+    "Sofia is a personal productivity agent — calendar, email, meeting coordination. She's been working with Maya, a People Ops coordinator, for one week. Long enough to be useful. Not long enough to have earned full trust.",
+    "On a Tuesday morning, Maya delegates a routine onboarding task: send calendar invites to four new hires starting Monday, and attach the Q1 onboarding brief. She confirms Sofia's interpretation and puts her phone down. That's the point of an agent — you hand something off and move on.",
+    "Sofia creates the events. Sends the invites. Then hits a wall: Google Drive permissions block external sharing for the file. She can't attach it. Two of four steps are done. Four people have calendar invites and nothing to read before Monday.",
+    "Sofia stops. She doesn't retry silently. She doesn't abandon the partial work. She surfaces exactly what happened, what's done, and what isn't. And she waits.",
+    "What happens next is what this episode is about.",
+  ],
+}
+
+export const walkthroughMeta = {
+  heading: "Walkthrough",
+  subtitle: "Watch how Sofia handles what she can't undo.",
+}
+
+export const walkthroughTabs = [
+  {
+    number: 1,
+    title: "Delegation",
+    subtitle: "Maya delegates, Sofia interprets before acting",
+    storyBeat: "Maya delegates a four-step onboarding task: calendar invites for four new hires, Q1 onboarding brief attached. Sofia surfaces her interpretation before acting. Maya confirms. The task begins.",
+    principlesAtWork: ["P2", "P7"],
+  },
+  {
+    number: 2,
+    title: "Error surfaces",
+    subtitle: "Sofia stops, preserves state",
+    storyBeat: "Step 3 of 4 fails. Sofia stops the task and notifies Maya. The remaining step does not run.",
+    principlesAtWork: ["P1", "P3", "P6"],
+  },
+  {
+    number: 3,
+    title: "Error detail",
+    subtitle: "Full transparency, assumptions exposed. Jamie's phone appears.",
+    storyBeat: "Maya opens the full error detail. The step log shows what ran, what failed, and what was skipped. The assumption audit lists the file Sofia selected. The invitees have already accepted the calendar invite.",
+    principlesAtWork: ["P3", "P6", "P7"],
+    unseenUser: "Jamie's phone. A calendar invite for Onboarding Kickoff · Monday 10am. Event title, date, time, attendees. An RSVP prompt. Nothing else. No briefing doc. No attachment. The absence is visible without being labelled.",
+  },
+  {
+    number: 4,
+    title: "Recovery options",
+    subtitle: "Sofia presents the paths forward. Jamie's email arrives.",
+    storyBeat: 'Sofia presents four recovery paths with one labelled recommended. Maya selects Option A: a follow-up email to all four with a view-only link to the briefing doc. As she decides, a notification slides in — Jamie Rodriguez, re: "Onboarding Kickoff · Monday 10am."',
+    recoveryOptions: [
+      {
+        id: "A",
+        label: "Send follow-up with view-only link",
+        recommended: true,
+        description: "Bypasses the Drive permission issue. All four receive the doc.",
+        estimatedTime: "2 minutes",
+      },
+      {
+        id: "B",
+        label: "Send updated calendar invite with doc attached",
+        recommended: false,
+        description: "Requires Drive permissions fix first. Maya must action that.",
+        estimatedTime: "10–15 minutes",
+      },
+      {
+        id: "C",
+        label: "Sofia drafts, Maya sends",
+        recommended: false,
+        description: "Maya reviews and sends manually. Full control, more effort.",
+        estimatedTime: "5 minutes",
+      },
+      {
+        id: "D",
+        label: "I'll handle this",
+        recommended: false,
+        description: "Sofia closes the task. No further action taken.",
+        estimatedTime: null,
+      },
+    ],
+    notification: {
+      from: "Jamie Rodriguez",
+      subject: "Onboarding Kickoff · Monday 10am",
+    },
+    annotation: {
+      scenario: "The invites are sent and accepted. There is no undo. Sofia presents four paths forward — each one honest about what it costs and what it fixes. Maya chooses.",
+      designDecisions: [
+        { label: "Forward-only framing", body: "Recovery means choosing what happens next, not reversing what already did. The design reflects that constraint honestly." },
+        { label: "Recommended but not pre-selected", body: "Option A is labelled recommended. It is not pre-ticked. Maya's choice belongs to Maya." },
+        { label: "Trade-offs visible per option", body: "Time, effort, and what each path fixes are shown inline. Not buried in a tooltip." },
+        { label: "Jamie's notification makes it real", body: "A person is already waiting. The human cost is not abstract." },
+      ],
+      principlesAtWork: ["P5", "P6"],
+    },
+  },
+  {
+    number: 5,
+    title: "Resolution",
+    subtitle: "Task complete. Jamie's phone appears again.",
+    storyBeat: "Sofia sends the follow-up email to all four. The view-only link works. The step log is all green. She surfaces one question: use view-only links for external recipients by default?",
+    preferenceOptions: [
+      {
+        id: "A",
+        label: "Yes, always",
+        description: "Sofia decides, no confirmation needed.",
+        recommended: false,
+      },
+      {
+        id: "B",
+        label: "Yes, confirm each time",
+        description: "Sofia suggests, Maya approves.",
+        recommended: true,
+      },
+      {
+        id: "C",
+        label: "Not now",
+        description: "Sofia will ask again when it's relevant.",
+        recommended: false,
+      },
+    ],
+    annotation: {
+      scenario: "Task complete. But recovery isn't done until the relationship is repaired. Sofia doesn't just close the loop — she acknowledges what happened and shows what she's learned.",
+      designDecisions: [
+        { label: "All green, specifically", body: 'Not just "done." Each step confirmed with what was fixed and how. Maya can verify.' },
+        { label: "Expressed regret for impact, not just failure", body: "Sofia acknowledges that four people were affected, not just that a permission error occurred. The distinction is what P8 turns on." },
+        { label: "One preference prompt, not a settings page", body: "A single, specific adjustment offered in the moment. Concrete and immediately actionable." },
+        { label: "Behavior change demonstrated", body: "Sofia doesn't promise to do better. She proposes a specific change Maya can confirm now. Trust is rebuilt through action, not announcement." },
+      ],
+      principlesAtWork: ["P8", "P2"],
+    },
+    unseenUser: "Jamie's phone again. The follow-up email arrives. He opens the briefing doc. The view-only link works. He has what he needs before Monday. No chase email. No confusion. The quiet version of things going right.",
+  },
+]
+
+export const unseenUserSection = {
+  heading: "The unseen user",
+  paragraphs: [
+    "Jamie emailed. The others waited. Four people had calendar invites, no briefing doc, and no way to know whether the missing attachment was a mistake or something they were supposed to chase. They were inside the consequences of a failure they had no part in causing.",
+    "Errors in agentic systems are not edge cases. They are not failures of good design. They are the nature of systems that act in a complex world on behalf of people. The design question is never whether they will happen. It is what the system owes everyone they touch when they do.",
+    "That's a harder question than it sounds. Most error design is built around one assumption: that the person experiencing the failure is the person who caused it — or at least the one who chose to use the system. Parasuraman's automation trust research, the foundational work on how humans calibrate reliance on automated systems, makes exactly that assumption. You are the operator. You have context. You have agency. You can adjust.",
+    "Jamie has none of that. He didn't delegate anything. He didn't choose Sofia. He received a calendar invite from a system he's never interacted with, and when something was missing he did the only thing available to him: he sent an email and hoped someone would respond.",
+    "That asymmetry is what makes the unseen user a distinct design problem — not a harder version of the delegating user's problem, but a different one entirely. Transparency and recovery have to reach further than the person who issued the request. The blast radius of an agentic error includes everyone the system acted on, not just everyone who asked it to act. Designing for that is not optional complexity. It is what it means to build systems that are responsible about what they do in the world.",
+  ],
+}
+
+export const designersSection = {
+  heading: "What this means for designers",
+  paragraphs: [
+    "The first thing it means is that the blast radius is a design surface. Not a side effect to acknowledge in a post-mortem, but something to map before a task runs, surface when something goes wrong, and address as part of recovery. Jamie's name appearing in Sofia's error detail wasn't incidental. It was a design decision. Knowing who was affected, and offering Maya a path to reach them, is what separates a recovery flow from a closed loop that only serves the person holding the phone.",
+    "The second is that recovery is not a feature. It is a responsibility — and its scope has to match the scope of the failure. A recovery flow that restores Maya's task to green while Jamie is still waiting for a briefing doc is technically complete and humanly incomplete. Designing for recovery means asking: who did this reach, and what do they need now?",
+    "The third is perhaps the most uncomfortable for a field that has always prized prevention. In agentic AI, recovery is not the fallback when prevention fails. It is equally primary. These systems act in a complex world, across tools and permissions and people who never opted in. Prevention reduces the frequency of failure. It does not change the fact that failures will happen, that they will have consequences, and that someone has to design for what comes after. That someone is us.",
+  ],
+}
+
+export const principlesReferenced = [
+  { code: "P1", tab: "Tab 2", body: "Sofia surfaces the failure immediately. The notification fires the moment the task stops. The remaining step does not run." },
+  { code: "P2", tab: "Tab 1 and Tab 5", body: "Sofia shows its interpretation before acting. After recovery, the assumption is corrected and Maya calibrates the default." },
+  { code: "P3", tab: "Tab 3", body: "The complete forensic record. Step log, assumption audit, third-party flag. The partial work is preserved and made visible." },
+  { code: "P5", tab: "Tab 4", body: "Four forward-only recovery paths. Each one honest about what it costs. One labelled recommended, none pre-selected." },
+  { code: "P6", tab: "Tabs 2, 3, and 4", body: "The unseen user thread running through the episode. Jamie, Priya, Omar, Sam — named, not abstracted." },
+  { code: "P7", tab: "Tab 3", body: "The assumption audit surfaces which file Sofia selected and why. Not a timestamp. The specific thing that was assumed." },
+  { code: "P8", tab: "Tab 5", body: "Trust repair through demonstrated behavior change. Sofia doesn't promise to do better. She proposes a specific adjustment Maya can confirm now." },
+]

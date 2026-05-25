@@ -227,3 +227,117 @@ em {
   from { opacity: 0; }
   to   { opacity: 1; }
 }
+
+
+/* ── Inner page (shared background pattern) ── */
+/* Used by Error Taxonomy, Design Principles, Episode pages. */
+
+.inner-page {
+  position: relative;
+  min-height: 100vh;
+  background-image: url("/assets/images/sofia-bg-image.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.inner-page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-color: var(--color-bg-light);
+  opacity: 0.82;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.inner-page > * {
+  position: relative;
+  z-index: 1;
+}
+
+
+/* ── Page header ── */
+
+.page-header {
+  padding: var(--space-10) 0 var(--space-8);
+}
+
+.page-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-3xl);
+  font-weight: var(--weight-semibold);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-text-on-light);
+  margin-top: var(--space-3);
+}
+
+.page-description {
+  margin-top: var(--space-5);
+  font-size: var(--text-lg);
+  line-height: var(--leading-normal);
+  color: var(--color-text-on-light);
+}
+
+.page-tags {
+  display: flex;
+  gap: var(--space-5);
+  margin-top: var(--space-4);
+}
+
+.page-tags .tag + .tag::before {
+  content: "·";
+  margin-right: var(--space-5);
+  color: var(--color-inactive);
+}
+
+
+/* ── Prose column ── */
+
+.prose-column {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+
+/* ── Prose sections ── */
+
+.prose-section {
+  padding: var(--space-8) 0;
+  border-top: 1px solid var(--glass-border);
+}
+
+.prose-section .prose-column > * + * {
+  margin-top: var(--space-5);
+}
+
+.section-heading {
+  font-family: var(--font-heading);
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-semibold);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-text-on-light);
+  margin-bottom: var(--space-5);
+}
+
+.prose-subsection {
+  margin-top: var(--space-6);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--glass-border);
+}
+
+.prose-subsection > * + * {
+  margin-top: var(--space-4);
+}
+
+.subsection-heading {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: var(--weight-semibold);
+  line-height: var(--leading-snug);
+  color: var(--color-text-on-light);
+  margin-bottom: var(--space-4);
+}
