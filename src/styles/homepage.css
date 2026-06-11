@@ -15,6 +15,7 @@
 .home-page {
   position: relative;
   min-height: 100vh;
+  background-color: var(--color-bg-light);
   background-image: url("/assets/images/sofia-bg-image.jpeg");
   background-size: cover;
   background-position: center;
@@ -26,7 +27,8 @@
   position: fixed;
   inset: 0;
   background-color: var(--color-bg-light);
-  opacity: 0.82;
+  mix-blend-mode: hard-light;
+  opacity: 0.5;
   z-index: 0;
   pointer-events: none;
 }

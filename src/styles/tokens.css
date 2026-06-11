@@ -108,4 +108,21 @@
   --transition-base:    250ms ease;
   --transition-slow:    400ms ease;
 
+
+  /* ── Phone mockup ── */
+
+  /* Sofia app — dark UI for agent interface screens */
+  --phone-sofia-bg:       #0c0f14;
+  --phone-sofia-bg-2:     #131720;
+  --phone-sofia-border:   #2a3148;
+  --phone-sofia-text:     #e8eaf0;
+  --phone-sofia-muted:    #7a8099;
+
+  /* Jamie — warm/light for the unseen user perspective */
+  --phone-jamie-bg:       #f3f0e9;
+  --phone-jamie-bg-2:     #e8e4db;
+  --phone-jamie-border:   rgba(141, 132, 122, 0.3);
+  --phone-jamie-text:     #18191a;
+  --phone-jamie-muted:    #8d847a;
+
 }
