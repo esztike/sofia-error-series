@@ -243,152 +243,196 @@
 }
 
 
-/* ── Phone mockup wrapper ── */
+/* ── Phone mockup — pure CSS frame, ported from HTML prototype ── */
 
 .phone-mockup {
-  display: flex;
-  justify-content: center;
-  zoom: 0.7;
-  transform-origin: top center;
-}
-
-
-/* ── Phone screen (fills DeviceFrameset screen area) ── */
-
-.phone-screen {
-  width: 100%;
-  height: 100%;
+  width: 375px;
+  height: 812px;
+  border-radius: 44px;
+  position: relative;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  flex-shrink: 0;
+  zoom: 0.7;
 }
 
-.phone-screen--sofia {
-  background-color: var(--phone-sofia-bg);
+/* Notch */
+.phone-mockup::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 126px;
+  height: 34px;
+  border-radius: 0 0 20px 20px;
+  z-index: 10;
+}
+
+/* Side buttons (Sofia only) */
+.phone-mockup--sofia::after {
+  content: '';
+  position: absolute;
+  right: -3px;
+  top: 100px;
+  width: 3px;
+  height: 70px;
+  border-radius: 2px;
+}
+
+.phone-mockup--sofia {
+  background: var(--phone-sofia-bg);
+  border: 1.5px solid var(--phone-sofia-border);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.04),
+    0 40px 80px rgba(0, 0, 0, 0.7);
   color: var(--phone-sofia-text);
 }
 
-.phone-screen--jamie {
-  background-color: var(--phone-jamie-bg);
+.phone-mockup--sofia::before {
+  background: var(--phone-sofia-bg);
+  border-bottom: 1px solid #1a2030;
+}
+
+.phone-mockup--sofia::after {
+  background: var(--phone-sofia-border);
+  box-shadow: 0 90px 0 var(--phone-sofia-border), 0 -90px 0 var(--phone-sofia-border);
+}
+
+.phone-mockup--jamie {
+  background: var(--phone-jamie-bg);
+  border: 1px solid var(--phone-jamie-border);
+  box-shadow: 0 8px 40px rgba(24, 25, 26, 0.12);
   color: var(--phone-jamie-text);
+}
+
+.phone-mockup--jamie::before {
+  background: var(--phone-jamie-bg-2);
+  border-bottom: 1px solid var(--phone-jamie-border);
 }
 
 
 /* ── App header ── */
 
-.phone-mockup__app-header {
+.phone-header {
   flex-shrink: 0;
-  height: 52px;
-  padding: 0 16px;
+  padding: 40px 20px 12px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: var(--space-3);
+  gap: 12px;
+  position: relative;
+  z-index: 4;
 }
 
-.phone-screen--sofia .phone-mockup__app-header {
-  background-color: var(--phone-sofia-bg-2);
+.phone-mockup--sofia .phone-header {
+  background: var(--phone-sofia-bg-2);
   border-bottom: 1px solid var(--phone-sofia-border);
 }
 
-.phone-screen--jamie .phone-mockup__app-header {
-  background-color: var(--phone-jamie-bg-2);
+.phone-mockup--jamie .phone-header {
+  background: var(--phone-jamie-bg-2);
   border-bottom: 1px solid var(--phone-jamie-border);
 }
 
-.phone-mockup__app-back {
-  width: 28px;
-  height: 28px;
+.phone-back {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  opacity: 0.6;
+  opacity: 0.5;
 }
 
-.phone-mockup__app-info {
+.phone-title-group {
   flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 2px;
 }
 
-.phone-mockup__app-title {
+.phone-title {
   font-family: var(--font-body);
   font-size: 15px;
   font-weight: var(--weight-semibold);
   line-height: 1.2;
 }
 
-.phone-mockup__app-subtitle {
-  font-family: var(--font-body);
-  font-size: 11px;
-  line-height: 1.2;
+.phone-subtitle {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   color: var(--phone-sofia-muted);
 }
 
-.phone-mockup__app-avatar {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
+.phone-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 12px;
   font-weight: var(--weight-medium);
-  letter-spacing: 0;
   flex-shrink: 0;
   background-color: var(--color-accent);
   color: var(--color-light);
 }
 
-.phone-mockup__app-avatar--jamie {
-  background-color: var(--phone-jamie-bg-2);
+.phone-avatar--jamie {
+  background-color: var(--phone-jamie-bg);
   border: 1px solid var(--phone-jamie-border);
   color: var(--phone-jamie-text);
-  font-size: 9px;
+  font-size: 10px;
 }
 
 
 /* ── Screen content area ── */
 
-.phone-mockup__screen {
+.phone-screen {
   flex: 1;
   min-height: 0;
   overflow-y: auto;
   scrollbar-width: none;
 }
 
-.phone-mockup__screen::-webkit-scrollbar {
+.phone-screen::-webkit-scrollbar {
   display: none;
 }
 
 
 /* ── Bottom nav (Sofia only) ── */
 
-.phone-mockup__bottom-nav {
+.phone-nav {
   flex-shrink: 0;
-  height: 60px;
-  padding: 0 8px;
+  height: 80px;
+  padding: 0 16px 16px;
   display: flex;
   align-items: center;
   justify-content: space-around;
   border-top: 1px solid var(--phone-sofia-border);
-  background-color: var(--phone-sofia-bg-2);
+  background: var(--phone-sofia-bg-2);
 }
 
-.phone-mockup__nav-item {
-  width: 48px;
-  height: 48px;
+.phone-nav-item {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 48px;
+  height: 48px;
   color: var(--phone-sofia-muted);
+  opacity: 0.4;
 }
 
-.phone-mockup__nav-item--active {
+.phone-nav-item--active {
   color: var(--color-accent);
+  opacity: 1;
 }
 
 
