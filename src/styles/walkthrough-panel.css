@@ -3,7 +3,6 @@
 /* Tab-based walkthrough for Episode 01.                       */
 /* ============================================================ */
 
-
 /* ── Window card ── */
 
 .walkthrough {
@@ -11,7 +10,6 @@
   margin: var(--space-6) auto 0;
   padding: 0 var(--gutter);
 }
-
 
 /* ── Tab bar — fills container, equal-width tabs ── */
 
@@ -38,7 +36,9 @@
   font-size: var(--text-sm);
   font-weight: var(--weight-medium);
   color: var(--color-inactive);
-  transition: color var(--transition-fast), border-color var(--transition-fast);
+  transition:
+    color var(--transition-fast),
+    border-color var(--transition-fast);
   white-space: nowrap;
 }
 
@@ -51,7 +51,6 @@
   color: var(--color-text-on-light);
 }
 
-
 /* ── Tab content ── */
 
 .walkthrough-content {
@@ -62,7 +61,6 @@
 .walkthrough-content[data-state="inactive"] {
   display: none;
 }
-
 
 /* ── Story beat — full width above grid ── */
 
@@ -85,7 +83,6 @@
   color: var(--color-grey-tag);
 }
 
-
 /* ── Two-column layout — each column stacks its own items ── */
 
 .walkthrough-grid {
@@ -107,7 +104,6 @@
   display: flex;
   justify-content: center;
 }
-
 
 /* ── Annotation card ── */
 
@@ -198,7 +194,6 @@
   -webkit-backdrop-filter: blur(2px);
 }
 
-
 /* ── Unseen user card ── */
 
 .walkthrough__unseen-card {
@@ -224,7 +219,6 @@
   color: var(--color-text-on-light);
 }
 
-
 /* ── Placeholder text ── */
 
 .walkthrough-placeholder {
@@ -238,7 +232,6 @@
   text-align: center;
 }
 
-
 /* ── Phone mockup — pure CSS frame, ported from HTML prototype ── */
 
 .phone-mockup {
@@ -250,12 +243,12 @@
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
-  zoom: 0.7;
+  zoom: 1;
 }
 
 /* Notch */
 .phone-mockup::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 50%;
@@ -268,7 +261,7 @@
 
 /* Side buttons (Sofia only) */
 .phone-mockup--sofia::after {
-  content: '';
+  content: "";
   position: absolute;
   right: -3px;
   top: 100px;
@@ -293,7 +286,9 @@
 
 .phone-mockup--sofia::after {
   background: var(--phone-sofia-border);
-  box-shadow: 0 90px 0 var(--phone-sofia-border), 0 -90px 0 var(--phone-sofia-border);
+  box-shadow:
+    0 90px 0 var(--phone-sofia-border),
+    0 -90px 0 var(--phone-sofia-border);
 }
 
 .phone-mockup--jamie {
@@ -307,7 +302,6 @@
   background: var(--phone-jamie-bg-2);
   border-bottom: 1px solid var(--phone-jamie-border);
 }
-
 
 /* ── App header ── */
 
@@ -388,7 +382,6 @@
   font-size: 10px;
 }
 
-
 /* ── Screen content area ── */
 
 .phone-screen {
@@ -401,7 +394,6 @@
 .phone-screen::-webkit-scrollbar {
   display: none;
 }
-
 
 /* ── Bottom nav (Sofia only) ── */
 
@@ -430,7 +422,6 @@
   color: var(--color-accent);
   opacity: 1;
 }
-
 
 /* ── Responsive ── */
 
