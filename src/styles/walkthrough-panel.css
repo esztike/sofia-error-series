@@ -243,7 +243,7 @@
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
-  zoom: 1;
+  zoom: 0.85;
 }
 
 /* Notch */
