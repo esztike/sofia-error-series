@@ -125,4 +125,12 @@
   --phone-jamie-text:     #18191a;
   --phone-jamie-muted:    #8d847a;
 
+  /* Sofia screen content — additional surfaces and status colors */
+  --phone-sofia-bg-3:     #1a1f2e;
+  --phone-sofia-faint:    #3a4160;
+  --phone-status-ok:      #4fc3a1;
+  --phone-status-fail:    #e87070;
+  --phone-status-running: #7b9cf5;
+  --phone-status-warn:    #f0a05a;
+
 }

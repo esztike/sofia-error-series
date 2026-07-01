@@ -1,7 +1,10 @@
 import * as Tabs from '@radix-ui/react-tabs'
 import { walkthroughTabs } from '../content/episode-01.mdx'
 import PhoneMockup from './PhoneMockup'
+import SofiaScreen1 from './SofiaScreen1'
 import '../styles/walkthrough-panel.css'
+
+const SOFIA_SCREENS = { 1: SofiaScreen1 }
 
 export default function WalkthroughPanel() {
   return (
@@ -21,6 +24,7 @@ export default function WalkthroughPanel() {
 
       {walkthroughTabs.map(tab => {
         const hasUnseen = !!tab.unseenUser
+        const SofiaScreenComponent = SOFIA_SCREENS[tab.number]
         return (
           <Tabs.Content
             key={tab.number}
@@ -41,7 +45,9 @@ export default function WalkthroughPanel() {
               <div className="walkthrough-col">
                 <div className="walkthrough__phone">
                   <PhoneMockup variant="sofia">
-                    <p className="walkthrough-placeholder">Screen {tab.number}</p>
+                    {SofiaScreenComponent
+                      ? <SofiaScreenComponent />
+                      : <p className="walkthrough-placeholder">Screen {tab.number}</p>}
                   </PhoneMockup>
                 </div>
                 {hasUnseen && (

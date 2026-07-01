@@ -1,0 +1,301 @@
+/* ============================================================ */
+/* SOFIA SCREEN CONTENT                                         */
+/* Styles for Sofia app screen content inside PhoneMockup.     */
+/* StepRow is shared across screens 1–3.                       */
+/* ============================================================ */
+
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes progressFill {
+  from { width: 0; }
+  to   { width: 62%; }
+}
+
+
+/* ── Screen content wrapper ── */
+
+.sofia-screen-content {
+  padding: 0 20px 20px;
+}
+
+
+/* ── Task hero card ── */
+
+.sofia-task-hero {
+  background: linear-gradient(160deg, #141c2a 0%, #0f1420 100%);
+  border: 1px solid var(--phone-sofia-border);
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+.sofia-task-hero::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(79, 195, 161, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.sofia-task-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: rgba(79, 195, 161, 0.12);
+  border: 1px solid rgba(79, 195, 161, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--phone-status-ok);
+  margin-bottom: 12px;
+  flex-shrink: 0;
+}
+
+.sofia-task-name {
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: var(--weight-bold);
+  color: var(--phone-sofia-text);
+  margin-bottom: 4px;
+  line-height: var(--leading-snug);
+}
+
+.sofia-task-desc {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--phone-sofia-muted);
+  line-height: var(--leading-normal);
+  margin-bottom: 14px;
+}
+
+.sofia-progress-track {
+  background: var(--phone-sofia-bg-3);
+  border-radius: 4px;
+  height: 4px;
+  margin-bottom: 8px;
+  overflow: hidden;
+}
+
+.sofia-progress-fill {
+  height: 100%;
+  border-radius: 4px;
+  background: linear-gradient(90deg, var(--phone-status-ok), var(--phone-status-running));
+  width: 62%;
+  animation: progressFill 1.2s cubic-bezier(0.25, 1, 0.5, 1) both;
+}
+
+.sofia-progress-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sofia-progress-pct {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--phone-status-ok);
+}
+
+.sofia-progress-eta {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: var(--phone-sofia-muted);
+}
+
+
+/* ── Section label ── */
+
+.sofia-section-label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--phone-sofia-muted);
+  margin-top: 4px;
+  margin-bottom: 8px;
+}
+
+
+/* ── Card container ── */
+
+.sofia-card {
+  background: var(--phone-sofia-bg-2);
+  border: 1px solid var(--phone-sofia-border);
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 12px;
+  padding: 4px 16px 8px;
+}
+
+
+/* ── Steps list (shared: screens 1 and 2) ── */
+
+.sofia-steps-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.step-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(42, 49, 72, 0.6);
+}
+
+.step-row:last-child {
+  border-bottom: none;
+}
+
+.step-indicator {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.step-indicator--ok {
+  background: rgba(79, 195, 161, 0.15);
+  border: 1px solid rgba(79, 195, 161, 0.4);
+}
+
+.step-indicator--fail {
+  background: rgba(232, 112, 112, 0.15);
+  border: 1px solid rgba(232, 112, 112, 0.4);
+}
+
+.step-indicator--running {
+  background: rgba(123, 156, 245, 0.15);
+  border: 1px solid rgba(123, 156, 245, 0.4);
+}
+
+.step-indicator--pending {
+  background: rgba(42, 49, 72, 0.6);
+  border: 1px solid var(--phone-sofia-border);
+}
+
+.step-icon--ok {
+  font-size: 11px;
+  color: var(--phone-status-ok);
+  line-height: 1;
+}
+
+.step-icon--fail {
+  font-size: 11px;
+  color: var(--phone-status-fail);
+  line-height: 1;
+}
+
+.step-spinner {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border: 2px solid var(--phone-status-running);
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+.step-dot {
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--phone-sofia-faint);
+}
+
+.step-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.step-name {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: var(--weight-medium);
+  color: var(--phone-sofia-text);
+  margin-bottom: 2px;
+  line-height: var(--leading-snug);
+}
+
+.step-name--muted {
+  color: var(--phone-sofia-muted);
+}
+
+.step-detail {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.06em;
+  color: var(--phone-sofia-muted);
+  line-height: var(--leading-normal);
+}
+
+.step-detail--ok {
+  color: rgba(79, 195, 161, 0.7);
+}
+
+.step-detail--fail {
+  color: rgba(232, 112, 112, 0.7);
+}
+
+
+/* ── Assumption card ── */
+
+.sofia-assumption-card {
+  background: var(--phone-sofia-bg-2);
+  border: 1px solid rgba(240, 160, 90, 0.2);
+  border-left: 3px solid var(--phone-status-warn);
+  border-radius: 16px;
+  padding: 14px 16px;
+  margin-bottom: 12px;
+}
+
+.sofia-assumption-heading {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--phone-status-warn);
+  margin-bottom: 8px;
+}
+
+.sofia-assumption-row {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(42, 49, 72, 0.4);
+}
+
+.sofia-assumption-row:last-child {
+  border-bottom: none;
+}
+
+.sofia-assumption-key {
+  font-family: var(--font-body);
+  font-size: 11px;
+  color: var(--phone-sofia-muted);
+  min-width: 90px;
+  flex-shrink: 0;
+  line-height: var(--leading-normal);
+}
+
+.sofia-assumption-val {
+  font-family: var(--font-body);
+  font-size: 11px;
+  color: var(--phone-sofia-text);
+  line-height: var(--leading-snug);
+}

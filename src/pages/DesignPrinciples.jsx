@@ -81,7 +81,7 @@ export default function DesignPrinciples() {
       </section>
 
       {/* ── Where the principles point ── */}
-      <section className="dp-closing-section">
+      <section className="prose-section">
         <div className="prose-column">
           <h2 className="section-heading">{closingSection.heading}</h2>
           {closingSection.paragraphs.map((p, i) => <p key={i}>{p}</p>)}
