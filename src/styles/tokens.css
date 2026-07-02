@@ -133,4 +133,8 @@
   --phone-status-running: #7b9cf5;
   --phone-status-warn:    #f0a05a;
 
+  /* Sofia screen content — accent colors (screen 3) */
+  --phone-accent-unseen:  #5bc4e0;
+  --phone-accent-context: #f5c842;
+
 }

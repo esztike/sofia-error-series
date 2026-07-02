@@ -482,3 +482,188 @@
   border: 1px solid var(--phone-sofia-border);
   color: var(--phone-sofia-text);
 }
+
+
+/* ── Context chip (screen 3) ── */
+
+.sofia-context-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(245, 200, 66, 0.08);
+  border: 1px solid rgba(245, 200, 66, 0.2);
+  border-radius: 6px;
+  padding: 5px 10px;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  color: var(--phone-accent-context);
+  margin-bottom: 10px;
+}
+
+
+/* ── Step-by-step log card (screen 3) ── */
+
+.sofia-log-card {
+  background: var(--phone-sofia-bg-2);
+  border: 1px solid var(--phone-sofia-border);
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.sofia-log-header {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--phone-sofia-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sofia-log-header-title {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: var(--weight-bold);
+  color: var(--phone-sofia-text);
+}
+
+.sofia-log-header-count {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--phone-sofia-muted);
+}
+
+.sofia-log-body {
+  padding: 0 16px;
+}
+
+.sofia-log-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(42, 49, 72, 0.5);
+}
+
+.sofia-log-row:last-child {
+  border-bottom: none;
+}
+
+.sofia-log-connector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  width: 24px;
+  flex-shrink: 0;
+}
+
+.sofia-log-dot {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  flex-shrink: 0;
+}
+
+.sofia-log-dot--ok {
+  background: rgba(79, 195, 161, 0.15);
+  color: var(--phone-status-ok);
+  border: 1px solid rgba(79, 195, 161, 0.3);
+}
+
+.sofia-log-dot--fail {
+  background: rgba(232, 112, 112, 0.15);
+  color: var(--phone-status-fail);
+  border: 1px solid rgba(232, 112, 112, 0.3);
+}
+
+.sofia-log-dot--skip {
+  background: var(--phone-sofia-bg-3);
+  color: var(--phone-sofia-muted);
+  border: 1px solid var(--phone-sofia-border);
+}
+
+.sofia-log-line {
+  width: 1px;
+  flex: 1;
+  background: var(--phone-sofia-border);
+  min-height: 12px;
+  margin-top: 4px;
+}
+
+.sofia-log-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.sofia-log-title {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: var(--weight-medium);
+  margin-bottom: 2px;
+}
+
+.sofia-log-title--ok {
+  color: var(--phone-sofia-text);
+}
+
+.sofia-log-title--fail {
+  color: var(--phone-status-fail);
+}
+
+.sofia-log-title--skip {
+  color: var(--phone-sofia-muted);
+}
+
+.sofia-log-note {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.06em;
+  color: var(--phone-sofia-muted);
+  line-height: var(--leading-normal);
+}
+
+.sofia-log-note--fail {
+  color: rgba(232, 112, 112, 0.7);
+}
+
+
+/* ── Third-party impact card (screen 3) ── */
+
+.sofia-thirdparty-card {
+  background: var(--phone-sofia-bg-2);
+  border: 1px solid rgba(91, 196, 224, 0.25);
+  border-left: 3px solid var(--phone-accent-unseen);
+  border-radius: 16px;
+  padding: 14px 16px;
+  margin-bottom: 12px;
+}
+
+.sofia-thirdparty-label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--phone-accent-unseen);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.sofia-thirdparty-text {
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: var(--phone-sofia-muted);
+  line-height: 1.6;
+}
+
+.sofia-thirdparty-text strong {
+  color: var(--phone-sofia-text);
+}
