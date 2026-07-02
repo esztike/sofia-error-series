@@ -136,6 +136,10 @@
   padding: 4px 16px 8px;
 }
 
+.sofia-card--snapshot {
+  padding: 16px;
+}
+
 
 /* ── Steps list (shared: screens 1 and 2) ── */
 
@@ -235,6 +239,10 @@
   color: var(--phone-sofia-muted);
 }
 
+.step-name--fail {
+  color: var(--phone-status-fail);
+}
+
 .step-detail {
   font-family: var(--font-mono);
   font-size: 9px;
@@ -298,4 +306,179 @@
   font-size: 11px;
   color: var(--phone-sofia-text);
   line-height: var(--leading-snug);
+}
+
+
+/* ── Notification banner (screen 2) ── */
+
+.sofia-notification-banner {
+  background: var(--phone-sofia-bg-2);
+  border: 1px solid var(--phone-sofia-border);
+  border-radius: 14px;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.sofia-notif-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: rgba(232, 112, 112, 0.12);
+  border: 1px solid rgba(232, 112, 112, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 16px;
+}
+
+.sofia-notif-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.sofia-notif-title {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: var(--weight-medium);
+  color: var(--phone-sofia-text);
+  margin-bottom: 2px;
+}
+
+.sofia-notif-time {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: var(--phone-sofia-muted);
+}
+
+.sofia-notif-chevron {
+  color: var(--phone-sofia-muted);
+  font-size: 14px;
+}
+
+
+/* ── Error sheet (screen 2) ── */
+
+.sofia-error-sheet {
+  background: linear-gradient(170deg, #1a1020 0%, #0f1420 100%);
+  border: 1px solid rgba(232, 112, 112, 0.3);
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+.sofia-error-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 10px;
+  border-radius: 6px;
+  background: rgba(232, 112, 112, 0.12);
+  border: 1px solid rgba(232, 112, 112, 0.25);
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--phone-status-fail);
+  margin-bottom: 12px;
+}
+
+.sofia-error-badge::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--phone-status-fail);
+  margin-right: 2px;
+}
+
+.sofia-error-headline {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  color: var(--phone-sofia-text);
+  margin-bottom: 8px;
+  line-height: var(--leading-snug);
+}
+
+.sofia-error-headline em {
+  font-style: italic;
+  color: var(--phone-status-fail);
+}
+
+.sofia-error-summary {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--phone-sofia-muted);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.sofia-error-impact-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.sofia-impact-chip {
+  background: var(--phone-sofia-bg-3);
+  border: 1px solid var(--phone-sofia-border);
+  border-radius: 10px;
+  padding: 12px;
+}
+
+.sofia-impact-chip-label {
+  font-family: var(--font-mono);
+  font-size: 8px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--phone-sofia-muted);
+  margin-bottom: 4px;
+}
+
+.sofia-impact-chip-value {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: var(--weight-bold);
+  color: var(--phone-sofia-text);
+}
+
+.sofia-impact-chip-value--ok {
+  color: var(--phone-status-ok);
+}
+
+.sofia-impact-chip-value--warn {
+  color: var(--phone-status-warn);
+}
+
+.sofia-error-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sofia-btn {
+  padding: 13px 16px;
+  border-radius: 12px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: var(--weight-bold);
+  text-align: center;
+  width: 100%;
+}
+
+.sofia-btn--primary {
+  background: var(--phone-status-fail);
+  color: #fff;
+}
+
+.sofia-btn--secondary {
+  background: var(--phone-sofia-bg-3);
+  border: 1px solid var(--phone-sofia-border);
+  color: var(--phone-sofia-text);
 }

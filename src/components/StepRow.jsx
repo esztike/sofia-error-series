@@ -8,7 +8,7 @@ export default function StepRow({ status, name, detail, detailVariant }) {
         {status === 'pending' && <span className="step-dot" />}
       </div>
       <div className="step-content">
-        <p className={`step-name${status === 'pending' ? ' step-name--muted' : ''}`}>{name}</p>
+        <p className={`step-name${status === 'pending' ? ' step-name--muted' : ''}${status === 'fail' ? ' step-name--fail' : ''}`}>{name}</p>
         {detail && (
           <p className={`step-detail${detailVariant ? ` step-detail--${detailVariant}` : ''}`}>
             {detail}
