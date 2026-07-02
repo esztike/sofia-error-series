@@ -38,70 +38,65 @@ export default function WalkthroughPanel() {
               <p className="walkthrough__beat">{tab.storyBeat}</p>
             </div>
 
-            {/* ── Two independent columns ── */}
+            {/* ── 2×2 grid: Sofia phone/annotation, unseen phone/annotation ── */}
             <div className="walkthrough-grid">
 
-              {/* Left column: Sofia's phone, then unseen card if applicable */}
-              <div className="walkthrough-col">
-                <div className="walkthrough__phone">
-                  <PhoneMockup variant="sofia">
-                    {SofiaScreenComponent
-                      ? <SofiaScreenComponent />
-                      : <p className="walkthrough-placeholder">Screen {tab.number}</p>}
-                  </PhoneMockup>
-                </div>
-                {hasUnseen && (
-                  <div className="walkthrough__unseen-card">
-                    <p className="walkthrough__unseen-label">Unseen user</p>
-                    <p className="walkthrough__unseen-text">{tab.unseenUser}</p>
-                  </div>
-                )}
+              <div className="walkthrough__phone walkthrough__phone--sofia">
+                <PhoneMockup variant="sofia">
+                  {SofiaScreenComponent
+                    ? <SofiaScreenComponent />
+                    : <p className="walkthrough-placeholder">Screen {tab.number}</p>}
+                </PhoneMockup>
               </div>
 
-              {/* Right column: annotation card, then Jamie's phone if applicable */}
-              <div className="walkthrough-col">
-                <div className="walkthrough__annotation">
-                  {tab.annotation ? (
-                    <>
-                      <p className="walkthrough__scenario">{tab.annotation.scenario}</p>
-                      <div className="walkthrough__decisions">
-                        <p className="walkthrough__section-label">Design decisions</p>
-                        {tab.annotation.designDecisions.map((d, i) => (
-                          <div key={i} className="walkthrough__decision">
-                            <p className="walkthrough__decision-label">{d.label}</p>
-                            <p className="walkthrough__decision-body">{d.body}</p>
-                          </div>
-                        ))}
-                      </div>
-                      <div className="walkthrough__principles">
-                        <p className="walkthrough__section-label">Principles at work</p>
-                        <div className="walkthrough__chips">
-                          {tab.annotation.principlesAtWork.map(p => (
-                            <span key={p} className="walkthrough__chip">{p}</span>
-                          ))}
+              <div className={`walkthrough__annotation${hasUnseen ? ' walkthrough__annotation--paired' : ''}`}>
+                {tab.annotation ? (
+                  <>
+                    <p className="walkthrough__scenario">{tab.annotation.scenario}</p>
+                    <div className="walkthrough__decisions">
+                      <p className="walkthrough__section-label">Design decisions</p>
+                      {tab.annotation.designDecisions.map((d, i) => (
+                        <div key={i} className="walkthrough__decision">
+                          <p className="walkthrough__decision-label">{d.label}</p>
+                          <p className="walkthrough__decision-body">{d.body}</p>
                         </div>
-                      </div>
-                    </>
-                  ) : (
+                      ))}
+                    </div>
                     <div className="walkthrough__principles">
                       <p className="walkthrough__section-label">Principles at work</p>
                       <div className="walkthrough__chips">
-                        {(tab.principlesAtWork || []).map(p => (
+                        {tab.annotation.principlesAtWork.map(p => (
                           <span key={p} className="walkthrough__chip">{p}</span>
                         ))}
                       </div>
                     </div>
-                  )}
-                </div>
-
-                {hasUnseen && (
-                  <div className="walkthrough__phone">
-                    <PhoneMockup variant="jamie">
-                      <p className="walkthrough-placeholder">Jamie's screen</p>
-                    </PhoneMockup>
+                  </>
+                ) : (
+                  <div className="walkthrough__principles">
+                    <p className="walkthrough__section-label">Principles at work</p>
+                    <div className="walkthrough__chips">
+                      {(tab.principlesAtWork || []).map(p => (
+                        <span key={p} className="walkthrough__chip">{p}</span>
+                      ))}
+                    </div>
                   </div>
                 )}
               </div>
+
+              {hasUnseen && (
+                <div className="walkthrough__phone walkthrough__phone--unseen">
+                  <PhoneMockup variant="jamie">
+                    <p className="walkthrough-placeholder">Jamie's screen</p>
+                  </PhoneMockup>
+                </div>
+              )}
+
+              {hasUnseen && (
+                <div className="walkthrough__unseen-card">
+                  <p className="walkthrough__unseen-label">Unseen user</p>
+                  <p className="walkthrough__unseen-text">{tab.unseenUser}</p>
+                </div>
+              )}
 
             </div>
           </Tabs.Content>
