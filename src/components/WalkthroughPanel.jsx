@@ -52,7 +52,6 @@ export default function WalkthroughPanel() {
               <div className={`walkthrough__annotation${hasUnseen ? ' walkthrough__annotation--paired' : ''}`}>
                 {tab.annotation ? (
                   <>
-                    <p className="walkthrough__scenario">{tab.annotation.scenario}</p>
                     <div className="walkthrough__decisions">
                       <p className="walkthrough__section-label">Design decisions</p>
                       {tab.annotation.designDecisions.map((d, i) => (
