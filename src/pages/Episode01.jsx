@@ -1,8 +1,8 @@
-import { motion } from 'framer-motion'
-import '../styles/globals.css'
-import Nav from '../components/Nav'
-import PageHero from '../components/PageHero'
-import WalkthroughPanel from '../components/WalkthroughPanel'
+import { motion } from "framer-motion";
+import "../styles/globals.css";
+import Nav from "../components/Nav";
+import PageHero from "../components/PageHero";
+import WalkthroughPanel from "../components/WalkthroughPanel";
 import {
   pageHeader,
   section1,
@@ -12,17 +12,21 @@ import {
   unseenUserSection,
   designersSection,
   principlesReferenced,
-} from '../content/episode-01.mdx'
+} from "../content/episode-01.mdx";
 
 const containerVariants = {
   hidden: {},
   visible: { transition: { staggerChildren: 0.1, delayChildren: 0.05 } },
-}
+};
 
 const itemVariants = {
   hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.4, 0, 0.2, 1] } },
-}
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, ease: [0.4, 0, 0.2, 1] },
+  },
+};
 
 export default function Episode01() {
   return (
@@ -38,12 +42,20 @@ export default function Episode01() {
         variants={containerVariants}
       >
         <div className="prose-column">
-          <motion.p className="eyebrow" variants={itemVariants}>{pageHeader.eyebrow}</motion.p>
-          <motion.p className="eyebrow" variants={itemVariants}>{pageHeader.errorClass}</motion.p>
-          <motion.h1 className="page-title" variants={itemVariants}>{pageHeader.title}</motion.h1>
+          <motion.p className="eyebrow" variants={itemVariants}>
+            {pageHeader.eyebrow}
+          </motion.p>
+          <motion.p className="eyebrow" variants={itemVariants}>
+            {pageHeader.errorClass}
+          </motion.p>
+          <motion.h1 className="page-title" variants={itemVariants}>
+            {pageHeader.title}
+          </motion.h1>
           <motion.div className="page-tags" variants={itemVariants}>
-            {pageHeader.tags.map(tag => (
-              <span key={tag} className="tag">{tag}</span>
+            {pageHeader.tags.map((tag) => (
+              <span key={tag} className="tag">
+                {tag}
+              </span>
             ))}
           </motion.div>
         </div>
@@ -53,21 +65,27 @@ export default function Episode01() {
       <section className="prose-section">
         <div className="prose-column">
           <h2 className="section-heading">{section1.heading}</h2>
-          {section1.paragraphs.map((p, i) => <p key={i}>{p}</p>)}
+          {section1.paragraphs.map((p, i) => (
+            <p key={i}>{p}</p>
+          ))}
         </div>
       </section>
 
       {/* ── Transition / episode context ── */}
       <section className="prose-section">
         <div className="prose-column">
-          {section2.paragraphs.map((p, i) => <p key={i}>{p}</p>)}
+          {section2.paragraphs.map((p, i) => (
+            <p key={i}>{p}</p>
+          ))}
         </div>
       </section>
 
       {/* ── Sofia & Maya setup ── */}
       <section className="prose-section">
         <div className="prose-column">
-          {section3.paragraphs.map((p, i) => <p key={i}>{p}</p>)}
+          {section3.paragraphs.map((p, i) => (
+            <p key={i}>{p}</p>
+          ))}
         </div>
       </section>
 
@@ -84,7 +102,9 @@ export default function Episode01() {
       <section className="prose-section">
         <div className="prose-column">
           <h2 className="section-heading">{unseenUserSection.heading}</h2>
-          {unseenUserSection.paragraphs.map((p, i) => <p key={i}>{p}</p>)}
+          {unseenUserSection.paragraphs.map((p, i) => (
+            <p key={i}>{p}</p>
+          ))}
         </div>
       </section>
 
@@ -92,7 +112,9 @@ export default function Episode01() {
       <section className="prose-section">
         <div className="prose-column">
           <h2 className="section-heading">{designersSection.heading}</h2>
-          {designersSection.paragraphs.map((p, i) => <p key={i}>{p}</p>)}
+          {designersSection.paragraphs.map((p, i) => (
+            <p key={i}>{p}</p>
+          ))}
         </div>
       </section>
 
@@ -100,7 +122,7 @@ export default function Episode01() {
       <section className="prose-section">
         <div className="prose-column">
           <h2 className="section-heading">Principles referenced</h2>
-          {principlesReferenced.map(p => (
+          {principlesReferenced.map((p) => (
             <div key={p.code} className="prose-subsection">
               <h3 className="subsection-heading">
                 <span className="eyebrow">{p.code}</span> · {p.tab}
@@ -115,5 +137,5 @@ export default function Episode01() {
         <p>Sofia, an error series © 2026 Eszti Hollenback</p>
       </footer>
     </div>
-  )
+  );
 }
