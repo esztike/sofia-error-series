@@ -49,7 +49,7 @@ export const walkthroughTabs = [
     title: "Delegation",
     subtitle: "Maya delegates, Sofia interprets before acting",
     storyBeat:
-      "Maya delegates a four-step onboarding task: calendar invites for four new hires, Q1 onboarding brief attached. Sofia surfaces her interpretation before acting. Maya confirms. The task begins.",
+      "Maya delegates a four-step onboarding task: calendar invite for four new hires, with Q1 onboarding brief attached. Sofia rereads the task before acting. Maya confirms. The task begins.",
     principlesAtWork: ["P2", "P7"],
   },
   {
@@ -57,7 +57,7 @@ export const walkthroughTabs = [
     title: "Error surfaces",
     subtitle: "Sofia stops, preserves state",
     storyBeat:
-      "Step 3 of 4 fails. Sofia stops the task and notifies Maya. The remaining step does not run.",
+      "The task paused at step 3 of 4. Sofia surfaces this immediately. The user do not have to go looking.",
     principlesAtWork: ["P1", "P3", "P6"],
   },
   {
@@ -65,7 +65,7 @@ export const walkthroughTabs = [
     title: "Error detail",
     subtitle: "Full transparency, assumptions exposed. Jamie's phone appears.",
     storyBeat:
-      "Maya opens the full error detail. The step log shows what ran, what failed, and what was skipped. The assumption audit lists the file Sofia selected.",
+      "The user taps 'See full error detail.' This screen is a complete forensic record.",
     principlesAtWork: ["P3", "P6", "P7"],
     unseenUser:
       "Jamie's phone. A calendar invite for Onboarding Kickoff · Monday 10am. Event title, date, time, attendees. An RSVP prompt. Nothing else. No briefing doc. No attachment. The absence is visible without being labelled.",
@@ -75,7 +75,7 @@ export const walkthroughTabs = [
     title: "Recovery options",
     subtitle: "Sofia presents the paths forward. Jamie's email arrives.",
     storyBeat:
-      'Sofia presents four recovery paths with one labelled recommended. Maya selects Option A: a follow-up email to all four with a view-only link to the briefing doc. As she decides, a notification slides in — Jamie Rodriguez, re: "Onboarding Kickoff · Monday 10am."',
+      'The invite is sent. Sofia presents four recovery paths. Each one honest about what it costs and what it fixes. Maya chooses."',
     recoveryOptions: [
       {
         id: "A",
@@ -111,7 +111,7 @@ export const walkthroughTabs = [
     ],
     notification: {
       from: "Jamie Rodriguez",
-      subject: "Onboarding Kickoff · Monday 10am",
+      subject: "Re: Onboarding Kickoff · Monday 9am",
     },
     annotation: {
       scenario:
@@ -123,11 +123,11 @@ export const walkthroughTabs = [
         },
         {
           label: "Recommended but not pre-selected",
-          body: "Option A is labelled recommended. It is not pre-ticked. Maya's choice belongs to Maya.",
+          body: "Option A is labeled recommended. It is not pre-selected. The choice belongs to the user.",
         },
         {
           label: "Trade-offs visible per option",
-          body: "Time, effort, and what each path fixes are shown inline. Not buried in a tooltip.",
+          body: "Time, effort, and what each path fixes are shown inline.",
         },
         {
           label: "Jamie's notification makes it real",
@@ -140,9 +140,10 @@ export const walkthroughTabs = [
   {
     number: 5,
     title: "Resolution",
-    subtitle: "Task complete. Jamie's phone appears again.",
+    subtitle:
+      "Task complete. But recovery isn't done until the relationship is repaired.",
     storyBeat:
-      "Sofia sends the follow-up email to all four. The view-only link works. The step log is all green. She surfaces one question: use view-only links for external recipients by default?",
+      "Task complete. But recovery isn't done until the relationship is repaired.",
     preferenceOptions: [
       {
         id: "A",
