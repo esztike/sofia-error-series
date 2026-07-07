@@ -7,15 +7,18 @@
 
 /* ── Screen 3: Calendar invite ── */
 
-.jamie-screen-content {
-  padding: 0 20px 20px;
-}
-
 .jamie-t3-header {
-  padding: 6px 0 14px;
+  padding: 14px 20px 14px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.jamie-t3-scroll {
+  padding: 4px 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .jamie-t3-header-btn {
@@ -56,11 +59,10 @@
   align-items: flex-start;
 }
 
-.jamie-t3-row--invite {
+.jamie-t3-notes-header {
+  display: flex;
+  gap: 12px;
   align-items: flex-start;
-}
-
-.jamie-t3-row--tight {
   margin-bottom: 10px;
 }
 
@@ -238,7 +240,7 @@
 }
 
 .jamie-t3-cta {
-  margin-top: 16px;
+  margin-top: 4px;
   padding: 15px 0;
   border-radius: 14px;
   background: var(--phone-jamie-text);
@@ -257,8 +259,6 @@
   display: flex;
   flex-direction: column;
   background: linear-gradient(165deg, #e4e6e3 0%, #ede4d5 60%, #e8dcc8 100%);
-  margin: 0 -20px -20px;
-  padding: 0 20px 20px;
 }
 
 .jamie-t5-lock-date {
@@ -296,8 +296,11 @@
   flex: 1;
 }
 
+.jamie-t5-notif-wrap {
+  padding: 0 14px 10px;
+}
+
 .jamie-t5-notif {
-  margin: 0 0 10px;
   background: rgba(255, 255, 255, 0.72);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
@@ -380,7 +383,7 @@
 }
 
 .jamie-t5-lock-icons {
-  padding: 0 10px 30px;
+  padding: 0 30px 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
