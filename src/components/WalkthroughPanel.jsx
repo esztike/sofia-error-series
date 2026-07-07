@@ -6,9 +6,12 @@ import SofiaScreen2 from './SofiaScreen2'
 import SofiaScreen3 from './SofiaScreen3'
 import SofiaScreen4 from './SofiaScreen4'
 import SofiaScreen5 from './SofiaScreen5'
+import JamieScreen3 from './JamieScreen3'
+import JamieScreen5 from './JamieScreen5'
 import '../styles/walkthrough-panel.css'
 
 const SOFIA_SCREENS = { 1: SofiaScreen1, 2: SofiaScreen2, 3: SofiaScreen3, 4: SofiaScreen4, 5: SofiaScreen5 }
+const JAMIE_SCREENS = { 3: JamieScreen3, 5: JamieScreen5 }
 
 const PRINCIPLES = {
   P1: { label: 'Never fail silently', color: '#4fc3a1' },
@@ -39,6 +42,7 @@ export default function WalkthroughPanel() {
       {walkthroughTabs.map(tab => {
         const hasUnseen = !!tab.unseenUser
         const SofiaScreenComponent = SOFIA_SCREENS[tab.number]
+        const JamieScreenComponent = JAMIE_SCREENS[tab.number]
         return (
           <Tabs.Content
             key={tab.number}
@@ -89,7 +93,9 @@ export default function WalkthroughPanel() {
               {hasUnseen && (
                 <div className="walkthrough__phone walkthrough__phone--unseen">
                   <PhoneMockup variant="jamie">
-                    <p className="walkthrough-placeholder">Jamie's screen</p>
+                    {JamieScreenComponent
+                      ? <JamieScreenComponent />
+                      : <p className="walkthrough-placeholder">Jamie's screen</p>}
                   </PhoneMockup>
                 </div>
               )}

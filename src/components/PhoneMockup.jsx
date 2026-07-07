@@ -5,18 +5,20 @@ export default function PhoneMockup({ variant = 'sofia', children }) {
     <div className={`phone-mockup phone-mockup--${variant}`}>
 
       <div className="phone-header" aria-hidden="true">
-        <div className="phone-back">
-          <svg width="10" height="16" viewBox="0 0 10 16" fill="none">
-            <path d="M8 2L2 8L8 14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-        </div>
+        {isSofia && (
+          <div className="phone-back">
+            <svg width="10" height="16" viewBox="0 0 10 16" fill="none">
+              <path d="M8 2L2 8L8 14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </div>
+        )}
         <div className="phone-title-group">
-          <span className="phone-title">{isSofia ? 'Sofia' : 'Jamie Rodriguez'}</span>
+          <span className="phone-title">{isSofia ? 'Sofia' : "Jamie Rodriguez's phone"}</span>
           {isSofia && <span className="phone-subtitle">Personal agent</span>}
         </div>
-        <div className={`phone-avatar${isSofia ? '' : ' phone-avatar--jamie'}`}>
-          {isSofia ? 'S' : 'JR'}
-        </div>
+        {isSofia && (
+          <div className="phone-avatar">S</div>
+        )}
       </div>
 
       <div className="phone-screen">

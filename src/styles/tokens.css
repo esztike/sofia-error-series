@@ -125,6 +125,18 @@
   --phone-jamie-text:     #18191a;
   --phone-jamie-muted:    #8d847a;
 
+  /* Jamie screen content — additional surfaces and accents */
+  --phone-jamie-bg-3:            #ffffff;
+  --phone-jamie-border-2:        #e4e0d6;
+  --phone-jamie-faint:           #b8b2a4;
+  --phone-jamie-accent-link:     #2f6fed;
+  --phone-jamie-status-ok-bg:    #eaf6ee;
+  --phone-jamie-status-ok-text:  #3f8a5b;
+  --phone-jamie-status-fail-bg:  #fdece9;
+  --phone-jamie-status-fail-text: #c94d3f;
+  --phone-jamie-status-warn-bg:  #fbf1de;
+  --phone-jamie-status-warn-text: #9c7422;
+
   /* Sofia screen content — additional surfaces and status colors */
   --phone-sofia-bg-3:     #1a1f2e;
   --phone-sofia-faint:    #3a4160;

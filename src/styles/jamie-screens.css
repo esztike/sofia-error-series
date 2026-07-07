@@ -1,0 +1,406 @@
+/* ============================================================ */
+/* JAMIE SCREEN CONTENT                                         */
+/* Styles for Jamie's (unseen user) screen content inside       */
+/* PhoneMockup variant="jamie". Light mode, distinct palette.    */
+/* ============================================================ */
+
+
+/* ── Screen 3: Calendar invite ── */
+
+.jamie-screen-content {
+  padding: 0 20px 20px;
+}
+
+.jamie-t3-header {
+  padding: 6px 0 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.jamie-t3-header-btn {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: var(--weight-medium);
+  color: var(--phone-jamie-accent-link);
+}
+
+.jamie-t3-header-title {
+  font-family: var(--font-heading);
+  font-size: 15px;
+  font-weight: var(--weight-bold);
+  color: var(--phone-jamie-text);
+}
+
+.jamie-t3-list {
+  background: var(--phone-jamie-bg-3);
+  border: 1px solid var(--phone-jamie-border-2);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.jamie-t3-row,
+.jamie-t3-row-group,
+.jamie-t3-rsvp {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--phone-jamie-border-2);
+}
+
+.jamie-t3-list > :last-child {
+  border-bottom: none;
+}
+
+.jamie-t3-row {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.jamie-t3-row--invite {
+  align-items: flex-start;
+}
+
+.jamie-t3-row--tight {
+  margin-bottom: 10px;
+}
+
+.jamie-t3-invite-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: #e9f5ee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.jamie-t3-invite-icon svg {
+  width: 20px;
+  height: 20px;
+  fill: var(--phone-jamie-status-ok-text);
+}
+
+.jamie-t3-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--phone-jamie-muted);
+  margin-bottom: 4px;
+}
+
+.jamie-t3-invite-title {
+  font-family: var(--font-heading);
+  font-size: 17px;
+  font-weight: var(--weight-bold);
+  color: var(--phone-jamie-text);
+  margin-bottom: 4px;
+}
+
+.jamie-t3-invite-organizer {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--phone-jamie-text);
+}
+
+.jamie-t3-via {
+  color: var(--phone-jamie-muted);
+  font-weight: var(--weight-regular);
+}
+
+.jamie-t3-date-badge {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: #eef2ff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.jamie-t3-dow {
+  font-family: var(--font-mono);
+  font-size: 8px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #5468c9;
+}
+
+.jamie-t3-dom {
+  font-family: var(--font-heading);
+  font-size: 15px;
+  font-weight: var(--weight-bold);
+  color: #3a4bb5;
+}
+
+.jamie-t3-row-label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--phone-jamie-muted);
+  margin-bottom: 3px;
+}
+
+.jamie-t3-row-value {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--phone-jamie-text);
+  font-weight: var(--weight-medium);
+}
+
+.jamie-t3-row-value--muted {
+  font-weight: var(--weight-regular);
+  color: var(--phone-jamie-muted);
+}
+
+.jamie-t3-row-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: #f2f0e9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.jamie-t3-row-icon svg {
+  width: 18px;
+  height: 18px;
+  fill: var(--phone-jamie-muted);
+}
+
+.jamie-t3-row-icon--dim {
+  opacity: 0.5;
+}
+
+.jamie-t3-rsvp-label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--phone-jamie-muted);
+  margin-bottom: 10px;
+}
+
+.jamie-t3-rsvp-btns {
+  display: flex;
+  gap: 8px;
+}
+
+.jamie-t3-rsvp-btn {
+  flex: 1;
+  padding: 10px 0;
+  border-radius: 8px;
+  text-align: center;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: var(--weight-semibold);
+}
+
+.jamie-t3-rsvp-btn--yes {
+  background: var(--phone-jamie-status-ok-bg);
+  color: var(--phone-jamie-status-ok-text);
+}
+
+.jamie-t3-rsvp-btn--no {
+  background: var(--phone-jamie-status-fail-bg);
+  color: var(--phone-jamie-status-fail-text);
+}
+
+.jamie-t3-rsvp-btn--maybe {
+  background: var(--phone-jamie-status-warn-bg);
+  color: var(--phone-jamie-status-warn-text);
+}
+
+.jamie-t3-notes-text {
+  font-family: var(--font-body);
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--phone-jamie-text);
+}
+
+.jamie-t3-attach-text {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--phone-jamie-faint);
+}
+
+.jamie-t3-guests-value {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--phone-jamie-text);
+  font-weight: var(--weight-medium);
+}
+
+.jamie-t3-cta {
+  margin-top: 16px;
+  padding: 15px 0;
+  border-radius: 14px;
+  background: var(--phone-jamie-text);
+  color: var(--phone-jamie-bg-3);
+  text-align: center;
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-weight: var(--weight-bold);
+}
+
+
+/* ── Screen 5: Lock screen ── */
+
+.jamie-t5-content {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(165deg, #e4e6e3 0%, #ede4d5 60%, #e8dcc8 100%);
+  margin: 0 -20px -20px;
+  padding: 0 20px 20px;
+}
+
+.jamie-t5-lock-date {
+  text-align: center;
+  margin-top: 26px;
+}
+
+.jamie-t5-lock-day {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: var(--weight-medium);
+  color: rgba(28, 28, 26, 0.7);
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.jamie-t5-lock-day svg {
+  width: 13px;
+  height: 13px;
+  fill: #d99a2b;
+}
+
+.jamie-t5-lock-time {
+  font-family: var(--font-heading);
+  font-size: 64px;
+  font-weight: var(--weight-semibold);
+  color: var(--phone-jamie-text);
+  line-height: 1;
+}
+
+.jamie-t5-spacer {
+  flex: 1;
+}
+
+.jamie-t5-notif {
+  margin: 0 0 10px;
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 18px;
+  padding: 12px 14px;
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  box-shadow: 0 8px 24px rgba(28, 28, 26, 0.12);
+}
+
+.jamie-t5-notif-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: var(--phone-jamie-status-ok-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.jamie-t5-notif-icon svg {
+  width: 16px;
+  height: 16px;
+  fill: #fff;
+}
+
+.jamie-t5-notif-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.jamie-t5-notif-top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 2px;
+}
+
+.jamie-t5-notif-sender {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: var(--weight-bold);
+  color: var(--phone-jamie-text);
+}
+
+.jamie-t5-via {
+  font-weight: var(--weight-regular);
+  color: #58554c;
+}
+
+.jamie-t5-notif-time {
+  font-family: var(--font-body);
+  font-size: 11px;
+  color: var(--phone-jamie-muted);
+  flex-shrink: 0;
+}
+
+.jamie-t5-notif-subject {
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  font-weight: var(--weight-semibold);
+  color: var(--phone-jamie-text);
+  margin-bottom: 3px;
+}
+
+.jamie-t5-notif-preview {
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  line-height: 1.45;
+  color: #3a3833;
+}
+
+.jamie-t5-notif-link {
+  color: var(--phone-jamie-accent-link);
+  font-weight: var(--weight-semibold);
+}
+
+.jamie-t5-lock-icons {
+  padding: 0 10px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.jamie-t5-lock-icon-btn {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: rgba(28, 28, 26, 0.12);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.jamie-t5-lock-icon-btn svg {
+  width: 20px;
+  height: 20px;
+  fill: var(--phone-jamie-text);
+  opacity: 0.85;
+}

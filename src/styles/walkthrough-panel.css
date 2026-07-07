@@ -396,13 +396,6 @@
   color: var(--color-light);
 }
 
-.phone-avatar--jamie {
-  background-color: var(--phone-jamie-bg);
-  border: 1px solid var(--phone-jamie-border);
-  color: var(--phone-jamie-text);
-  font-size: 10px;
-}
-
 /* ── Screen content area ── */
 
 .phone-screen {
