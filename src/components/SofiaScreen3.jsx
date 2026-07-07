@@ -3,23 +3,23 @@ import '../styles/sofia-screens.css'
 const LOG_STEPS = [
   {
     status: 'ok',
-    title: 'Create calendar events',
-    note: <>4 events · Mon Mar 24 · 9am–5pm PST<br />Event IDs: cal_a1b2 through cal_a1b5</>,
+    title: 'Create calendar event',
+    note: <>1 event · Mon Mar 24 · 9am–5pm PST<br />Event ID: cal_a1b2</>,
   },
   {
     status: 'ok',
-    title: 'Send invitations',
-    note: <>Delivered to 4 recipients · All accepted<br />Jamie R, Priya N, Omar S, Sam T</>,
+    title: 'Send invitation',
+    note: <>Delivered to 4 recipients<br />Jamie R, Priya N, Omar S, Sam S</>,
   },
   {
     status: 'fail',
-    title: 'Attach briefing documents',
-    note: <>Drive API returned 403 Forbidden<br />File: Onboarding 2025 v2.pdf<br />"Insufficient permissions to share with external users"</>,
+    title: 'Attach briefing document',
+    note: <>Drive API returned 403 Forbidden<br />File: Onboarding 2025.pdf<br />"Insufficient permissions to share with external users"</>,
   },
   {
     status: 'skip',
     title: 'Send confirmation summary',
-    note: 'Skipped — dependent on step 3',
+    note: 'Pending · dependent on step 3',
   },
 ]
 
@@ -31,7 +31,7 @@ export default function SofiaScreen3() {
 
       {/* ── Context chip ── */}
       <div className="sofia-context-chip">
-        <span aria-hidden="true">📄</span> Based on task started at 9:38am · Mar 22
+        <span aria-hidden="true">📄</span> Based on task started at 9:38am · Mar 18
       </div>
 
       {/* ── Step-by-step log ── */}
@@ -66,7 +66,7 @@ export default function SofiaScreen3() {
           <span aria-hidden="true">↗</span> Third-party impact
         </p>
         <p className="sofia-thirdparty-text">
-          <strong>4 new hires have already accepted</strong> the calendar invite. They'll arrive Monday without briefing materials unless you take action. Undoing the invites would send cancellations to all of them.
+          <strong>4 new hires received the calendar invite.</strong> They'll have no briefing material Monday unless you take action.
         </p>
       </div>
 
@@ -75,11 +75,11 @@ export default function SofiaScreen3() {
         <p className="sofia-assumption-heading">Sofia's assumptions</p>
         <div className="sofia-assumption-row">
           <span className="sofia-assumption-key">Document</span>
-          <span className="sofia-assumption-val">Chose most recent file matching "onboarding" — may not be what you meant</span>
+          <span className="sofia-assumption-val">Chosen most recent file matching "onboarding" · may not be what you meant</span>
         </div>
         <div className="sofia-assumption-row">
           <span className="sofia-assumption-key">Sharing</span>
-          <span className="sofia-assumption-val">Assumed external sharing was enabled. It isn't for this Drive.</span>
+          <span className="sofia-assumption-val">Assumed external sharing was enabled. It is not.</span>
         </div>
       </div>
 

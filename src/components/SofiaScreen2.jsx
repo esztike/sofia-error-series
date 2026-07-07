@@ -2,9 +2,9 @@ import StepRow from './StepRow'
 import '../styles/sofia-screens.css'
 
 const SNAPSHOT_STEPS = [
-  { status: 'ok',      name: 'Create calendar events',   detail: 'Done',                    detailVariant: 'ok'   },
-  { status: 'ok',      name: 'Send invitations',          detail: 'Done',                    detailVariant: 'ok'   },
-  { status: 'fail',    name: 'Attach briefing documents', detail: 'Drive permission error',  detailVariant: 'fail' },
+  { status: 'ok',      name: 'Create calendar event',    detail: 'Done',                    detailVariant: 'ok'   },
+  { status: 'ok',      name: 'Send invitation',          detail: 'Done',                    detailVariant: 'ok'   },
+  { status: 'fail',    name: 'Attach briefing document', detail: 'Drive permission error',  detailVariant: 'fail' },
   { status: 'pending', name: 'Send confirmation summary', detail: 'Not started',             detailVariant: null   },
 ]
 
@@ -16,7 +16,7 @@ export default function SofiaScreen2() {
       <div className="sofia-notification-banner">
         <div className="sofia-notif-icon" aria-hidden="true">⚠️</div>
         <div className="sofia-notif-text">
-          <p className="sofia-notif-title">Sofia stopped — action needed</p>
+          <p className="sofia-notif-title">Sofia paused · action required</p>
           <p className="sofia-notif-time">Just now · Onboarding sequence</p>
         </div>
         <div className="sofia-notif-chevron" aria-hidden="true">›</div>
@@ -24,16 +24,16 @@ export default function SofiaScreen2() {
 
       {/* ── Error sheet ── */}
       <div className="sofia-error-sheet">
-        <div className="sofia-error-badge">Task stopped</div>
+        <div className="sofia-error-badge">Task paused</div>
         <p className="sofia-error-headline">Step 3 of 4 <em>failed</em></p>
-        <p className="sofia-error-summary">Sofia couldn't attach the briefing documents — Google Drive returned a permission error. The task is paused. Nothing was undone. Your new hires have calendar invites but no attached materials.</p>
+        <p className="sofia-error-summary">Sofia couldn't attach the briefing document due to a Drive permission error. The task is paused. Your new hires have a calendar invite but no attached material.</p>
         <div className="sofia-error-impact-row">
           <div className="sofia-impact-chip">
             <p className="sofia-impact-chip-label">Completed</p>
             <p className="sofia-impact-chip-value sofia-impact-chip-value--ok">2 / 4</p>
           </div>
           <div className="sofia-impact-chip">
-            <p className="sofia-impact-chip-label">People affected</p>
+            <p className="sofia-impact-chip-label">Impact</p>
             <p className="sofia-impact-chip-value sofia-impact-chip-value--warn">4 hires</p>
           </div>
         </div>

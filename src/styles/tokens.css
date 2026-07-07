@@ -137,4 +137,7 @@
   --phone-accent-unseen:  #5bc4e0;
   --phone-accent-context: #f5c842;
 
+  /* Sofia screen content — accent color (screens 4–5) */
+  --phone-accent-learned: #b07ef5;
+
 }

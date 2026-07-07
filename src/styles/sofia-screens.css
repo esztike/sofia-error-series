@@ -19,6 +19,7 @@
 
 .sofia-screen-content {
   padding: 0 20px 20px;
+  position: relative; /* containing block for the screen 4 Jamie notification overlay */
 }
 
 
@@ -666,4 +667,438 @@
 
 .sofia-thirdparty-text strong {
   color: var(--phone-sofia-text);
+}
+
+
+/* ── Jamie notification overlay (screen 4) ── */
+
+@keyframes sofiaNotifSlide {
+  from { opacity: 0; transform: translateY(-14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.sofia-jamie-notif {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  background: rgba(26, 31, 46, 0.55);
+  backdrop-filter: blur(16px) saturate(1.3);
+  -webkit-backdrop-filter: blur(16px) saturate(1.3);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  padding: 12px 14px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.45);
+  animation: sofiaNotifSlide 0.5s cubic-bezier(0.22, 1, 0.36, 1) 1.1s both;
+}
+
+.sofia-jamie-notif-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: rgba(91, 196, 224, 0.12);
+  border: 1px solid rgba(91, 196, 224, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  flex-shrink: 0;
+}
+
+.sofia-jamie-notif-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.sofia-jamie-notif-meta {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 8px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--phone-sofia-muted);
+  margin-bottom: 3px;
+}
+
+.sofia-jamie-notif-from {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: var(--weight-bold);
+  color: var(--phone-sofia-text);
+}
+
+.sofia-jamie-notif-subject {
+  font-family: var(--font-body);
+  font-size: 11px;
+  color: var(--phone-sofia-text);
+  margin-top: 1px;
+}
+
+.sofia-jamie-notif-preview {
+  font-family: var(--font-body);
+  font-size: 11px;
+  color: var(--phone-sofia-muted);
+  line-height: 1.4;
+  margin-top: 2px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+/* ── Recovery intro (screen 4) ── */
+
+.sofia-recovery-intro {
+  background: var(--phone-sofia-bg-2);
+  border: 1px solid var(--phone-sofia-border);
+  border-radius: 16px;
+  padding: 16px;
+  margin-bottom: 12px;
+}
+
+.sofia-recovery-intro-label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--phone-accent-learned);
+  margin-bottom: 8px;
+}
+
+.sofia-recovery-intro-text {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--phone-sofia-muted);
+  line-height: var(--leading-normal);
+}
+
+
+/* ── Recovery option cards (screen 4) ── */
+
+.sofia-recovery-option {
+  background: var(--phone-sofia-bg-2);
+  border: 1px solid var(--phone-sofia-border);
+  border-radius: 16px;
+  padding: 16px;
+  margin-bottom: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+.sofia-recovery-option::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--option-color, var(--phone-sofia-border));
+  border-radius: 2px;
+}
+
+.sofia-option-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.sofia-option-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  flex-shrink: 0;
+  background: rgba(var(--option-rgb, 79, 195, 161), 0.1);
+  border: 1px solid rgba(var(--option-rgb, 79, 195, 161), 0.2);
+}
+
+.sofia-option-title {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: var(--weight-bold);
+  color: var(--phone-sofia-text);
+  margin-bottom: 2px;
+}
+
+.sofia-option-subtitle {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.06em;
+  color: var(--phone-sofia-muted);
+}
+
+.sofia-option-subtitle--recommended {
+  color: var(--phone-status-ok);
+}
+
+.sofia-option-desc {
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: var(--phone-sofia-muted);
+  line-height: var(--leading-normal);
+}
+
+.sofia-option-meta {
+  display: flex;
+  gap: 6px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+.sofia-option-tag {
+  font-family: var(--font-mono);
+  font-size: 8px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 3px 7px;
+  border-radius: 4px;
+  background: var(--phone-sofia-bg);
+  border: 1px solid var(--phone-sofia-border);
+  color: var(--phone-sofia-muted);
+}
+
+
+/* ── Resolution hero (screen 5) ── */
+
+.sofia-resolution-hero {
+  background: linear-gradient(160deg, #0f1a18 0%, #0f1420 100%);
+  border: 1px solid rgba(79, 195, 161, 0.25);
+  border-radius: 16px;
+  padding: 24px 20px 20px;
+  margin-bottom: 12px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.sofia-resolution-hero::before {
+  content: "";
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(79, 195, 161, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.sofia-resolution-check {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(79, 195, 161, 0.15);
+  border: 2px solid rgba(79, 195, 161, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  color: var(--phone-status-ok);
+  margin: 0 auto 14px;
+  position: relative;
+}
+
+.sofia-resolution-title {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  color: var(--phone-sofia-text);
+  margin-bottom: 6px;
+}
+
+.sofia-resolution-desc {
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: var(--phone-sofia-muted);
+  line-height: 1.6;
+}
+
+
+/* ── What changed (screen 5) ── */
+
+.sofia-what-changed {
+  background: var(--phone-sofia-bg-2);
+  border: 1px solid var(--phone-sofia-border);
+  border-radius: 16px;
+  padding: 14px 16px;
+  margin-bottom: 12px;
+}
+
+.sofia-changed-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(42, 49, 72, 0.4);
+}
+
+.sofia-changed-row:last-child {
+  border-bottom: none;
+}
+
+.sofia-changed-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--phone-status-ok);
+  flex-shrink: 0;
+  margin-top: 5px;
+}
+
+.sofia-changed-dot--accent {
+  background: var(--phone-status-running);
+}
+
+.sofia-changed-text {
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: var(--phone-sofia-muted);
+  line-height: var(--leading-normal);
+}
+
+.sofia-changed-text strong {
+  color: var(--phone-sofia-text);
+}
+
+
+/* ── What Sofia learned (screen 5) ── */
+
+.sofia-learned-card {
+  background: linear-gradient(135deg, rgba(176, 126, 245, 0.05), rgba(123, 156, 245, 0.05));
+  border: 1px solid rgba(176, 126, 245, 0.2);
+  border-radius: 16px;
+  padding: 14px 16px;
+  margin-bottom: 12px;
+}
+
+.sofia-learned-label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--phone-accent-learned);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.sofia-learned-item {
+  background: var(--phone-sofia-bg);
+  border: 1px solid var(--phone-sofia-border);
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.sofia-learned-ico {
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.sofia-learned-text {
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: var(--phone-sofia-muted);
+  line-height: var(--leading-normal);
+}
+
+.sofia-learned-text strong {
+  color: var(--phone-sofia-text);
+}
+
+.sofia-learned-note {
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: var(--phone-sofia-muted);
+  line-height: var(--leading-normal);
+  margin: 10px 2px;
+}
+
+
+/* ── Preference prompt (screen 5) ── */
+
+.sofia-pref-prompt {
+  background: var(--phone-sofia-bg-2);
+  border: 1px solid var(--phone-sofia-border);
+  border-radius: 16px;
+  padding: 14px 16px;
+}
+
+.sofia-pref-question {
+  font-family: var(--font-heading);
+  font-size: 15px;
+  font-style: italic;
+  color: var(--phone-sofia-text);
+  line-height: var(--leading-snug);
+  margin-bottom: 12px;
+}
+
+.sofia-pref-choice {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 12px;
+  border: 1px solid var(--phone-sofia-border);
+  border-radius: 10px;
+  background: var(--phone-sofia-bg);
+  margin-bottom: 8px;
+}
+
+.sofia-pref-choice:last-child {
+  margin-bottom: 0;
+}
+
+.sofia-choice-radio {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 1.5px solid var(--phone-sofia-muted);
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.sofia-choice-text {
+  flex: 1;
+}
+
+.sofia-choice-title {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: var(--weight-medium);
+  color: var(--phone-sofia-text);
+  margin-bottom: 2px;
+}
+
+.sofia-choice-sub {
+  font-family: var(--font-body);
+  font-size: 11px;
+  color: var(--phone-sofia-muted);
+  line-height: var(--leading-normal);
+}
+
+.sofia-choice-badge {
+  font-family: var(--font-mono);
+  font-size: 8px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--phone-status-ok);
+  border: 1px solid rgba(79, 195, 161, 0.35);
+  background: rgba(79, 195, 161, 0.08);
+  border-radius: 4px;
+  padding: 2px 6px;
+  flex-shrink: 0;
+  align-self: flex-start;
 }

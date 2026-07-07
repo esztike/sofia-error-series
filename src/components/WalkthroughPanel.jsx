@@ -4,9 +4,11 @@ import PhoneMockup from './PhoneMockup'
 import SofiaScreen1 from './SofiaScreen1'
 import SofiaScreen2 from './SofiaScreen2'
 import SofiaScreen3 from './SofiaScreen3'
+import SofiaScreen4 from './SofiaScreen4'
+import SofiaScreen5 from './SofiaScreen5'
 import '../styles/walkthrough-panel.css'
 
-const SOFIA_SCREENS = { 1: SofiaScreen1, 2: SofiaScreen2, 3: SofiaScreen3 }
+const SOFIA_SCREENS = { 1: SofiaScreen1, 2: SofiaScreen2, 3: SofiaScreen3, 4: SofiaScreen4, 5: SofiaScreen5 }
 
 export default function WalkthroughPanel() {
   return (
