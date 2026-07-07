@@ -50,7 +50,23 @@ export const walkthroughTabs = [
     subtitle: "Maya delegates, Sofia interprets before acting",
     storyBeat:
       "Maya delegates a four-step onboarding task: calendar invite for four new hires, with Q1 onboarding brief attached. Sofia rereads the task before acting. Maya confirms. The task begins.",
-    principlesAtWork: ["P2", "P7"],
+    annotation: {
+      designDecisions: [
+        {
+          label: "Live step log",
+          body: "The action log stays visible, so the user can follow what's done and what's next.",
+        },
+        {
+          label: "Assumptions surfaced",
+          body: "Sofia reads back the task before acting. P2 in motion.",
+        },
+        {
+          label: "Progress is concrete",
+          body: "Progress shows as a real number and a time remaining.",
+        },
+      ],
+      principlesAtWork: ["P2", "P3"],
+    },
   },
   {
     number: 2,
@@ -58,7 +74,23 @@ export const walkthroughTabs = [
     subtitle: "Sofia stops, preserves state",
     storyBeat:
       "The task paused at step 3 of 4. Sofia surfaces this immediately. Maya does not have to go looking.",
-    principlesAtWork: ["P1", "P3", "P6"],
+    annotation: {
+      designDecisions: [
+        {
+          label: "Never silent",
+          body: "The notification appears the moment the failure occurs. P1 is non-negotiable.",
+        },
+        {
+          label: "State preserved",
+          body: "Steps 1 and 2 are done. The error tells the user exactly what world state they're in.",
+        },
+        {
+          label: "Impact shown",
+          body: "4 new hires affected. The cost is visible up front.",
+        },
+      ],
+      principlesAtWork: ["P1", "P6"],
+    },
   },
   {
     number: 3,
@@ -66,7 +98,23 @@ export const walkthroughTabs = [
     subtitle: "Full transparency, assumptions exposed. Jamie's phone appears.",
     storyBeat:
       "Maya taps 'See full error detail.' This screen is a complete forensic record.",
-    principlesAtWork: ["P3", "P6", "P7"],
+    annotation: {
+      designDecisions: [
+        {
+          label: "Step log with receipts",
+          body: "Detailed log for auditability: event ID, timestamp, actual API error string.",
+        },
+        {
+          label: "Third-party flag",
+          body: "Unseen users are indirect users. When the error reaches them, the screen says so.",
+        },
+        {
+          label: "Assumption audit",
+          body: "Which file did Sofia pick? Why did it assume external sharing was on?",
+        },
+      ],
+      principlesAtWork: ["P3", "P6", "P7"],
+    },
     unseenUser:
       "Jamie's phone. A calendar invite for Onboarding Kickoff · Monday 9am. Event title, date, time, attendees. An RSVP prompt. Nothing else. No briefing doc. No attachment. The absence is visible without being labelled.",
   },
@@ -114,8 +162,6 @@ export const walkthroughTabs = [
       subject: "Re: Onboarding Kickoff · Monday 9am",
     },
     annotation: {
-      scenario:
-        "The invites are sent. There is no undo. Sofia presents four paths forward — each one honest about what it costs and what it fixes. Maya chooses.",
       designDecisions: [
         {
           label: "Forward-only framing",
@@ -165,24 +211,22 @@ export const walkthroughTabs = [
       },
     ],
     annotation: {
-      scenario:
-        "Task complete. But recovery isn't done until the relationship is repaired. Sofia doesn't just close the loop. She acknowledges what happened and shows what she's learned.",
       designDecisions: [
         {
           label: "All green, specifically",
-          body: 'Not just "done." Each step confirmed with what was fixed and how. Maya can verify.',
+          body: 'Not just "done." Each step confirmed with what was fixed and how. The user can verify.',
         },
         {
           label: "Expressed regret for impact, not just failure",
-          body: "Sofia acknowledges that four people were affected, not just that a permission error occurred. The distinction is what P8 turns on.",
+          body: "Sofia acknowledges the impact on unseen users, and names the cause. Regret for impact, in place of apology for failure. That distinction is what P8 turns on.",
         },
         {
           label: "One preference prompt, not a settings page",
-          body: "A single, specific adjustment offered in the moment. Concrete and immediately actionable.",
+          body: "A specific adjustment offered in the What Sofia learned section. Concrete and immediately actionable.",
         },
         {
           label: "Behavior change demonstrated",
-          body: "Sofia doesn't promise to do better. She proposes a specific change Maya can confirm now. Trust is rebuilt through action, not announcement.",
+          body: "Sofia can't promise to do better, but it can propose a specific change the user can confirm now. Trust is rebuilt through action.",
         },
       ],
       principlesAtWork: ["P8", "P2"],

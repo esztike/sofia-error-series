@@ -54,36 +54,23 @@ export default function WalkthroughPanel() {
               </div>
 
               <div className={`walkthrough__annotation${hasUnseen ? ' walkthrough__annotation--paired' : ''}`}>
-                {tab.annotation ? (
-                  <>
-                    <div className="walkthrough__decisions">
-                      <p className="walkthrough__section-label">Design decisions</p>
-                      {tab.annotation.designDecisions.map((d, i) => (
-                        <div key={i} className="walkthrough__decision">
-                          <p className="walkthrough__decision-label">{d.label}</p>
-                          <p className="walkthrough__decision-body">{d.body}</p>
-                        </div>
-                      ))}
+                <div className="walkthrough__decisions">
+                  <p className="walkthrough__section-label">Design decisions</p>
+                  {tab.annotation.designDecisions.map((d, i) => (
+                    <div key={i} className="walkthrough__decision">
+                      <p className="walkthrough__decision-label">{d.label}</p>
+                      <p className="walkthrough__decision-body">{d.body}</p>
                     </div>
-                    <div className="walkthrough__principles">
-                      <p className="walkthrough__section-label">Principles at work</p>
-                      <div className="walkthrough__chips">
-                        {tab.annotation.principlesAtWork.map(p => (
-                          <span key={p} className="walkthrough__chip">{p}</span>
-                        ))}
-                      </div>
-                    </div>
-                  </>
-                ) : (
-                  <div className="walkthrough__principles">
-                    <p className="walkthrough__section-label">Principles at work</p>
-                    <div className="walkthrough__chips">
-                      {(tab.principlesAtWork || []).map(p => (
-                        <span key={p} className="walkthrough__chip">{p}</span>
-                      ))}
-                    </div>
+                  ))}
+                </div>
+                <div className="walkthrough__principles">
+                  <p className="walkthrough__section-label">Principles at work</p>
+                  <div className="walkthrough__chips">
+                    {tab.annotation.principlesAtWork.map(p => (
+                      <span key={p} className="walkthrough__chip">{p}</span>
+                    ))}
                   </div>
-                )}
+                </div>
               </div>
 
               {hasUnseen && (
