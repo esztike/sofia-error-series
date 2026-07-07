@@ -10,6 +10,16 @@ import '../styles/walkthrough-panel.css'
 
 const SOFIA_SCREENS = { 1: SofiaScreen1, 2: SofiaScreen2, 3: SofiaScreen3, 4: SofiaScreen4, 5: SofiaScreen5 }
 
+const PRINCIPLES = {
+  P1: { label: 'Never fail silently', color: '#4fc3a1' },
+  P2: { label: 'Make assumptions visible', color: '#f0a05a' },
+  P3: { label: 'Preserve partial work', color: '#7b9cf5' },
+  P5: { label: 'Recovery ≠ retry', color: '#b07ef5' },
+  P6: { label: 'Design for the unseen user', color: '#5bc4e0' },
+  P7: { label: 'Timestamp the context', color: '#f5c842' },
+  P8: { label: 'Rebuild trust after failure', color: '#e06abf' },
+}
+
 export default function WalkthroughPanel() {
   return (
     <Tabs.Root className="walkthrough" defaultValue="tab-1">
@@ -67,7 +77,10 @@ export default function WalkthroughPanel() {
                   <p className="walkthrough__section-label">Principles at work</p>
                   <div className="walkthrough__chips">
                     {tab.annotation.principlesAtWork.map(p => (
-                      <span key={p} className="walkthrough__chip">{p}</span>
+                      <span key={p} className="walkthrough__chip">
+                        <span className="walkthrough__chip-dot" style={{ backgroundColor: PRINCIPLES[p]?.color }} />
+                        {p} · {PRINCIPLES[p]?.label}
+                      </span>
                     ))}
                   </div>
                 </div>
