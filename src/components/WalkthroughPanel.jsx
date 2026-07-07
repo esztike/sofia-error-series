@@ -67,7 +67,7 @@ export default function WalkthroughPanel() {
                 </PhoneMockup>
               </div>
 
-              <div className={`walkthrough__annotation${hasUnseen ? ' walkthrough__annotation--paired' : ''}`}>
+              <div className={`walkthrough__card walkthrough__annotation${hasUnseen ? ' walkthrough__annotation--paired' : ''}`}>
                 <div className="walkthrough__decisions">
                   <p className="walkthrough__section-label">Design decisions</p>
                   {tab.annotation.designDecisions.map((d, i) => (
@@ -101,8 +101,8 @@ export default function WalkthroughPanel() {
               )}
 
               {hasUnseen && (
-                <div className="walkthrough__unseen-card">
-                  <p className="walkthrough__unseen-label">Unseen user</p>
+                <div className="walkthrough__card walkthrough__unseen-card">
+                  <p className="walkthrough__section-label">Unseen user</p>
                   <p className="walkthrough__unseen-text">{tab.unseenUser}</p>
                 </div>
               )}

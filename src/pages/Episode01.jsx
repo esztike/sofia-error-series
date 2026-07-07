@@ -11,7 +11,6 @@ import {
   walkthroughMeta,
   unseenUserSection,
   designersSection,
-  principlesReferenced,
 } from "../content/episode-01.mdx";
 
 const containerVariants = {
@@ -114,21 +113,6 @@ export default function Episode01() {
           <h2 className="section-heading">{designersSection.heading}</h2>
           {designersSection.paragraphs.map((p, i) => (
             <p key={i}>{p}</p>
-          ))}
-        </div>
-      </section>
-
-      {/* ── Principles referenced ── */}
-      <section className="prose-section">
-        <div className="prose-column">
-          <h2 className="section-heading">Principles referenced</h2>
-          {principlesReferenced.map((p) => (
-            <div key={p.code} className="prose-subsection">
-              <h3 className="subsection-heading">
-                <span className="eyebrow">{p.code}</span> · {p.tab}
-              </h3>
-              <p>{p.body}</p>
-            </div>
           ))}
         </div>
       </section>
