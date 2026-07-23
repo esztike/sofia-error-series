@@ -134,6 +134,36 @@ export const principles = [
   }
 ]
 
+export const testingSection = {
+  heading: "How to test them",
+  cards: [
+    {
+      icon: "drama",
+      title: "Error scenario walkthroughs",
+      description: "Give users a specific failure scenario and ask them to narrate what they'd do next. Look for hesitation and confusion.",
+      metric: "Time-to-recovery decision"
+    },
+    {
+      icon: "brain",
+      title: "Mental model interviews",
+      description: "Ask: \"What do you think Sofia did before it stopped?\" Mismatches between answer and reality reveal transparency gaps.",
+      metric: "Accuracy of user's state model"
+    },
+    {
+      icon: "bar-chart-3",
+      title: "Trust calibration survey",
+      description: "Measure trust before and after a failure scenario. Good recovery design should restore trust to baseline or above.",
+      metric: "Trust delta pre/post error"
+    },
+    {
+      icon: "repeat",
+      title: "Delegation willingness",
+      description: "After experiencing an error and recovery, would the user delegate a similar task again? Measures real behavioral trust.",
+      metric: "Re-delegation rate"
+    }
+  ]
+}
+
 export const furtherConsiderationsSection = {
   heading: "Further considerations",
   intro: "Some ideas don't fit inside a single principle. They cut across all eight, and they're worth naming.",

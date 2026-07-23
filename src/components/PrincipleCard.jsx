@@ -1,34 +1,85 @@
-import { motion } from 'framer-motion'
+import * as Accordion from '@radix-ui/react-accordion'
+import { ChevronDown } from 'lucide-react'
+import { Link } from 'react-router-dom'
 
-const cardVariants = {
-  hidden: { opacity: 0, y: 16 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.45, ease: [0.4, 0, 0.2, 1] },
-  },
-}
-
-export default function PrincipleCard({ principle, onClick }) {
+export default function PrincipleCard({ principle }) {
   return (
-    <motion.button
-      className="principle-card"
-      onClick={onClick}
-      variants={cardVariants}
-      whileHover={{ y: -2, transition: { duration: 0.2 } }}
-      aria-label={`Expand: ${principle.shortLabel}`}
-    >
-      <div className="principle-card__meta">
-        <span
-          className="principle-card__number-dot"
-          style={{ backgroundColor: `var(--color-principle-${principle.number.toLowerCase()})` }}
-        />
-        <span className="principle-card__number">{principle.number}</span>
-      </div>
-      <div className="principle-card__content">
-        <h3 className="principle-card__title">{principle.shortLabel}</h3>
-        <p className="principle-card__tagline">{principle.tagline}</p>
-      </div>
-    </motion.button>
+    <Accordion.Item value={principle.number} className="principle-item">
+      <Accordion.Header>
+        <Accordion.Trigger className="principle-trigger">
+          <div className="principle-trigger__text">
+            <span className="principle-chip">
+              <span
+                className="principle-chip-dot"
+                style={{ backgroundColor: `var(--color-principle-${principle.number.toLowerCase()})` }}
+              />
+              {principle.number} · {principle.shortLabel}
+            </span>
+            <p className="principle-trigger__title">{principle.title}</p>
+          </div>
+          <ChevronDown className="principle-chevron" size={18} aria-hidden="true" />
+        </Accordion.Trigger>
+      </Accordion.Header>
+
+      <Accordion.Content className="principle-content">
+        <div className="principle-content__inner">
+          <div className="dp-overlay__header">
+            <p className="dp-overlay__tagline">{principle.tagline}</p>
+          </div>
+
+          <div className="dp-overlay__body">
+            <div className="overlay-section">
+              <h4 className="overlay-label">Anti-pattern</h4>
+              <p className="overlay-text">{principle.antiPattern}</p>
+            </div>
+
+            <div className="overlay-section">
+              <h4 className="overlay-label">Principle in action</h4>
+              <p className="overlay-text">{principle.principleInAction}</p>
+            </div>
+
+            <div className="overlay-section">
+              <h4 className="overlay-label">Screen chips</h4>
+              <div className="dp-screen-chips">
+                {principle.screenChips.map(chip => (
+                  <span key={chip} className="dp-screen-chip">{chip}</span>
+                ))}
+              </div>
+            </div>
+
+            <div className="overlay-section">
+              <h4 className="overlay-label">Addresses errors</h4>
+              <div className="dp-error-refs">
+                {principle.addressesErrors.map(err => (
+                  <Link
+                    key={err.number}
+                    to="/error-taxonomy"
+                    className="dp-error-ref"
+                    style={{
+                      backgroundColor: `var(--color-error-${err.number}-bg)`,
+                      color: `var(--color-error-${err.number}-text)`,
+                    }}
+                  >
+                    {err.number} · {err.title}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            <div className="overlay-section">
+              <h4 className="overlay-label">Research note</h4>
+              <p className="overlay-text">{principle.researchNote}</p>
+            </div>
+
+            {principle.designInteractionNote && (
+              <div className="overlay-section dp-interaction-note">
+                <h4 className="overlay-label">Design interaction note</h4>
+                <p className="overlay-text">{principle.designInteractionNote}</p>
+              </div>
+            )}
+          </div>
+        </div>
+      </Accordion.Content>
+    </Accordion.Item>
   )
 }

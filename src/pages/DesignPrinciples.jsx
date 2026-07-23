@@ -1,16 +1,26 @@
 import { motion } from 'framer-motion'
+import { Drama, Brain, BarChart3, Repeat } from 'lucide-react'
 import '../styles/design-principles.css'
 import Nav from '../components/Nav'
 import PageHero from '../components/PageHero'
 import PrincipleList from '../components/PrincipleList'
+import TestCard from '../components/TestCard'
 import {
   pageHeader,
   cardHint,
   howToUseSection,
   principles,
+  testingSection,
   furtherConsiderationsSection,
   closingSection,
 } from '../content/design-principles.mdx'
+
+const TEST_ICONS = {
+  drama: Drama,
+  brain: Brain,
+  'bar-chart-3': BarChart3,
+  repeat: Repeat,
+}
 
 const containerVariants = {
   hidden: {},
@@ -62,6 +72,30 @@ export default function DesignPrinciples() {
           <h2 className="section-heading">The eight principles</h2>
         </div>
         <PrincipleList principles={principles} hint={cardHint} />
+      </section>
+
+      {/* ── How to test them ── */}
+      <section className="testing-section">
+        <div className="prose-column">
+          <h2 className="section-heading">{testingSection.heading}</h2>
+        </div>
+        <motion.div
+          className="testing-grid"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-60px' }}
+          variants={containerVariants}
+        >
+          {testingSection.cards.map(card => (
+            <TestCard
+              key={card.title}
+              icon={TEST_ICONS[card.icon]}
+              title={card.title}
+              description={card.description}
+              metric={card.metric}
+            />
+          ))}
+        </motion.div>
       </section>
 
       {/* ── Further considerations ── */}
