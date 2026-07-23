@@ -28,27 +28,24 @@ export default function DesignPrinciples() {
       <Nav />
       <PageHero src={null} alt="" />
 
-      {/* ── Hero ── */}
+      {/* ── Page header ── */}
       <motion.section
-        className="dp-hero"
+        className="page-header"
         initial="hidden"
         animate="visible"
         variants={containerVariants}
       >
-        <motion.div className="dp-hero__left" variants={itemVariants}>
-          <p className="eyebrow">{pageHeader.eyebrow}</p>
-          <h1 className="dp-hero__title">{pageHeader.title}</h1>
-          <p className="dp-hero__subtitle">{pageHeader.subtitle}</p>
-        </motion.div>
-
-        <motion.div className="dp-hero__right" variants={itemVariants}>
-          <p className="dp-hero__intro">{pageHeader.intro}</p>
-          <div className="dp-hero__tags">
+        <div className="prose-column">
+          <motion.p className="eyebrow" variants={itemVariants}>{pageHeader.eyebrow}</motion.p>
+          <motion.h1 className="page-title" variants={itemVariants}>{pageHeader.title}</motion.h1>
+          <motion.p className="dp-hero__subtitle" variants={itemVariants}>{pageHeader.subtitle}</motion.p>
+          <motion.p className="page-description" variants={itemVariants}>{pageHeader.intro}</motion.p>
+          <motion.div className="page-tags" variants={itemVariants}>
             {pageHeader.tags.map(tag => (
               <span key={tag} className="tag">{tag}</span>
             ))}
-          </div>
-        </motion.div>
+          </motion.div>
+        </div>
       </motion.section>
 
       {/* ── How to use them ── */}
@@ -61,8 +58,8 @@ export default function DesignPrinciples() {
 
       {/* ── Eight principle cards ── */}
       <section className="dp-list-section">
-        <div className="dp-list-section__header">
-          <h2 className="dp-section-heading">The eight principles</h2>
+        <div className="dp-list-section__header prose-column">
+          <h2 className="section-heading">The eight principles</h2>
         </div>
         <PrincipleList principles={principles} hint={cardHint} />
       </section>
