@@ -27,6 +27,16 @@
   --color-tag-on-dark:      var(--color-light);  /* same as text on dark */
   --color-inactive:         var(--color-grey-mid);
 
+  /* Principles (P1–P8) — dedicated colors for principle chips/badges across pages */
+  --color-principle-p1: #4fc3a1;
+  --color-principle-p2: #f0a05a;
+  --color-principle-p3: #7b9cf5;
+  --color-principle-p4: #8bb96a;
+  --color-principle-p5: #b07ef5;
+  --color-principle-p6: #5bc4e0;
+  --color-principle-p7: #f5c842;
+  --color-principle-p8: #e06abf;
+
 
   /* ── Typography ── */
 

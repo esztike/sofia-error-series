@@ -1,5 +1,6 @@
 import * as Tabs from '@radix-ui/react-tabs'
 import { walkthroughTabs } from '../content/episode-01.mdx'
+import { principles } from '../content/design-principles.mdx'
 import PhoneMockup from './PhoneMockup'
 import SofiaScreen1 from './SofiaScreen1'
 import SofiaScreen2 from './SofiaScreen2'
@@ -13,15 +14,7 @@ import '../styles/walkthrough-panel.css'
 const SOFIA_SCREENS = { 1: SofiaScreen1, 2: SofiaScreen2, 3: SofiaScreen3, 4: SofiaScreen4, 5: SofiaScreen5 }
 const JAMIE_SCREENS = { 3: JamieScreen3, 5: JamieScreen5 }
 
-const PRINCIPLES = {
-  P1: { label: 'Never fail silently', color: '#4fc3a1' },
-  P2: { label: 'Make assumptions visible', color: '#f0a05a' },
-  P3: { label: 'Preserve partial work', color: '#7b9cf5' },
-  P5: { label: 'Recovery ≠ retry', color: '#b07ef5' },
-  P6: { label: 'Design for the unseen user', color: '#5bc4e0' },
-  P7: { label: 'Timestamp the context', color: '#f5c842' },
-  P8: { label: 'Rebuild trust after failure', color: '#e06abf' },
-}
+const principleByNumber = Object.fromEntries(principles.map(p => [p.number, p]))
 
 export default function WalkthroughPanel() {
   return (
@@ -81,9 +74,9 @@ export default function WalkthroughPanel() {
                   <p className="walkthrough__section-label">Principles at work</p>
                   <div className="walkthrough__chips">
                     {tab.annotation.principlesAtWork.map(p => (
-                      <span key={p} className="walkthrough__chip">
-                        <span className="walkthrough__chip-dot" style={{ backgroundColor: PRINCIPLES[p]?.color }} />
-                        {p} · {PRINCIPLES[p]?.label}
+                      <span key={p} className="principle-chip">
+                        <span className="principle-chip-dot" style={{ backgroundColor: `var(--color-principle-${p.toLowerCase()})` }} />
+                        {p} · {principleByNumber[p]?.shortLabel}
                       </span>
                     ))}
                   </div>

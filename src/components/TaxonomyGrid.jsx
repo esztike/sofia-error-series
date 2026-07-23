@@ -3,12 +3,15 @@ import { motion, AnimatePresence } from 'framer-motion'
 import * as Dialog from '@radix-ui/react-dialog'
 import { X, ArrowRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import { principles } from '../content/design-principles.mdx'
 import TaxonomyCard from './TaxonomyCard'
 
 const gridVariants = {
   hidden: {},
   visible: { transition: { staggerChildren: 0.08, delayChildren: 0.1 } },
 }
+
+const principleByNumber = Object.fromEntries(principles.map(p => [p.number, p]))
 
 export default function TaxonomyGrid({ cards, hint }) {
   const [openId, setOpenId] = useState(null)
@@ -132,7 +135,10 @@ export default function TaxonomyGrid({ cards, hint }) {
                         <span className="overlay-principles__label">Related design principles</span>
                         <div className="overlay-principles__chips">
                           {openCard.relatedPrinciples.map(p => (
-                            <span key={p} className="overlay-principle-chip">{p}</span>
+                            <span key={p} className="principle-chip">
+                              <span className="principle-chip-dot" style={{ backgroundColor: `var(--color-principle-${p.toLowerCase()})` }} />
+                              {p} · {principleByNumber[p]?.shortLabel}
+                            </span>
                           ))}
                         </div>
                       </div>

@@ -6,6 +6,8 @@ export const pageHeader = {
   tags: ["UX", "AGENTIC AI", "ERROR & RECOVERY"]
 }
 
+export const cardHint = "Click any card to expand"
+
 export const howToUseSection = {
   heading: "How to use them",
   paragraphs: [
@@ -17,6 +19,7 @@ export const howToUseSection = {
 export const principles = [
   {
     number: "P1",
+    shortLabel: "Never fail silently",
     title: "Surface every failure. Interrupt only when it matters.",
     tagline: "Every failure should be discoverable. Only the ones that need you should say so.",
     antiPattern: "Sofia tries to send an email, the OAuth token expires, and nothing happens. The user assumes the task is done. Days later they discover it wasn't. Alternatively: Sofia surfaces a notification for every minor retry, every brief API timeout, every background sync delay. Within a week the user ignores all of them, including the one about the meeting that never got booked.",
@@ -30,6 +33,7 @@ export const principles = [
   },
   {
     number: "P2",
+    shortLabel: "Make assumptions visible",
     title: "Surface assumptions selectively, then make them impossible to skip.",
     tagline: "Sofia must show its reasoning before it acts. But showing is not enough — the design has to make engagement unavoidable.",
     antiPattern: "Sofia drafts a follow-up email and shows a small banner: \"Based on your 2pm meeting with Lena.\" The user sees it, registers it vaguely, and approves. The meeting was with someone else entirely. The assumption was visible. It changed nothing.",
@@ -43,6 +47,7 @@ export const principles = [
   },
   {
     number: "P3",
+    shortLabel: "Preserve partial work",
     title: "Preserve partial work, then choose the right path forward.",
     tagline: "What was completed before failure has value. Make it visible. Then decide what comes next based on what the situation actually calls for.",
     antiPattern: "Sofia fails on step 3 of 5. The error screen says \"Task failed\" with a single retry button. Steps 1 and 2 produced real-world effects — invites were sent, records were created — but none of that is visible. The user has no idea what state the world is in, and retrying from the beginning risks duplicating what already happened.",
@@ -55,6 +60,7 @@ export const principles = [
   },
   {
     number: "P4",
+    shortLabel: "Gate irreversible actions",
     title: "Gate irreversible actions, but make the gate do real work.",
     tagline: "Not all actions are equal. Sending, deleting, purchasing require a different interaction model than reading or drafting.",
     antiPattern: "\"Clear my inbox.\" Sofia shows a dialog: \"This will delete 340 emails. Are you sure?\" The user clicks confirm without reading. 340 emails deleted, including archived contracts. The confirmation was present. It did nothing.",
@@ -68,6 +74,7 @@ export const principles = [
   },
   {
     number: "P5",
+    shortLabel: "Recovery ≠ retry",
     title: "Recovery means choosing a path, not repeating a step.",
     tagline: "A retry button is not a recovery flow. Recovery means understanding what happened, seeing the options, and choosing the one that fits.",
     antiPattern: "Sofia fails mid-task. The error screen shows one button: Try again. The user taps it. It fails again. They tap it a third time. Nothing changes, nothing is explained, and the user has no sense of control over what happens next. They give up, or they escalate to a human, or they lose trust in Sofia entirely.",
@@ -82,6 +89,7 @@ export const principles = [
   },
   {
     number: "P6",
+    shortLabel: "Design for the unseen user",
     title: "Design for the unseen user.",
     tagline: "Agentic errors often affect people who never delegated anything. Their experience is part of the design problem.",
     antiPattern: "Sofia fails to attach the onboarding brief to four calendar invites. The new hires receive invites with no materials and no explanation. The error recovery flow helps Maya understand what happened and offers a retry. It says nothing about the four people already sitting with incomplete invites, wondering what to prepare. The recovery is complete for the delegating user. Everyone else is still in the dark.",
@@ -95,6 +103,7 @@ export const principles = [
   },
   {
     number: "P7",
+    shortLabel: "Show what changed",
     title: "Show what changed, not when you checked.",
     tagline: "A timestamp tells users when Sofia last looked. What they need to know is whether anything has shifted since.",
     antiPattern: "Sofia is about to book a flight. It shows: \"Based on your calendar as of 10:32am.\" The user reads \"10:32am,\" thinks \"that was recent,\" and confirms. The meeting the trip was built around was cancelled at 11:15am. The timestamp was accurate. It was also useless.",
@@ -108,6 +117,7 @@ export const principles = [
   },
   {
     number: "P8",
+    shortLabel: "Rebuild trust after failure",
     title: "Rebuild trust after failure.",
     tagline: "Recovery is not complete when the task is fixed. It is complete when the person on the other end feels the system understood what it cost them.",
     antiPattern: "Sofia fails to complete the onboarding task. The error screen explains what went wrong technically and offers a retry path. Sofia resumes, completes the task, and returns to ready state. No acknowledgment that four people were affected. No recognition that Maya's Monday morning just got harder. The task is done. The relationship is quieter than it was before.",

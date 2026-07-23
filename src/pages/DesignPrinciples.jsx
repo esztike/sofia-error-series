@@ -5,6 +5,7 @@ import PageHero from '../components/PageHero'
 import PrincipleList from '../components/PrincipleList'
 import {
   pageHeader,
+  cardHint,
   howToUseSection,
   principles,
   furtherConsiderationsSection,
@@ -63,7 +64,7 @@ export default function DesignPrinciples() {
         <div className="dp-list-section__header">
           <h2 className="dp-section-heading">The eight principles</h2>
         </div>
-        <PrincipleList principles={principles} />
+        <PrincipleList principles={principles} hint={cardHint} />
       </section>
 
       {/* ── Further considerations ── */}

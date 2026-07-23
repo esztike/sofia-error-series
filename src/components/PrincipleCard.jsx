@@ -16,11 +16,17 @@ export default function PrincipleCard({ principle, onClick }) {
       onClick={onClick}
       variants={cardVariants}
       whileHover={{ y: -2, transition: { duration: 0.2 } }}
-      aria-label={`Expand: ${principle.title}`}
+      aria-label={`Expand: ${principle.shortLabel}`}
     >
-      <span className="principle-card__number">{principle.number}</span>
+      <div className="principle-card__meta">
+        <span
+          className="principle-card__number-dot"
+          style={{ backgroundColor: `var(--color-principle-${principle.number.toLowerCase()})` }}
+        />
+        <span className="principle-card__number">{principle.number}</span>
+      </div>
       <div className="principle-card__content">
-        <h3 className="principle-card__title">{principle.title}</h3>
+        <h3 className="principle-card__title">{principle.shortLabel}</h3>
         <p className="principle-card__tagline">{principle.tagline}</p>
       </div>
     </motion.button>

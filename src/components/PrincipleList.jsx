@@ -9,7 +9,7 @@ const listVariants = {
   visible: { transition: { staggerChildren: 0.07, delayChildren: 0.05 } },
 }
 
-export default function PrincipleList({ principles }) {
+export default function PrincipleList({ principles, hint }) {
   const [openId, setOpenId] = useState(null)
   const openPrinciple = principles.find(p => p.number === openId) ?? null
 
@@ -26,6 +26,8 @@ export default function PrincipleList({ principles }) {
 
   return (
     <>
+      <p className="dp-hint">{hint}</p>
+
       <motion.div
         className="principle-list"
         initial="hidden"
@@ -78,7 +80,13 @@ export default function PrincipleList({ principles }) {
                 </button>
 
                 <div className="dp-overlay__header">
-                  <span className="dp-overlay__number">{openPrinciple.number}</span>
+                  <span className="principle-chip">
+                    <span
+                      className="principle-chip-dot"
+                      style={{ backgroundColor: `var(--color-principle-${openPrinciple.number.toLowerCase()})` }}
+                    />
+                    {openPrinciple.number} · {openPrinciple.shortLabel}
+                  </span>
                   <h2 className="dp-overlay__title">{openPrinciple.title}</h2>
                   <p className="dp-overlay__tagline">{openPrinciple.tagline}</p>
                 </div>
