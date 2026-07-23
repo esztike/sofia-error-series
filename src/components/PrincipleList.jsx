@@ -119,6 +119,10 @@ export default function PrincipleList({ principles, hint }) {
                           key={err.number}
                           to="/error-taxonomy"
                           className="dp-error-ref"
+                          style={{
+                            backgroundColor: `var(--color-error-${err.number}-bg)`,
+                            color: `var(--color-error-${err.number}-text)`,
+                          }}
                           onClick={() => setOpenId(null)}
                         >
                           {err.number} · {err.title}

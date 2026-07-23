@@ -287,6 +287,16 @@ em {
   margin-top: var(--space-3);
 }
 
+.page-subtitle {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: var(--weight-regular);
+  font-style: italic;
+  line-height: var(--leading-snug);
+  color: var(--color-accent);
+  margin-top: var(--space-2);
+}
+
 .page-description {
   margin-top: var(--space-5);
   font-size: var(--text-lg);

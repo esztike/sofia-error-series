@@ -4,6 +4,19 @@ export default function JamieScreen5() {
   return (
     <div className="jamie-t5-content">
 
+      <div className="jamie-t5-wallpaper" aria-hidden="true">
+        <div className="jamie-t5-wallpaper-sun" />
+        <svg className="jamie-t5-wallpaper-birds" viewBox="0 0 60 20">
+          <path d="M2,12 Q7,4 12,12 Q17,4 22,12" />
+          <path d="M28,6 Q32,0 36,6 Q40,0 44,6" />
+        </svg>
+        <svg className="jamie-t5-wallpaper-mountains" viewBox="0 0 375 480" preserveAspectRatio="none">
+          <path d="M0,280 Q47,255 94,272 Q141,290 188,265 Q235,240 282,268 Q329,285 375,258 L375,480 L0,480 Z" className="jamie-t5-wallpaper-hill jamie-t5-wallpaper-hill--far" />
+          <path d="M0,340 Q60,305 120,330 Q180,358 240,320 Q300,290 375,315 L375,480 L0,480 Z" className="jamie-t5-wallpaper-hill jamie-t5-wallpaper-hill--mid" />
+          <path d="M0,400 Q65,365 130,392 Q195,420 260,380 Q310,350 375,378 L375,480 L0,480 Z" className="jamie-t5-wallpaper-hill jamie-t5-wallpaper-hill--near" />
+        </svg>
+      </div>
+
       <div className="jamie-t5-lock-date">
         <p className="jamie-t5-lock-day">
           <span>Tue, March 18</span>

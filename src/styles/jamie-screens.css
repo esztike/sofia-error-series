@@ -255,13 +255,66 @@
 /* ── Screen 5: Lock screen ── */
 
 .jamie-t5-content {
+  position: relative;
   min-height: 100%;
   display: flex;
   flex-direction: column;
   background: linear-gradient(165deg, #e4e6e3 0%, #ede4d5 60%, #e8dcc8 100%);
+  overflow: hidden;
+}
+
+.jamie-t5-wallpaper {
+  position: absolute;
+  inset: 0;
+}
+
+.jamie-t5-wallpaper-sun {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  width: 108px;
+  height: 108px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(217, 154, 43, 0.85) 0%, rgba(217, 154, 43, 0.3) 45%, rgba(217, 154, 43, 0) 72%);
+}
+
+.jamie-t5-wallpaper-birds {
+  position: absolute;
+  top: 20%;
+  left: 24%;
+  width: 46px;
+  height: 16px;
+  fill: none;
+  stroke: rgba(28, 28, 26, 0.35);
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.jamie-t5-wallpaper-mountains {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.jamie-t5-wallpaper-hill--far {
+  fill: #cfc9b8;
+  opacity: 0.5;
+}
+
+.jamie-t5-wallpaper-hill--mid {
+  fill: #b9ad93;
+  opacity: 0.6;
+}
+
+.jamie-t5-wallpaper-hill--near {
+  fill: #9c8f74;
+  opacity: 0.75;
 }
 
 .jamie-t5-lock-date {
+  position: relative;
   text-align: center;
   margin-top: 26px;
 }
@@ -297,6 +350,7 @@
 }
 
 .jamie-t5-notif-wrap {
+  position: relative;
   padding: 0 14px 10px;
 }
 
@@ -383,6 +437,7 @@
 }
 
 .jamie-t5-lock-icons {
+  position: relative;
   padding: 0 30px 30px;
   display: flex;
   align-items: center;

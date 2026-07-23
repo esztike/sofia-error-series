@@ -37,6 +37,22 @@
   --color-principle-p7: #f5c842;
   --color-principle-p8: #e06abf;
 
+  /* Error classes (01–06) — tinted bg/text pairs for taxonomy badges and cross-reference
+     chips, AA-checked for small text. Deliberately muted/earthy vs. the brighter principle
+     set above, so the two coded systems read as distinct families. */
+  --color-error-01-bg:   #f6e0dc; /* Misread Intent — rose */
+  --color-error-01-text: #9c4630;
+  --color-error-02-bg:   #f5ecd4; /* Tool Failure — ochre */
+  --color-error-02-text: #7a5c18;
+  --color-error-03-bg:   #e9edd3; /* Scope Exceeded — olive */
+  --color-error-03-text: #5f6b26;
+  --color-error-04-bg:   #f2e2d6; /* Partial Completion — terracotta */
+  --color-error-04-text: #8a4f2f;
+  --color-error-05-bg:   #e0e6ea; /* Stale Context — steel blue-grey */
+  --color-error-05-text: #4a6572;
+  --color-error-06-bg:   #ecdfe6; /* Wrong Inference — plum */
+  --color-error-06-text: #7a4864;
+
 
   /* ── Typography ── */
 

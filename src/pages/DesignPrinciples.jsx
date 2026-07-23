@@ -38,7 +38,7 @@ export default function DesignPrinciples() {
         <div className="prose-column">
           <motion.p className="eyebrow" variants={itemVariants}>{pageHeader.eyebrow}</motion.p>
           <motion.h1 className="page-title" variants={itemVariants}>{pageHeader.title}</motion.h1>
-          <motion.p className="dp-hero__subtitle" variants={itemVariants}>{pageHeader.subtitle}</motion.p>
+          <motion.p className="page-subtitle" variants={itemVariants}>{pageHeader.subtitle}</motion.p>
           <motion.p className="page-description" variants={itemVariants}>{pageHeader.intro}</motion.p>
           <motion.div className="page-tags" variants={itemVariants}>
             {pageHeader.tags.map(tag => (

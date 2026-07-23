@@ -73,8 +73,15 @@ export default function TaxonomyGrid({ cards, hint }) {
                     </Dialog.Close>
 
                     <div className="overlay-card__meta">
-                      <span className="taxonomy-card__number">{openCard.number}</span>
-                      <span className="taxonomy-card__badge">{openCard.categoryBadge}</span>
+                      <span
+                        className="taxonomy-card__badge"
+                        style={{
+                          backgroundColor: `var(--color-error-${openCard.number}-bg)`,
+                          color: `var(--color-error-${openCard.number}-text)`,
+                        }}
+                      >
+                        {openCard.number} · {openCard.title}
+                      </span>
                       {openCard.isCaseStudy && (
                         <span className="taxonomy-card__case-study-tag">Case Study</span>
                       )}

@@ -19,12 +19,23 @@ export default function TaxonomyCard({ card, onClick }) {
       aria-label={`Expand: ${card.title}`}
     >
       <div className="taxonomy-card__meta">
-        <span className="taxonomy-card__badge">{card.number} · {card.title}</span>
+        <span
+          className="taxonomy-card__badge"
+          style={{
+            backgroundColor: `var(--color-error-${card.number}-bg)`,
+            color: `var(--color-error-${card.number}-text)`,
+          }}
+        >
+          {card.number}
+        </span>
         {card.isCaseStudy && (
           <span className="taxonomy-card__case-study-tag">Case Study</span>
         )}
       </div>
-      <p className="taxonomy-card__summary">{card.summary}</p>
+      <div className="taxonomy-card__content">
+        <h3 className="taxonomy-card__title">{card.title}</h3>
+        <p className="taxonomy-card__summary">{card.summary}</p>
+      </div>
     </motion.button>
   )
 }
