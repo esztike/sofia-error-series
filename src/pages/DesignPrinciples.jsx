@@ -4,7 +4,7 @@ import '../styles/design-principles.css'
 import Nav from '../components/Nav'
 import PageHero from '../components/PageHero'
 import PrincipleList from '../components/PrincipleList'
-import TestCard from '../components/TestCard'
+import SupportCard from '../components/SupportCard'
 import {
   pageHeader,
   howToUseSection,
@@ -80,14 +80,14 @@ export default function DesignPrinciples() {
           <p>{testingSection.intro}</p>
         </div>
         <motion.div
-          className="testing-grid"
+          className="support-grid"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-60px' }}
           variants={containerVariants}
         >
           {testingSection.cards.map(card => (
-            <TestCard
+            <SupportCard
               key={card.title}
               icon={TEST_ICONS[card.icon]}
               title={card.title}

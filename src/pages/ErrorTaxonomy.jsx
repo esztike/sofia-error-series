@@ -3,7 +3,7 @@ import '../styles/error-taxonomy.css'
 import Nav from '../components/Nav'
 import PageHero from '../components/PageHero'
 import TaxonomyGrid from '../components/TaxonomyGrid'
-import ConclusionCard from '../components/ConclusionCard'
+import SupportCard from '../components/SupportCard'
 import {
   pageHeader,
   cardHint,
@@ -12,7 +12,8 @@ import {
   failurePropertiesSection,
   taxonomyCards,
   conclusionSection,
-  conclusionCards,
+  insightsLabel,
+  insightCards,
   closingSection,
   researchFoundations,
 } from '../content/error-taxonomy.mdx'
@@ -41,7 +42,7 @@ export default function ErrorTaxonomy() {
         variants={containerVariants}
       >
         <div className="prose-column">
-          <motion.p className="eyebrow" variants={itemVariants}>{pageHeader.eyebrow}</motion.p>
+          <motion.p className="hero-eyebrow" variants={itemVariants}>{pageHeader.eyebrow}</motion.p>
           <motion.h1 className="page-title" variants={itemVariants}>{pageHeader.title}</motion.h1>
           <motion.p className="page-subtitle" variants={itemVariants}>{pageHeader.subtitle}</motion.p>
           <motion.p className="page-description" variants={itemVariants}>{pageHeader.intro}</motion.p>
@@ -75,6 +76,14 @@ export default function ErrorTaxonomy() {
         </div>
       </section>
 
+      {/* ── The six error classes ── */}
+      <section className="taxonomy-section">
+        <div className="taxonomy-section__header prose-column">
+          <p className="hero-eyebrow">The six error classes</p>
+        </div>
+        <TaxonomyGrid cards={taxonomyCards} hint={cardHint} />
+      </section>
+
       {/* ── Two failure properties ── */}
       <section className="prose-section">
         <div className="prose-column">
@@ -89,14 +98,6 @@ export default function ErrorTaxonomy() {
         </div>
       </section>
 
-      {/* ── The six error classes ── */}
-      <section className="taxonomy-section">
-        <div className="taxonomy-section__header prose-column">
-          <h2 className="section-heading">The six error classes</h2>
-        </div>
-        <TaxonomyGrid cards={taxonomyCards} hint={cardHint} />
-      </section>
-
       {/* ── What this taxonomy tells us ── */}
       <section className="prose-section">
         <div className="prose-column">
@@ -105,18 +106,19 @@ export default function ErrorTaxonomy() {
         </div>
       </section>
 
-      {/* ── Conclusion card strip ── */}
-      <section className="conclusion-strip">
-        <div className="conclusion-strip__inner">
+      {/* ── Insight card strip ── */}
+      <section className="insight-strip">
+        <div className="insight-strip__inner">
+          <p className="hero-eyebrow">{insightsLabel}</p>
           <motion.div
-            className="conclusion-strip__grid"
+            className="support-grid"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: '-60px' }}
             variants={containerVariants}
           >
-            {conclusionCards.map((card, i) => (
-              <ConclusionCard key={i} heading={card.heading} body={card.body} />
+            {insightCards.map((card, i) => (
+              <SupportCard key={i} title={card.heading} description={card.body} />
             ))}
           </motion.div>
         </div>

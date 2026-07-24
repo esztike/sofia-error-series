@@ -15,16 +15,17 @@
   --color-accent:   #FD4C46;   /* red — accent, error indicators, active states */
 
   /* Greys */
-  --color-grey-tag:  #3D3D3D; /* tags on light bg */
   --color-grey-mid:  #8D847A; /* inactive states, coming soon labels — AA compliant */
 
   /* Contextual aliases */
-  --color-bg-light:         var(--color-light);
+  --color-bg-light:         var(--color-light); /* page base color + hard-light photo blend only — not a general UI surface color */
+  --color-bg-warm:          #F7F5F0; /* default light UI surface — cards, nav, overlays, section fills */
+  --color-bg-inactive:      #FBFAF7; /* disabled/coming-soon card surfaces — lighter than --color-bg-warm */
   --color-bg-dark:          var(--color-dark);
-  --color-text-on-light:    var(--color-dark);
-  --color-text-on-dark:     var(--color-light);
-  --color-tag-on-light:     var(--color-grey-tag);
-  --color-tag-on-dark:      var(--color-light);  /* same as text on dark */
+  --color-text-on-light:    var(--color-dark); /* primary ink color — full strength for body/titles, 0.85 opacity for labels/tags/eyebrows */
+  --color-text-on-dark:     var(--color-bg-warm);
+  --color-tag-on-light:     var(--color-text-on-light); /* pair with opacity: 0.85 in the consuming rule */
+  --color-tag-on-dark:      var(--color-bg-warm);  /* same as text on dark */
   --color-inactive:         var(--color-grey-mid);
 
   /* Principles (P1–P8) — dedicated colors for principle chips/badges across pages */
@@ -124,6 +125,7 @@
 
   --glass-blur:       blur(12px);
   --glass-bg-light:   rgba(243, 240, 233, 0.92);
+  --glass-bg-warm:    rgba(247, 245, 240, 0.92); /* glass surfaces — pairs with --color-bg-warm */
   --glass-bg-dark:    rgba(24, 25, 26, 0.88);
   --glass-border:     rgba(141, 132, 122, 0.2);
 

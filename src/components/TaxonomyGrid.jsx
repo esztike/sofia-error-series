@@ -88,16 +88,16 @@ export default function TaxonomyGrid({ cards, hint }) {
                     </div>
 
                     {openCard.isCaseStudy && (
-                      <div className="overlay-case-study-banner">
-                        <span>This is the error class at the centre of the Sofia case study.</span>
-                        <Link
-                          to={openCard.caseStudyHref}
-                          className="overlay-case-study-link"
-                          onClick={() => setOpenId(null)}
-                        >
+                      <Link
+                        to={openCard.caseStudyHref}
+                        className="overlay-case-study-banner"
+                        onClick={() => setOpenId(null)}
+                      >
+                        <span>This is the error class at the center of the Sofia case study.</span>
+                        <span className="overlay-case-study-link">
                           Read Episode 01 <ArrowRight size={12} />
-                        </Link>
-                      </div>
+                        </span>
+                      </Link>
                     )}
 
                     <Dialog.Title asChild>

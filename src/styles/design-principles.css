@@ -31,7 +31,7 @@
 /* ── Principle item (accordion row) ── */
 
 .principle-item {
-  background: var(--glass-bg-light);
+  background: var(--glass-bg-warm);
   backdrop-filter: var(--glass-blur);
   -webkit-backdrop-filter: var(--glass-blur);
   border: 1px solid var(--glass-border);
@@ -157,31 +157,6 @@
 }
 
 
-/* ── Addresses errors ── */
-
-.dp-error-refs {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-2);
-  margin-top: var(--space-1);
-}
-
-.dp-error-ref {
-  font-family: var(--font-mono);
-  font-size: var(--text-xs);
-  font-weight: var(--weight-medium);
-  letter-spacing: var(--tracking-wide);
-  padding: 3px 10px;
-  border-radius: 100px;
-  transition: filter var(--transition-fast);
-  text-decoration: none;
-}
-
-.dp-error-ref:hover {
-  filter: brightness(0.94);
-}
-
-
 /* ── Design interaction note (P5) ── */
 
 .dp-interaction-note {
@@ -197,65 +172,6 @@
 .testing-section {
   padding: var(--space-8) 0 var(--space-10);
   border-top: 1px solid var(--glass-border);
-}
-
-.testing-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--space-4);
-  max-width: var(--content-width);
-  margin: var(--space-6) auto 0;
-  padding: 0 var(--gutter);
-}
-
-.test-card {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-3);
-  padding: var(--space-6);
-  background: var(--glass-bg-light);
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
-  border: 1px solid var(--glass-border);
-  border-radius: var(--radius-md);
-}
-
-.test-card__icon {
-  color: var(--color-accent);
-}
-
-.test-card__title {
-  font-family: var(--font-heading);
-  font-size: var(--text-lg);
-  font-weight: var(--weight-semibold);
-  line-height: var(--leading-snug);
-  color: var(--color-text-on-light);
-}
-
-.test-card__desc {
-  font-size: var(--text-sm);
-  line-height: var(--leading-normal);
-  color: var(--color-text-on-light);
-  opacity: 0.75;
-}
-
-.test-card__metric {
-  display: flex;
-  align-items: center;
-  gap: var(--space-2);
-  margin-top: auto;
-  padding-top: var(--space-3);
-  border-top: 1px solid var(--glass-border);
-  font-size: var(--text-sm);
-  color: var(--color-text-on-light);
-}
-
-.test-card__metric-label {
-  font-family: var(--font-mono);
-  font-size: var(--text-xs);
-  letter-spacing: var(--tracking-wide);
-  text-transform: uppercase;
-  color: var(--color-inactive);
 }
 
 
@@ -279,7 +195,8 @@
   font-size: var(--text-xs);
   letter-spacing: var(--tracking-wide);
   text-transform: uppercase;
-  color: var(--color-inactive);
+  color: var(--color-text-on-light);
+  opacity: 0.85;
 }
 
 
@@ -333,10 +250,6 @@
 
   .principle-content__inner {
     padding: 0 var(--space-5) var(--space-5);
-  }
-
-  .testing-grid {
-    grid-template-columns: 1fr;
   }
 
   .trust-cycle__labels {

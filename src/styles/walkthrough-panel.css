@@ -72,7 +72,8 @@
   font-family: var(--font-body);
   font-size: var(--text-sm);
   font-weight: var(--weight-medium);
-  color: var(--color-grey-tag);
+  color: var(--color-text-on-light);
+  opacity: 0.85;
   margin-bottom: var(--space-2);
 }
 
@@ -80,7 +81,7 @@
   font-family: var(--font-body);
   font-size: var(--text-base);
   line-height: var(--leading-loose);
-  color: var(--color-grey-tag);
+  color: var(--color-text-on-light);
 }
 
 /* ── 2×2 grid — Sofia phone/annotation, unseen phone/annotation ── */
@@ -110,7 +111,7 @@
 
 .walkthrough__card {
   align-self: start;
-  background-color: var(--color-bg-light);
+  background-color: var(--color-bg-warm);
   border: 1px solid var(--glass-border);
   border-radius: 6px;
   box-shadow: 0px 8px 8px rgba(24, 25, 26, 0.15);
@@ -171,7 +172,8 @@
   font-weight: var(--weight-medium);
   letter-spacing: var(--tracking-wide);
   text-transform: uppercase;
-  color: var(--color-grey-tag);
+  color: var(--color-text-on-light);
+  opacity: 0.85;
   margin-bottom: var(--space-2);
 }
 

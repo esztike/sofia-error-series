@@ -19,7 +19,7 @@ export default function Nav() {
         <Link to="/" className="nav-hub-badge" onClick={close}>hub</Link>
 
         <div className="nav-dropdown-wrapper">
-          <DropdownMenu.Root open={dropdownOpen} onOpenChange={setDropdownOpen}>
+          <DropdownMenu.Root open={dropdownOpen} onOpenChange={setDropdownOpen} modal={false}>
             <DropdownMenu.Trigger asChild>
               <button className="nav-dropdown-trigger">
                 series
