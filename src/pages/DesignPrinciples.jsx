@@ -7,7 +7,6 @@ import PrincipleList from '../components/PrincipleList'
 import TestCard from '../components/TestCard'
 import {
   pageHeader,
-  cardHint,
   howToUseSection,
   principles,
   testingSection,
@@ -71,13 +70,14 @@ export default function DesignPrinciples() {
         <div className="dp-list-section__header prose-column">
           <h2 className="section-heading">The eight principles</h2>
         </div>
-        <PrincipleList principles={principles} hint={cardHint} />
+        <PrincipleList principles={principles} />
       </section>
 
       {/* ── How to test them ── */}
       <section className="testing-section">
         <div className="prose-column">
           <h2 className="section-heading">{testingSection.heading}</h2>
+          <p>{testingSection.intro}</p>
         </div>
         <motion.div
           className="testing-grid"
@@ -117,6 +117,25 @@ export default function DesignPrinciples() {
         <div className="prose-column">
           <h2 className="section-heading">{closingSection.heading}</h2>
           {closingSection.paragraphs.map((p, i) => <p key={i}>{p}</p>)}
+
+          <div className="trust-cycle">
+            <div className="trust-cycle__labels">
+              <span className="trust-cycle__label">{closingSection.commitments.labelUser}</span>
+              <span />
+              <span className="trust-cycle__label">{closingSection.commitments.labelCommitment}</span>
+            </div>
+            <div className="trust-cycle__rows">
+              {closingSection.commitments.rows.map(row => (
+                <div className="trust-row" key={row.user}>
+                  <div className="trust-row__user">{row.user}</div>
+                  <div className="trust-row__arrow">⇄</div>
+                  <div className="trust-row__commitment">{row.commitment}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <p>{closingSection.closingParagraph}</p>
         </div>
       </section>
 

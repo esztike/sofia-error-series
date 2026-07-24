@@ -1,11 +1,9 @@
 import * as Accordion from '@radix-ui/react-accordion'
 import PrincipleCard from './PrincipleCard'
 
-export default function PrincipleList({ principles, hint }) {
+export default function PrincipleList({ principles }) {
   return (
     <>
-      <p className="dp-hint">{hint}</p>
-
       <Accordion.Root type="single" collapsible className="principle-list">
         {principles.map(p => (
           <PrincipleCard key={p.number} principle={p} />

@@ -6,8 +6,6 @@ export const pageHeader = {
   tags: ["UX", "AGENTIC AI", "ERROR & RECOVERY"]
 }
 
-export const cardHint = "Click any card to expand"
-
 export const howToUseSection = {
   heading: "How to use them",
   paragraphs: [
@@ -135,7 +133,8 @@ export const principles = [
 ]
 
 export const testingSection = {
-  heading: "How to test them",
+  heading: "Possible ways to test them",
+  intro: "The principles above are grounded in research.",
   cards: [
     {
       icon: "drama",
@@ -183,7 +182,18 @@ export const closingSection = {
   heading: "Where the principles point",
   paragraphs: [
     "Sofia is not designed to be perfect. It is designed to be transparent about when it is not.",
-    "Every failure surfaces — visibly, legibly, at the right level of urgency. Partial work is preserved and shown. Irreversible actions are slowed down. Recovery is a real choice. The people affected by a failure are named. And when something goes wrong, Sofia says so — with an account of what happened and an acknowledgment of what it cost.",
-    "These are design commitments. Not guarantees. The difference matters. A guarantee claims a future no system can promise. A commitment describes what the system is built to do — and what it owes the people it acts for when it falls short."
-  ]
+    "Every failure surfaces — visibly, legibly, at the right level of urgency. Partial work is preserved and shown. Irreversible actions are slowed down. Recovery is a real choice. The people affected by a failure are named. And when something goes wrong, Sofia says so — with an account of what happened and an acknowledgment of what it cost."
+  ],
+  commitments: {
+    labelUser: "User provides",
+    labelCommitment: "Sofia's commitment",
+    rows: [
+      { user: "A goal or task to complete", commitment: "An account of what was done, what wasn't, and why" },
+      { user: "Delegation and trust", commitment: "Transparency about the assumptions made along the way" },
+      { user: "Tolerance for imperfection", commitment: "Every failure surfaced, not hidden" },
+      { user: "Permission to act on their behalf", commitment: "A gate before every irreversible action" },
+      { user: "Patience during recovery", commitment: "A real choice, not just a retry button" }
+    ]
+  },
+  closingParagraph: "These are design commitments. Not guarantees. The difference matters. A guarantee claims a future no system can promise. A commitment describes what the system is built to do — and what it owes the people it acts for when it falls short."
 }
