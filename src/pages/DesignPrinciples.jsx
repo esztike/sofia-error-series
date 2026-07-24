@@ -45,7 +45,7 @@ export default function DesignPrinciples() {
         variants={containerVariants}
       >
         <div className="prose-column">
-          <motion.p className="eyebrow" variants={itemVariants}>{pageHeader.eyebrow}</motion.p>
+          <motion.p className="hero-eyebrow" variants={itemVariants}>{pageHeader.eyebrow}</motion.p>
           <motion.h1 className="page-title" variants={itemVariants}>{pageHeader.title}</motion.h1>
           <motion.p className="page-subtitle" variants={itemVariants}>{pageHeader.subtitle}</motion.p>
           <motion.p className="page-description" variants={itemVariants}>{pageHeader.intro}</motion.p>
@@ -68,7 +68,7 @@ export default function DesignPrinciples() {
       {/* ── Eight principle cards ── */}
       <section className="dp-list-section">
         <div className="dp-list-section__header prose-column">
-          <h2 className="section-heading">The eight principles</h2>
+          <p className="hero-eyebrow">The eight principles</p>
         </div>
         <PrincipleList principles={principles} />
       </section>
@@ -78,6 +78,7 @@ export default function DesignPrinciples() {
         <div className="prose-column">
           <h2 className="section-heading">{testingSection.heading}</h2>
           <p>{testingSection.intro}</p>
+          <p className="hero-eyebrow">{testingSection.methodsLabel}</p>
         </div>
         <motion.div
           className="support-grid"

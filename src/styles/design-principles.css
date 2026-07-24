@@ -10,8 +10,7 @@
 /* ── Principle list section ── */
 
 .dp-list-section {
-  padding: var(--space-8) 0 var(--space-10);
-  border-top: 1px solid var(--glass-border);
+  padding: 0 0 var(--space-10);
 }
 
 .dp-list-section__header {
@@ -31,17 +30,14 @@
 /* ── Principle item (accordion row) ── */
 
 .principle-item {
-  background: var(--glass-bg-warm);
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
-  border: 1px solid var(--glass-border);
+  background: var(--color-bg-dark);
   border-radius: var(--radius-md);
   overflow: hidden;
-  transition: border-color var(--transition-base);
+  transition: box-shadow var(--transition-base);
 }
 
 .principle-item:hover {
-  border-color: rgba(141, 132, 122, 0.45);
+  box-shadow: 0 4px 20px rgba(24, 25, 26, 0.08);
 }
 
 .principle-trigger {
@@ -71,13 +67,18 @@
   font-size: var(--text-xl);
   font-weight: var(--weight-semibold);
   line-height: var(--leading-snug);
-  color: var(--color-text-on-light);
+  color: var(--color-text-on-dark);
 }
 
 .principle-chevron {
   flex-shrink: 0;
-  color: var(--color-inactive);
+  color: var(--color-text-on-dark);
   transition: transform var(--transition-base);
+}
+
+.principle-trigger .principle-chip {
+  color: var(--color-text-on-dark);
+  border-color: rgba(243, 240, 233, 0.25);
 }
 
 .principle-trigger[data-state="open"] .principle-chevron {
@@ -124,8 +125,7 @@
 .dp-overlay__tagline {
   font-size: var(--text-base);
   line-height: var(--leading-normal);
-  color: var(--color-text-on-light);
-  opacity: 0.7;
+  color: var(--color-text-on-dark);
 }
 
 .dp-overlay__body {
@@ -172,6 +172,17 @@
 .testing-section {
   padding: var(--space-8) 0 var(--space-10);
   border-top: 1px solid var(--glass-border);
+}
+
+.testing-section .hero-eyebrow {
+  margin-top: var(--space-6);
+}
+
+/* Reserves equal description height across all 4 cards (3 lines) so the
+   metric footer lands at the same spot in every card — otherwise grid row
+   stretch only matches heights within a row, not across both rows. */
+.testing-section .support-card__desc {
+  min-height: 4.5em;
 }
 
 

@@ -34,7 +34,7 @@
 /* ── Taxonomy section (card grid) ── */
 
 .taxonomy-section {
-  padding: var(--space-8) 0 var(--space-10);
+  padding: 0 0 var(--space-10);
 }
 
 .taxonomy-section__header {

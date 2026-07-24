@@ -38,6 +38,11 @@
   z-index: 1;
 }
 
+.home-page > .nav {
+  position: fixed;
+  z-index: 100;
+}
+
 /* ── Hero ── */
 
 /* ── Nav overrides ── */

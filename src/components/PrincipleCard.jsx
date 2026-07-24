@@ -66,7 +66,7 @@ export default function PrincipleCard({ principle }) {
               </div>
             </div>
 
-            <div className="overlay-section">
+            <div className="overlay-section overlay-section--research">
               <h4 className="overlay-label">Research note</h4>
               <p className="overlay-text">{principle.researchNote}</p>
             </div>
