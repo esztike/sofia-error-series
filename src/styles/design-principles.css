@@ -73,7 +73,7 @@
 .principle-chevron {
   flex-shrink: 0;
   color: var(--color-text-on-dark);
-  transition: transform var(--transition-base);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .principle-trigger .principle-chip {
@@ -90,11 +90,11 @@
 }
 
 .principle-content[data-state="open"] {
-  animation: principle-slide-down 250ms ease-out;
+  animation: principle-slide-down 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .principle-content[data-state="closed"] {
-  animation: principle-slide-up 250ms ease-out;
+  animation: principle-slide-up 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @keyframes principle-slide-down {
