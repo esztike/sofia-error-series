@@ -280,11 +280,29 @@ em {
 .site-footer {
   text-align: center;
   padding: var(--space-8) var(--gutter);
+  border-top: 1px solid var(--glass-border);
+}
+
+/* The global `p` rule sets its own font-family/size/color directly on
+   this element, which beats an inherited value from .site-footer no
+   matter the ancestor's specificity — so these have to target the
+   <p> itself, not the wrapper. */
+.site-footer p {
   font-family: var(--font-mono);
   font-size: var(--text-xs);
   letter-spacing: var(--tracking-wide);
-  color: var(--color-inactive);
-  border-top: 1px solid var(--glass-border);
+  color: var(--color-text-on-light);
+  opacity: 0.85;
+}
+
+.site-footer a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: opacity var(--transition-fast);
+}
+
+.site-footer a:hover {
+  opacity: 0.7;
 }
 
 /* ── Animations ── */

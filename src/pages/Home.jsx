@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { ArrowRight, LayoutGrid, CircleSlash, PencilRuler } from 'lucide-react'
+import { ArrowRight, LayoutGrid, Bookmark, Signpost } from 'lucide-react'
 import '../styles/homepage.css'
 import Nav from '../components/Nav'
+import Footer from '../components/Footer'
 import {
   eyebrow,
   headingLine1,
@@ -18,8 +19,8 @@ import {
 const MotionLink = motion.create(Link)
 
 const FOUNDATION_ICONS = {
-  'error-taxonomy': CircleSlash,
-  'design-principles': PencilRuler,
+  'error-taxonomy': Bookmark,
+  'design-principles': Signpost,
 }
 
 const containerVariants = {
@@ -199,9 +200,7 @@ export default function Home() {
       </section>
 
       {/* ── Footer ── */}
-      <footer className="site-footer">
-        <p>Sofia, an error series © 2026 Eszti Hollenback</p>
-      </footer>
+      <Footer />
 
     </div>
   )

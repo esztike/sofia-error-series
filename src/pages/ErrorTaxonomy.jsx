@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import '../styles/error-taxonomy.css'
 import Nav from '../components/Nav'
+import Footer from '../components/Footer'
 import PageHero from '../components/PageHero'
 import TaxonomyGrid from '../components/TaxonomyGrid'
 import SupportCard from '../components/SupportCard'
@@ -150,9 +151,7 @@ export default function ErrorTaxonomy() {
         </div>
       </section>
 
-      <footer className="site-footer">
-        <p>Sofia, an error series © 2026 Eszti Hollenback</p>
-      </footer>
+      <Footer />
     </div>
   )
 }

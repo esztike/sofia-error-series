@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import { Drama, Brain, BarChart3, Repeat } from 'lucide-react'
 import '../styles/design-principles.css'
 import Nav from '../components/Nav'
+import Footer from '../components/Footer'
 import PageHero from '../components/PageHero'
 import PrincipleList from '../components/PrincipleList'
 import SupportCard from '../components/SupportCard'
@@ -140,9 +141,7 @@ export default function DesignPrinciples() {
         </div>
       </section>
 
-      <footer className="site-footer">
-        <p>Sofia, an error series © 2026 Eszti Hollenback</p>
-      </footer>
+      <Footer />
     </div>
   )
 }

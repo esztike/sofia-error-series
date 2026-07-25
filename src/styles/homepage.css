@@ -72,7 +72,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--space-6);
-  align-items: end;
+  align-items: start;
 }
 
 .hero-left {
@@ -418,6 +418,13 @@
 .card--episode-active {
   position: relative;
   border-color: transparent;
+}
+
+/* Card 1's title runs to 2 lines while cards 2/3's short "Episode N"
+   titles stay on 1 — without a reserved height, "Coming soon" and
+   card-body would start at different Y positions across the row. */
+.episodes-grid .card-title {
+  min-height: 2.6em;
 }
 
 /* pathLength="100" on the rect normalizes its length to 100 units

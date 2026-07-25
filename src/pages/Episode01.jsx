@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import "../styles/globals.css";
 import Nav from "../components/Nav";
+import Footer from "../components/Footer";
 import PageHero from "../components/PageHero";
 import WalkthroughPanel from "../components/WalkthroughPanel";
 import {
@@ -132,9 +133,7 @@ export default function Episode01() {
         </div>
       </section>
 
-      <footer className="site-footer">
-        <p>Sofia, an error series © 2026 Eszti Hollenback</p>
-      </footer>
+      <Footer />
     </div>
   );
 }
