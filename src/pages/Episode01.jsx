@@ -41,15 +41,30 @@ export default function Episode01() {
         variants={containerVariants}
       >
         <div className="prose-column">
-          <motion.p className="eyebrow" variants={itemVariants}>
+          <motion.p className="hero-eyebrow" variants={itemVariants}>
             {pageHeader.eyebrow}
           </motion.p>
-          <motion.p className="eyebrow" variants={itemVariants}>
-            {pageHeader.errorClass}
-          </motion.p>
+          <motion.div className="hero-error-class" variants={itemVariants}>
+            <span className="eyebrow">Error class</span>
+            <span
+              className="dp-error-ref"
+              style={{
+                backgroundColor: `var(--color-error-${pageHeader.errorClassNumber}-bg)`,
+                color: `var(--color-error-${pageHeader.errorClassNumber}-text)`,
+              }}
+            >
+              {pageHeader.errorClassNumber} · {pageHeader.errorClassTitle}
+            </span>
+          </motion.div>
           <motion.h1 className="page-title" variants={itemVariants}>
             {pageHeader.title}
           </motion.h1>
+          <motion.p className="page-subtitle" variants={itemVariants}>
+            {pageHeader.subtitle}
+          </motion.p>
+          <motion.p className="page-description" variants={itemVariants}>
+            {pageHeader.intro}
+          </motion.p>
           <motion.div className="page-tags" variants={itemVariants}>
             {pageHeader.tags.map((tag) => (
               <span key={tag} className="tag">
