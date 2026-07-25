@@ -200,6 +200,7 @@ em {
   font-weight: var(--weight-medium);
   letter-spacing: var(--tracking-wide);
   text-transform: uppercase;
+  white-space: nowrap;
   color: var(--color-tag-on-light);
   opacity: 0.85;
 }
@@ -396,6 +397,7 @@ em {
 
 .page-tags {
   display: flex;
+  flex-wrap: wrap;
   gap: var(--space-5);
   margin-top: var(--space-4);
 }

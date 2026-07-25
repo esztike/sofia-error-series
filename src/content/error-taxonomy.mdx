@@ -18,22 +18,22 @@ export const introSection = {
     "This shift, from AI as advisor to AI as actor, reframes the design problem entirely. Errors in agentic systems are not merely informational failures. They are consequential events with state, scope, and downstream effects. They affect not only the person who delegated the task but potentially many others who had no interaction with the system at all. And they unfold over time: a task that fails at step three has already changed the world in ways that step one and step two set in motion.",
     "Existing research on AI failure modes has grown rapidly since 2023. Empirical taxonomies have produced rigorous classifications of how agentic systems fail at a technical level. Industry frameworks from Microsoft, OWASP, and others have mapped failure modes from security and reliability perspectives.",
     "What remains largely unaddressed is the design question: when an agentic system fails, what does the user experience, and what does a designer need to build in response?",
-    "This taxonomy is an attempt to answer that question. It does not intend to replace the technical literature. It translates from it. The six error classes described here are organised not around which system component failed, but around the human experience of the failure: what went wrong from the user's perspective, what the consequences are, and what recovery requires. It is a designer's taxonomy, built for designers, grounded in research but oriented toward practice."
+    "This taxonomy is an attempt to answer that question. It does not intend to replace the technical literature. It translates from it. The six error classes described here are organized not around which system component failed, but around the human experience of the failure: what went wrong from the user's perspective, what the consequences are, and what recovery requires. It is a designer's taxonomy, built for designers, grounded in research but oriented toward practice."
   ]
 }
 
 export const howItWorksSection = {
   heading: "How this taxonomy works",
   paragraphs: [
-    "Most existing taxonomies of agentic AI failure are organised around causation: which component of the system broke, which module produced the wrong output, which integration failed. That framing is useful for engineers debugging systems, but less telling for designers building the experiences users encounter when something goes wrong.",
-    "This taxonomy is organised differently. Each error class is defined by the user's experience of the failure: what went wrong from the perspective of the person who delegated the task, what the consequences are in their world, and what recovery requires from a design standpoint. Two failures may belong to the same class regardless of their technical cause, and two failures with the same technical cause may belong to different classes if their consequences and recovery paths diverge.",
+    "Most existing taxonomies of agentic AI failure are organized around causation: which component of the system broke, which module produced the wrong output, which integration failed. That framing is useful for engineers debugging systems, but less telling for designers building the experiences users encounter when something goes wrong.",
+    "This taxonomy is organized differently. Each error class is defined by the user's experience of the failure: what went wrong from the perspective of the person who delegated the task, what the consequences are in their world, and what recovery requires from a design standpoint. Two failures may belong to the same class regardless of their technical cause, and two failures with the same technical cause may belong to different classes if their consequences and recovery paths diverge.",
     "The distinction is deliberate. From an error recovery perspective, a designer does not need to know whether a failure originated in the language model's context window or in an API timeout. They need to know: did the task complete? Were external parties already affected? Was the failure foreseeable? Can it be undone? Those are the questions that determine what to build."
   ],
   subsections: [
     {
       heading: "Research foundations and gaps",
       paragraphs: [
-        <>Five of the six classes have clear precedent in existing research, named under different terminology across different frameworks. One, <strong>partial completion</strong>, occupies territory the literature observes but does not name as a distinct design problem. That gap is not incidental. Existing frameworks were built for technical and security purposes, not for the design of recovery experiences. This taxonomy makes pragmatic choices where the research leaves open questions, optimised for designer usability rather than taxonomic precision.</>
+        <>Five of the six classes have clear precedent in existing research, named under different terminology across different frameworks. One, <strong>partial completion</strong>, occupies territory the literature observes but does not name as a distinct design problem. That gap is not incidental. Existing frameworks were built for technical and security purposes, not for the design of recovery experiences. This taxonomy makes pragmatic choices where the research leaves open questions, optimized for designer usability rather than taxonomic precision.</>
       ]
     },
     {
@@ -99,10 +99,10 @@ export const taxonomyCards = [
   {
     number: "03",
     title: "Scope exceeded",
-    summary: "The agent acts beyond what was authorised, pursuing the user's goal through means they did not sanction.",
+    summary: "The agent acts beyond what was authorized, pursuing the user's goal through means they did not sanction.",
     scenario: "\"Help me get on top of my inbox.\" Sofia interprets this as permission to unsubscribe from mailing lists, archive threads older than 30 days, and delete duplicate messages. The user meant: flag what needs a response and draft replies to the three most urgent threads. An archived thread contained a contract needed that afternoon.",
     userImpact: <><strong>Scope exceeded</strong> errors feel like a violation of trust in a way other error types do not. The user gave the agent a task. The agent rewrote the task. Even when the intent was well-meaning, the effect is unsettling: if it exceeded scope once without asking, when will it do so again?</>,
-    designOpportunity: "Before any action with broad or irreversible scope, the agent should present a preview of what it intends to do and require explicit confirmation. The preview should be specific enough to be meaningful: not \"I'll help organise your inbox\" but \"This will archive 847 threads, unsubscribe from 12 mailing lists, and delete 34 duplicate messages.\" Scope gates are not interruptions. They are part of the contract between the user and the agent.",
+    designOpportunity: "Before any action with broad or irreversible scope, the agent should present a preview of what it intends to do and require explicit confirmation. The preview should be specific enough to be meaningful: not \"I'll help organize your inbox\" but \"This will archive 847 threads, unsubscribe from 12 mailing lists, and delete 34 duplicate messages.\" Scope gates are not interruptions. They are part of the contract between the user and the agent.",
     prevention: "Partly architectural. Permission design and access scoping determine what the agent can do without confirmation. Automation level calibration determines when it must ask.",
     recovery: <>Partly social. When <strong>scope exceeded</strong> errors affect others, recovery is not just technical restoration but communication management.</>,
     relatedPrinciples: ["P4", "P6", "P8"],
@@ -163,7 +163,7 @@ export const insightsLabel = "Insights"
 export const insightCards = [
   {
     heading: "A relationship problem, not a technical one",
-    body: "Agentic AI failure is not primarily a technical problem with a communication solution. It is a relationship problem with a design solution. The errors described in this taxonomy are not system glitches to be minimised and hidden. They are moments of breakdown in the relationship between a person and an agent acting on their behalf. Designing for them well requires understanding what that relationship depends on, and what each class of failure takes away from it."
+    body: "Agentic AI failure is not primarily a technical problem with a communication solution. It is a relationship problem with a design solution. The errors described in this taxonomy are not system glitches to be minimized and hidden. They are moments of breakdown in the relationship between a person and an agent acting on their behalf. Designing for them well requires understanding what that relationship depends on, and what each class of failure takes away from it."
   },
   {
     heading: "Each failure breaks something different",
@@ -183,16 +183,16 @@ export const closingSection = {
   heading: "Conclusion",
   paragraphs: [
     "Taxonomies are not ends in themselves. A classification of failure modes is only useful if it changes what gets designed.",
-    <>The value of naming these six classes is not academic. It is practical. When a designer can identify that a failure is a <strong>partial completion</strong> rather than a <strong>tool failure</strong>, they know that the recovery experience needs state visibility and resume logic, not just a retry button. When they recognise a <strong>wrong inference</strong>, they know the intervention point is before the action, not after it. Named problems get designed for. Unnamed ones get handled with generic error messages and a hope that users figure it out.</>,
-    "The six classes also establish something that matters beyond individual design decisions: a shared vocabulary. Teams building agentic systems need a way to talk about failure that is specific enough to drive design choices and accessible enough to cross the boundary between engineering, product, and UX. That vocabulary does not yet exist in any standardised form. This taxonomy is a starting point.",
+    <>The value of naming these six classes is not academic. It is practical. When a designer can identify that a failure is a <strong>partial completion</strong> rather than a <strong>tool failure</strong>, they know that the recovery experience needs state visibility and resume logic, not just a retry button. When they recognize a <strong>wrong inference</strong>, they know the intervention point is before the action, not after it. Named problems get designed for. Unnamed ones get handled with generic error messages and a hope that users figure it out.</>,
+    "The six classes also establish something that matters beyond individual design decisions: a shared vocabulary. Teams building agentic systems need a way to talk about failure that is specific enough to drive design choices and accessible enough to cross the boundary between engineering, product, and UX. That vocabulary does not yet exist in any standardized form. This taxonomy is a starting point.",
     <>What follows in this case study builds directly on these foundations. The eight design principles translate the taxonomy into design positions: for each class, a principle that names what the system owes the user when that failure occurs. The Sofia scenario then demonstrates those principles in practice, through a real walkthrough of a <strong>partial completion</strong> failure and its recovery. And the prototype shows what the designed response looks like as an actual interface.</>,
-    "The argument across all three is the same one the taxonomy opens: errors in agentic AI are not edge cases to be minimised and hidden. They are a core part of the experience. Designing for them well is what separates a system users trust from one they eventually abandon."
+    "The argument across all three is the same one the taxonomy opens: errors in agentic AI are not edge cases to be minimized and hidden. They are a core part of the experience. Designing for them well is what separates a system users trust from one they eventually abandon."
   ]
 }
 
 export const researchFoundations = {
   heading: "Research foundations",
-  intro: "Sources cited directly in this document, organised by theme.",
+  intro: "Sources cited directly in this document, organized by theme.",
   groups: [
     {
       heading: "Agentic AI failure taxonomies",
@@ -216,6 +216,12 @@ export const researchFoundations = {
       sources: [
         "Yang, et al. \"What Prompts Don't Say: Understanding and Managing Underspecification.\" CMU, 2025. arXiv:2505.13360",
         'Kobalczyk, et al. "Active Task Disambiguation with LLMs." ICLR 2025 spotlight.'
+      ]
+    },
+    {
+      heading: "Automation trust and reliance",
+      sources: [
+        'Parasuraman, R., Sheridan, T. B., and Wickens, C. D. "A Model for Types and Levels of Human Interaction with Automation." IEEE Transactions on Systems, Man, and Cybernetics — Part A: Systems and Humans, 30(3), 2000.'
       ]
     },
     {
