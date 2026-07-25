@@ -9,8 +9,8 @@ export const pageHeader = {
 export const howToUseSection = {
   heading: "How to use them",
   paragraphs: [
-    "Each principle connects to one or more error classes in the taxonomy. Those links run both ways — from failure to design response, and back again. If you're deep in a specific error class, the principle cards will tell you what the design needs to do. If you're working from a principle, the error references will show you what failure it's answering.",
-    "Two responsibilities run through all eight. Prevention is about reducing the likelihood of failure before it occurs. Recovery is about what happens after — the cost in effort, in trust, in impact on people who had no part in the original delegation. Most principles touch both. Each card tells you where the weight falls."
+    "Each principle connects to one or more error classes in the taxonomy. Those links run both ways: from failure to design response, and back again. If you're deep in a specific error class, the principle cards will tell you what the design needs to do. If you're working from a principle, the error references will show you what failure it's answering.",
+    "Two responsibilities run through all eight. Prevention is about reducing the likelihood of failure before it occurs. Recovery is about what happens after: the cost in effort, in trust, in impact on people who had no part in the original delegation. Most principles touch both. Each card tells you where the weight falls."
   ]
 }
 
@@ -27,34 +27,34 @@ export const principles = [
       { number: "02", title: "Tool failure" },
       { number: "04", title: "Partial completion" }
     ],
-    researchNote: "The original principle said \"always, without exception.\" The research says that is half right. Surfacing every failure without exception produces alarm fatigue — users begin ignoring all notifications within days, including the critical ones. The defensible position is discoverability always, notification conditionally. Every failure is observable. Not every failure earns an interrupt."
+    researchNote: "The original principle said \"always, without exception.\" The research says that is half right. Surfacing every failure without exception produces alarm fatigue: users begin ignoring all notifications within days, including the critical ones. The defensible position is discoverability always, notification conditionally. Every failure is observable. Not every failure earns an interrupt."
   },
   {
     number: "P2",
     shortLabel: "Make assumptions visible",
     title: "Surface assumptions selectively, then make them impossible to skip.",
-    tagline: "Sofia must show its reasoning before it acts. But showing is not enough — the design has to make engagement unavoidable.",
+    tagline: "Sofia must show its reasoning before it acts. But showing is not enough. The design has to make engagement unavoidable.",
     antiPattern: "Sofia drafts a follow-up email and shows a small banner: \"Based on your 2pm meeting with Lena.\" The user sees it, registers it vaguely, and approves. The meeting was with someone else entirely. The assumption was visible. It changed nothing.",
-    principleInAction: "Sofia surfaces its interpretive choices before acting, but only when the stakes justify the interruption — not for every inference, every time. When it does surface an assumption, the design forces engagement with the specific content. Not a yes/no dialog the user can dismiss in half a second, but a targeted question that requires reading: \"I'm treating this as a follow-up to your 2pm with Lena Chen on Thursday. Is that the meeting you meant?\" The user has to process the detail to answer. The presentation varies enough across interactions to resist habituation. And Sofia learns, over time, which assumption types this user tends to catch versus miss, adjusting when it asks accordingly.",
+    principleInAction: "Sofia surfaces its interpretive choices before acting, but only when the stakes justify the interruption, not for every inference, every time. When it does surface an assumption, the design forces engagement with the specific content. Not a yes/no dialog the user can dismiss in half a second, but a targeted question that requires reading: \"I'm treating this as a follow-up to your 2pm with Lena Chen on Thursday. Is that the meeting you meant?\" The user has to process the detail to answer. The presentation varies enough across interactions to resist habituation. And Sofia learns, over time, which assumption types this user tends to catch versus miss, adjusting when it asks accordingly.",
     screenChips: ["Targeted assumption question", "Forced engagement pattern", "Selective surfacing", "Variable presentation"],
     addressesErrors: [
       { number: "01", title: "Misread intent" },
       { number: "06", title: "Wrong inference" }
     ],
-    researchNote: "Passive assumption surfaces — banners, inline notes, prefilled context chips — are frequently ignored or used as competence signals that increase blind trust rather than prompting genuine review. Three interventions have evidence behind them: cognitive forcing functions (make the user engage before proceeding), selective surfacing (ask only when the assumption is genuinely uncertain and the stakes are high), and variable presentation (identical patterns habituate; varying structure maintains attention). The principle survives the research, but only with the mechanism replaced."
+    researchNote: "Passive assumption surfaces (banners, inline notes, prefilled context chips) are frequently ignored or used as competence signals that increase blind trust rather than prompting genuine review. Three interventions have evidence behind them: cognitive forcing functions (make the user engage before proceeding), selective surfacing (ask only when the assumption is genuinely uncertain and the stakes are high), and variable presentation (identical patterns habituate; varying structure maintains attention). The principle survives the research, but only with the mechanism replaced."
   },
   {
     number: "P3",
     shortLabel: "Preserve partial work",
     title: "Preserve partial work, then choose the right path forward.",
     tagline: "What was completed before failure has value. Make it visible. Then decide what comes next based on what the situation actually calls for.",
-    antiPattern: "Sofia fails on step 3 of 5. The error screen says \"Task failed\" with a single retry button. Steps 1 and 2 produced real-world effects — invites were sent, records were created — but none of that is visible. The user has no idea what state the world is in, and retrying from the beginning risks duplicating what already happened.",
-    principleInAction: "The error view shows a step log — what completed, what did not, and what effects have already reached the outside world. From there the user chooses the path that fits: resume from the point of failure if the state is clean and the remaining steps are safe; restart with pre-filled inputs if the failure was in execution logic; accept the partial result if what was completed has independent value; or roll back completed steps if leaving things half-done is worse than starting over.",
+    antiPattern: "Sofia fails on step 3 of 5. The error screen says \"Task failed\" with a single retry button. Steps 1 and 2 produced real-world effects (invites were sent, records were created), but none of that is visible. The user has no idea what state the world is in, and retrying from the beginning risks duplicating what already happened.",
+    principleInAction: "The error view shows a step log: what completed, what did not, and what effects have already reached the outside world. From there the user chooses the path that fits: resume from the point of failure if the state is clean and the remaining steps are safe; restart with pre-filled inputs if the failure was in execution logic; accept the partial result if what was completed has independent value; or roll back completed steps if leaving things half-done is worse than starting over.",
     screenChips: ["Step log with state visibility", "Resume from step N", "Restart with pre-fill", "Accept partial result", "Compensating rollback"],
     addressesErrors: [
       { number: "04", title: "Partial completion" }
     ],
-    researchNote: "The instinct to resume is reliable — users consistently want to continue from where things stopped. The risk is that they often lack the cognitive resources to verify whether the partial state is actually safe to resume from. The step log addresses this directly: it makes the state auditable before the user commits to a path. Resume is the right default only when the log confirms the completed steps are clean."
+    researchNote: "The instinct to resume is reliable: users consistently want to continue from where things stopped. The risk is that they often lack the cognitive resources to verify whether the partial state is actually safe to resume from. The step log addresses this directly: it makes the state auditable before the user commits to a path. Resume is the right default only when the log confirms the completed steps are clean."
   },
   {
     number: "P4",
@@ -62,7 +62,7 @@ export const principles = [
     title: "Gate irreversible actions, but make the gate do real work.",
     tagline: "Not all actions are equal. Sending, deleting, purchasing require a different interaction model than reading or drafting.",
     antiPattern: "\"Clear my inbox.\" Sofia shows a dialog: \"This will delete 340 emails. Are you sure?\" The user clicks confirm without reading. 340 emails deleted, including archived contracts. The confirmation was present. It did nothing.",
-    principleInAction: "A confirmation that can be clicked through in half a second is not a gate. For irreversible actions, Sofia forces interaction with the specific consequence, not a generic warning. The scope is named concretely: not \"this will affect many items\" but \"this will permanently delete 340 emails, including 12 archived threads.\" The action is slowed deliberately. Confirmations are rationed — a system that requires confirmation for everything trains users to confirm everything without reading. Sofia reserves hard gates for actions that cannot be undone, and uses softer checkpoints for actions that are reversible.",
+    principleInAction: "A confirmation that can be clicked through in half a second is not a gate. For irreversible actions, Sofia forces interaction with the specific consequence, not a generic warning. The scope is named concretely: not \"this will affect many items\" but \"this will permanently delete 340 emails, including 12 archived threads.\" The action is slowed deliberately. Confirmations are rationed: a system that requires confirmation for everything trains users to confirm everything without reading. Sofia reserves hard gates for actions that cannot be undone, and uses softer checkpoints for actions that are reversible.",
     screenChips: ["Concrete scope preview", "Named consequence", "Deliberate friction", "Reversibility indicator"],
     addressesErrors: [
       { number: "03", title: "Scope exceeded" },
@@ -76,13 +76,13 @@ export const principles = [
     title: "Recovery means choosing a path, not repeating a step.",
     tagline: "A retry button is not a recovery flow. Recovery means understanding what happened, seeing the options, and choosing the one that fits.",
     antiPattern: "Sofia fails mid-task. The error screen shows one button: Try again. The user taps it. It fails again. They tap it a third time. Nothing changes, nothing is explained, and the user has no sense of control over what happens next. They give up, or they escalate to a human, or they lose trust in Sofia entirely.",
-    principleInAction: "When a task fails, Sofia offers 2 to 3 recovery paths — enough to restore a sense of control, not so many that choosing becomes its own burden. One option is always labeled as recommended. The label does real work: it gives users with limited cognitive bandwidth a safe default while preserving choice for those who want it. Each option is described in plain terms, simple enough to read and decide under stress. The paths reflect what actually happened: resume from the point of failure, restart with corrections, or accept what was completed and stop.",
+    principleInAction: "When a task fails, Sofia offers 2 to 3 recovery paths: enough to restore a sense of control, not so many that choosing becomes its own burden. One option is always labeled as recommended. The label does real work: it gives users with limited cognitive bandwidth a safe default while preserving choice for those who want it. Each option is described in plain terms, simple enough to read and decide under stress. The paths reflect what actually happened: resume from the point of failure, restart with corrections, or accept what was completed and stop.",
     screenChips: ["Recovery options panel", "Recommended label", "Plain-language option descriptions", "State summary"],
     addressesErrors: [
       { number: "04", title: "Partial completion" },
       { number: "02", title: "Tool failure" }
     ],
-    researchNote: "Single retry buttons produce exactly the learned helplessness conditions Seligman described — repeated failure with no perceived control. Perceived control under stress is genuinely restorative, which is why even two meaningful options change the experience significantly. But error states activate every known moderator of choice overload: high cognitive load, preference uncertainty, effort-minimizing goals. The guardrails matter as much as the options. Two to three paths maximum. Always one labeled recommended. Simple enough for System 1 processing.",
+    researchNote: "Single retry buttons produce exactly the learned helplessness conditions Seligman described: repeated failure with no perceived control. Perceived control under stress is genuinely restorative, which is why even two meaningful options change the experience significantly. But error states activate every known moderator of choice overload: high cognitive load, preference uncertainty, effort-minimizing goals. The guardrails matter as much as the options. Two to three paths maximum. Always one labeled recommended. Simple enough for System 1 processing.",
     designInteractionNote: "P4 and P5 share a user. Every confirmation gate in P4 depletes cognitive resources the user brings to P5's recovery decision. A gate that exhausts the user right before asking them to choose a path is a compounding failure. Design them as a system."
   },
   {
@@ -91,13 +91,13 @@ export const principles = [
     title: "Design for the unseen user.",
     tagline: "Agentic errors often affect people who never delegated anything. Their experience is part of the design problem.",
     antiPattern: "Sofia fails to attach the onboarding brief to four calendar invites. The new hires receive invites with no materials and no explanation. The error recovery flow helps Maya understand what happened and offers a retry. It says nothing about the four people already sitting with incomplete invites, wondering what to prepare. The recovery is complete for the delegating user. Everyone else is still in the dark.",
-    principleInAction: "When a failure has already reached people outside the immediate interaction, Sofia names them. Not abstractly, but concretely: \"Four people received invites without the brief. Jamie Rodriguez has already emailed to ask about it.\" From there, Sofia surfaces what each affected person's situation is and offers the delegating user a path to address it. Draft a follow-up, reschedule, send a correction. The offer is specific and the choice belongs to the user. Sofia does not draft and send on their behalf — the communication that repairs trust with a third party has to come from the person, not from another layer of AI.",
+    principleInAction: "When a failure has already reached people outside the immediate interaction, Sofia names them. Not abstractly, but concretely: \"Four people received invites without the brief. Jamie Rodriguez has already emailed to ask about it.\" From there, Sofia surfaces what each affected person's situation is and offers the delegating user a path to address it. Draft a follow-up, reschedule, send a correction. The offer is specific and the choice belongs to the user. Sofia does not draft and send on their behalf. The communication that repairs trust with a third party has to come from the person, not from another layer of AI.",
     screenChips: ["Affected people list", "Impact summary", "Communication path options", "Draft assist (user-authenticated)"],
     addressesErrors: [
       { number: "04", title: "Partial completion" },
       { number: "03", title: "Scope exceeded" }
     ],
-    researchNote: "Six of seven major Responsible AI frameworks recognize obligations to people affected by AI systems they never chose to use. None of them provide UX patterns for it. This principle is on solid ethical ground and genuinely novel interaction design ground. The one firm constraint the research imposes: do not automate communication to third parties on the delegating user's behalf. The Replicant Effect, the transparency dilemma, and the epistemic trust literature all converge on the same point — AI-mediated trust repair risks compounding the original error. Surface the impact. Enable the user to respond. The voice has to be theirs."
+    researchNote: "Six of seven major Responsible AI frameworks recognize obligations to people affected by AI systems they never chose to use. None of them provide UX patterns for it. This principle is on solid ethical ground and genuinely novel interaction design ground. The one firm constraint the research imposes: do not automate communication to third parties on the delegating user's behalf. The Replicant Effect, the transparency dilemma, and the epistemic trust literature all converge on the same point: AI-mediated trust repair risks compounding the original error. Surface the impact. Enable the user to respond. The voice has to be theirs."
   },
   {
     number: "P7",
@@ -105,12 +105,12 @@ export const principles = [
     title: "Show what changed, not when you checked.",
     tagline: "A timestamp tells users when Sofia last looked. What they need to know is whether anything has shifted since.",
     antiPattern: "Sofia is about to book a flight. It shows: \"Based on your calendar as of 10:32am.\" The user reads \"10:32am,\" thinks \"that was recent,\" and confirms. The meeting the trip was built around was cancelled at 11:15am. The timestamp was accurate. It was also useless.",
-    principleInAction: "Before any consequential action, Sofia checks whether the context it is acting on has changed since it last verified. If nothing has changed, it proceeds without interruption. If something has changed, it surfaces the delta — the specific thing that shifted — not a timestamp. \"The meeting this trip was built around has been removed from your calendar. Do you still want to book the flight?\" That is a question the user can act on. \"As of 10:32am\" is not. For action types with low tolerance for stale context — financial transactions, non-refundable bookings, external communications — Sofia verifies freshness immediately before acting, regardless of how recently it last checked.",
+    principleInAction: "Before any consequential action, Sofia checks whether the context it is acting on has changed since it last verified. If nothing has changed, it proceeds without interruption. If something has changed, it surfaces the delta (the specific thing that shifted), not a timestamp. \"The meeting this trip was built around has been removed from your calendar. Do you still want to book the flight?\" That is a question the user can act on. \"As of 10:32am\" is not. For action types with low tolerance for stale context (financial transactions, non-refundable bookings, external communications), Sofia verifies freshness immediately before acting, regardless of how recently it last checked.",
     screenChips: ["Context delta alert", "Freshness verification", "Staleness threshold by action type", "Change summary"],
     addressesErrors: [
       { number: "05", title: "Stale context" }
     ],
-    researchNote: "Timestamps fail because of anchoring. Once Sofia presents a piece of information, users anchor on it regardless of how old it is — the timestamp is processed as a reassurance signal, not a call to verify. No controlled HCI studies were found that directly test whether freshness indicators change decision quality. What the literature does support is delta surfacing: showing what changed forces engagement with the actual risk, rather than asking users to derive risk from an age label. That is a smaller cognitive ask and a more actionable one."
+    researchNote: "Timestamps fail because of anchoring. Once Sofia presents a piece of information, users anchor on it regardless of how old it is. The timestamp is processed as a reassurance signal, not a call to verify. No controlled HCI studies were found that directly test whether freshness indicators change decision quality. What the literature does support is delta surfacing: showing what changed forces engagement with the actual risk, rather than asking users to derive risk from an age label. That is a smaller cognitive ask and a more actionable one."
   },
   {
     number: "P8",
@@ -118,7 +118,7 @@ export const principles = [
     title: "Rebuild trust after failure.",
     tagline: "Recovery is not complete when the task is fixed. It is complete when the person on the other end feels the system understood what it cost them.",
     antiPattern: "Sofia fails to complete the onboarding task. The error screen explains what went wrong technically and offers a retry path. Sofia resumes, completes the task, and returns to ready state. No acknowledgment that four people were affected. No recognition that Maya's Monday morning just got harder. The task is done. The relationship is quieter than it was before.",
-    principleInAction: "Trust repair requires two things together — neither one alone is enough. First, an explanation: what happened, why, and what it meant for the people affected. Not a technical log. A human account. Second, expressed regret for the impact, not just the error. The distinction matters: \"I encountered a permissions error\" is an explanation. \"I sent incomplete invites to four people who needed to prepare\" is an acknowledgment of what that cost. Sofia offers both. Then it demonstrates, through subsequent behavior, that it understood. It does not promise to do better. It does better, and the user sees it.",
+    principleInAction: "Trust repair requires two things together; neither one alone is enough. First, an explanation: what happened, why, and what it meant for the people affected. Not a technical log. A human account. Second, expressed regret for the impact, not just the error. The distinction matters: \"I encountered a permissions error\" is an explanation. \"I sent incomplete invites to four people who needed to prepare\" is an acknowledgment of what that cost. Sofia offers both. Then it demonstrates, through subsequent behavior, that it understood. It does not promise to do better. It does better, and the user sees it.",
     screenChips: ["Impact acknowledgment", "Human-readable error account", "Expressed regret", "Subsequent behavior signal"],
     addressesErrors: [
       { number: "01", title: "Misread intent" },
@@ -128,7 +128,7 @@ export const principles = [
       { number: "05", title: "Stale context" },
       { number: "06", title: "Wrong inference" }
     ],
-    researchNote: "A 2025 meta-analysis of 22 studies found that apologies combined with explanations are the most effective trust repair strategy, but effect sizes remain small. The framing matters as much as the content: regret expressed for impact on the user lands differently than regret expressed for the system's own failure. Forward-looking promises — \"Sofia will learn from this,\" \"this won't happen again\" — are counterproductive. They inflate expectations, activate the Perfect Automation Schema, and make the next failure more damaging than if no promise had been made. Trust is rebuilt through demonstrated behavior, not announced intention."
+    researchNote: "A 2025 meta-analysis of 22 studies found that apologies combined with explanations are the most effective trust repair strategy, but effect sizes remain small. The framing matters as much as the content: regret expressed for impact on the user lands differently than regret expressed for the system's own failure. Forward-looking promises (\"Sofia will learn from this,\" \"this won't happen again\") are counterproductive. They inflate expectations, activate the Perfect Automation Schema, and make the next failure more damaging than if no promise had been made. Trust is rebuilt through demonstrated behavior, not announced intention."
   }
 ]
 
@@ -170,11 +170,11 @@ export const furtherConsiderationsSection = {
   subsections: [
     {
       heading: "Trust is a curve, not a threshold",
-      body: "Parasuraman's automation levels established that the appropriate degree of human oversight changes as reliability is demonstrated. Sofia starts conservative — more visible, more checkpoints, more friction. That's not a permanent state. It's the beginning of a relationship. As Sofia earns autonomy by using it well, the friction can ease. The design has to allow for that. And the system has to demonstrate it, never announce it. Users who are told \"Sofia will learn your preferences\" and then experience a failure are worse off than users who were told nothing. The promise is the trap."
+      body: "Parasuraman's automation levels established that the appropriate degree of human oversight changes as reliability is demonstrated. Sofia starts conservative: more visible, more checkpoints, more friction. That's not a permanent state. It's the beginning of a relationship. As Sofia earns autonomy by using it well, the friction can ease. The design has to allow for that. And the system has to demonstrate it, never announce it. Users who are told \"Sofia will learn your preferences\" and then experience a failure are worse off than users who were told nothing. The promise is the trap."
     },
     {
       heading: "Incentive alignment",
-      body: "Trust in a delegating system depends on whose interests it serves. A system whose business model depends on your attention or your data cannot fully earn delegation — the incentives are misaligned before the first interaction begins. Every principle in this series assumes that Sofia exists to serve the person using it. Where that assumption breaks, the principles break with it. That is not a design problem with a design solution. It is a reminder that the most honest thing a designer can do is name the conditions their work depends on."
+      body: "Trust in a delegating system depends on whose interests it serves. A system whose business model depends on your attention or your data cannot fully earn delegation. The incentives are misaligned before the first interaction begins. Every principle in this series assumes that Sofia exists to serve the person using it. Where that assumption breaks, the principles break with it. That is not a design problem with a design solution. It is a reminder that the most honest thing a designer can do is name the conditions their work depends on."
     }
   ]
 }
@@ -183,7 +183,7 @@ export const closingSection = {
   heading: "Where the principles point",
   paragraphs: [
     "Sofia is not designed to be perfect. It is designed to be transparent about when it is not.",
-    "Every failure surfaces — visibly, legibly, at the right level of urgency. Partial work is preserved and shown. Irreversible actions are slowed down. Recovery is a real choice. The people affected by a failure are named. And when something goes wrong, Sofia says so — with an account of what happened and an acknowledgment of what it cost."
+    "Every failure surfaces: visibly, legibly, at the right level of urgency. Partial work is preserved and shown. Irreversible actions are slowed down. Recovery is a real choice. The people affected by a failure are named. And when something goes wrong, Sofia says so, with an account of what happened and an acknowledgment of what it cost."
   ],
   commitments: {
     labelUser: "User provides",
@@ -196,5 +196,5 @@ export const closingSection = {
       { user: "Patience during recovery", commitment: "A real choice, not just a retry button" }
     ]
   },
-  closingParagraph: "These are design commitments. Not guarantees. The difference matters. A guarantee claims a future no system can promise. A commitment describes what the system is built to do — and what it owes the people it acts for when it falls short."
+  closingParagraph: "These are design commitments. Not guarantees. The difference matters. A guarantee claims a future no system can promise. A commitment describes what the system is built to do, and what it owes the people it acts for when it falls short."
 }

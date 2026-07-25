@@ -12,8 +12,8 @@ export const section1 = {
   heading: "This is not a button problem",
   paragraphs: [
     "There's a version of design history where everything gets simpler as it matures. Clearer affordances, better defaults, fewer sharp edges. Agentic AI is not that version.",
-    "When a system can act — not just respond, but actually do things on your behalf — the design surface doesn't just expand. It becomes invisible. The user issues a request and steps away. The agent interprets, decides, executes. And somewhere in that chain, without anyone watching, something can go wrong in a way that no amount of good button design prepares you for.",
-    "The question isn't whether agentic systems will fail. They will. The question is whether the designers building them have thought seriously about what failure looks like from the inside — and what it takes to recover without losing the trust that makes delegation possible in the first place.",
+    "When a system can act (not just respond, but actually do things on your behalf), the design surface doesn't just expand. It becomes invisible. The user issues a request and steps away. The agent interprets, decides, executes. And somewhere in that chain, without anyone watching, something can go wrong in a way that no amount of good button design prepares you for.",
+    "The question isn't whether agentic systems will fail. They will. The question is whether the designers building them have thought seriously about what failure looks like from the inside, and what it takes to recover without losing the trust that makes delegation possible in the first place.",
     "Most haven't. That gap is what this series is about.",
   ],
 };
@@ -21,15 +21,15 @@ export const section1 = {
 export const section2 = {
   paragraphs: [
     "This episode doesn't start from intuition. It's built on two prior artifacts: an error taxonomy that classifies how agentic systems fail, and a set of design principles for building systems that fail well. If you haven't read them, they're worth the time. If you have, you'll recognize them at work in what follows.",
-    "The taxonomy names six failure classes. This episode explores one: partial completion — a multi-step task that stops mid-way, leaving the world in an incomplete state. Not a crash. Not a visible error. A task that got halfway done and didn't tell anyone.",
+    "The taxonomy names six failure classes. This episode explores one: partial completion, a multi-step task that stops mid-way, leaving the world in an incomplete state. Not a crash. Not a visible error. A task that got halfway done and didn't tell anyone.",
     "Until Sofia did.",
   ],
 };
 
 export const section3 = {
   paragraphs: [
-    "Sofia is a personal productivity agent — calendar, email, meeting coordination. She's been working with Maya, a People Ops coordinator, for one week. Long enough to be useful. Not long enough to have earned full trust.",
-    "On a Tuesday morning, Maya delegates a routine onboarding task: send calendar invites to four new hires starting Monday, and attach the Q1 onboarding brief. She confirms Sofia's interpretation and puts her phone down. That's the point of an agent — you hand something off and move on.",
+    "Sofia is a personal productivity agent: calendar, email, meeting coordination. She's been working with Maya, a People Ops coordinator, for one week. Long enough to be useful. Not long enough to have earned full trust.",
+    "On a Tuesday morning, Maya delegates a routine onboarding task: send calendar invites to four new hires starting Monday, and attach the Q1 onboarding brief. She confirms Sofia's interpretation and puts her phone down. That's the point of an agent: you hand something off and move on.",
     "Sofia creates the events. Sends the invites. Then hits a wall: Google Drive permissions block external sharing for the file. She can't attach it. Two of four steps are done. Four people have calendar invites and nothing to read before Monday.",
     "Sofia stops. She doesn't retry silently. She doesn't abandon the partial work. She surfaces exactly what happened, what's done, and what isn't. And she waits.",
     "What happens next is what this episode is about.",
@@ -182,9 +182,9 @@ export const unseenUserSection = {
   paragraphs: [
     "Jamie emailed. The others waited. Four people had calendar invites, no briefing doc, and no way to know whether the missing attachment was a mistake or something they were supposed to chase. They were inside the consequences of a failure they had no part in causing.",
     "Errors in agentic systems are not edge cases. They are not failures of good design. They are the nature of systems that act in a complex world on behalf of people. The design question is never whether they will happen. It is what the system owes everyone they touch when they do.",
-    "That's a harder question than it sounds. Most error design is built around one assumption: that the person experiencing the failure is the person who caused it — or at least the one who chose to use the system. Parasuraman's automation trust research, the foundational work on how humans calibrate reliance on automated systems, makes exactly that assumption. You are the operator. You have context. You have agency. You can adjust.",
+    "That's a harder question than it sounds. Most error design is built around one assumption: that the person experiencing the failure is the person who caused it, or at least the one who chose to use the system. Parasuraman's automation trust research, the foundational work on how humans calibrate reliance on automated systems, makes exactly that assumption. You are the operator. You have context. You have agency. You can adjust.",
     "Jamie has none of that. He didn't delegate anything. He didn't choose Sofia. He received a calendar invite from a system he's never interacted with, and when something was missing he did the only thing available to him: he sent an email and hoped someone would respond.",
-    "That asymmetry is what makes the unseen user a distinct design problem — not a harder version of the delegating user's problem, but a different one entirely. Transparency and recovery have to reach further than the person who issued the request. The blast radius of an agentic error includes everyone the system acted on, not just everyone who asked it to act. Designing for that is not optional complexity. It is what it means to build systems that are responsible about what they do in the world.",
+    "That asymmetry is what makes the unseen user a distinct design problem: not a harder version of the delegating user's problem, but a different one entirely. Transparency and recovery have to reach further than the person who issued the request. The blast radius of an agentic error includes everyone the system acted on, not just everyone who asked it to act. Designing for that is not optional complexity. It is what it means to build systems that are responsible about what they do in the world.",
   ],
 };
 
@@ -192,7 +192,7 @@ export const designersSection = {
   heading: "What this means for designers",
   paragraphs: [
     "The first thing it means is that the blast radius is a design surface. Not a side effect to acknowledge in a post-mortem, but something to map before a task runs, surface when something goes wrong, and address as part of recovery. Jamie's name appearing in Sofia's error detail wasn't incidental. It was a design decision. Knowing who was affected, and offering Maya a path to reach them, is what separates a recovery flow from a closed loop that only serves the person holding the phone.",
-    "The second is that recovery is not a feature. It is a responsibility — and its scope has to match the scope of the failure. A recovery flow that restores Maya's task to green while Jamie is still waiting for a briefing doc is technically complete and humanly incomplete. Designing for recovery means asking: who did this reach, and what do they need now?",
+    "The second is that recovery is not a feature. It is a responsibility, and its scope has to match the scope of the failure. A recovery flow that restores Maya's task to green while Jamie is still waiting for a briefing doc is technically complete and humanly incomplete. Designing for recovery means asking: who did this reach, and what do they need now?",
     "The third is perhaps the most uncomfortable for a field that has always prized prevention. In agentic AI, recovery is not the fallback when prevention fails. It is equally primary. These systems act in a complex world, across tools and permissions and people who never opted in. Prevention reduces the frequency of failure. It does not change the fact that failures will happen, that they will have consequences, and that someone has to design for what comes after. That someone is us.",
   ],
 };

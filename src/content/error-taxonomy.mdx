@@ -49,22 +49,22 @@ export const howItWorksSection = {
 
 export const failurePropertiesSection = {
   heading: "Two failure properties: cascading and silent",
-  intro: "Not every failure pattern belongs in the card grid. Two patterns appear throughout the research literature and are worth naming here — not as error classes but as properties. They describe not what went wrong, but how far it reached and whether anyone knew.",
+  intro: "Not every failure pattern belongs in the card grid. Two patterns appear throughout the research literature and are worth naming here: not as error classes but as properties. They describe not what went wrong, but how far it reached and whether anyone knew.",
   properties: [
     {
       heading: "Cascading failure",
       paragraphs: [
         "A cascading failure occurs when one error triggers a chain of downstream actions that compound the original mistake at scale. The initiating failure may have been minor. The cascade is not. Each step in the chain was executed correctly given the state the previous step left behind. The error propagates not despite the agent working as intended, but partly because of it.",
-        <>Any of the six error classes can cascade. A <strong>misread intent</strong> that triggers a bulk operation. A <strong>tool failure</strong> mid-sequence that leaves partial state, which the next step builds on incorrectly. A <strong>scope exceeded</strong> action that proliferates across connected systems. The cascade is not the root failure — it is what the root failure becomes when the system has no circuit breaker.</>,
+        <>Any of the six error classes can cascade. A <strong>misread intent</strong> that triggers a bulk operation. A <strong>tool failure</strong> mid-sequence that leaves partial state, which the next step builds on incorrectly. A <strong>scope exceeded</strong> action that proliferates across connected systems. The cascade is not the root failure. It is what the root failure becomes when the system has no circuit breaker.</>,
         <>This is why cascading failure is not a card in this taxonomy. Placing it alongside <strong>misread intent</strong> or <strong>tool failure</strong> would imply it answers the same question: what went wrong? It does not. It answers a different question: how far did it go? That distinction matters for design. The root class tells you what intervention to build. The cascading property tells you how much blast radius that intervention needs to account for.</>,
-        "The research literature is unambiguous about the severity. Empirical analysis of multi-agent systems found error amplification of up to 17.2 times compared to single-agent baselines (arXiv:2603.04474, 2026). OWASP lists cascading failures among the highest-severity risk categories for agentic systems (ASI08, 2025). The design response — staged execution, blast radius previews, undo campaigns — is not optional friction. It is the primary protection available for any operation with a high multiplier."
+        "The research literature is unambiguous about the severity. Empirical analysis of multi-agent systems found error amplification of up to 17.2 times compared to single-agent baselines (arXiv:2603.04474, 2026). OWASP lists cascading failures among the highest-severity risk categories for agentic systems (ASI08, 2025). The design response (staged execution, blast radius previews, undo campaigns) is not optional friction. It is the primary protection available for any operation with a high multiplier."
       ]
     },
     {
       heading: "Silent failure",
       paragraphs: [
         "A silent failure occurs when an error happens and the user is never told. The task stalls, halts, or produces a wrong result, and nothing surfaces. The user's mental model of what the agent did diverges from reality, sometimes for hours or days, until an external signal (a colleague asking about an email that never arrived, a new hire wondering about a missing brief) forces the gap into view.",
-        <>Like cascading, silent failure is a property rather than a class. Any of the six error classes can be silent. A <strong>tool failure</strong> that produces no notification. A <strong>partial completion</strong> that reports success. A <strong>wrong inference</strong> that acts confidently and logs nothing. The silence is a design failure layered on top of the original failure — and in many cases it is worse than the error itself, because it removes the user's ability to respond.</>,
+        <>Like cascading, silent failure is a property rather than a class. Any of the six error classes can be silent. A <strong>tool failure</strong> that produces no notification. A <strong>partial completion</strong> that reports success. A <strong>wrong inference</strong> that acts confidently and logs nothing. The silence is a design failure layered on top of the original failure, and in many cases it is worse than the error itself, because it removes the user's ability to respond.</>,
         "The design principle is absolute: errors must never be silent. The agent's obligation is not just to surface failures when they occur, but to surface them in a way that gives the user enough context to understand what happened, what the current state is, and what their options are. That obligation holds regardless of error class."
       ]
     }
