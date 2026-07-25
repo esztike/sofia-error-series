@@ -47,6 +47,12 @@ const cardVariants = {
   },
 }
 
+function handleCardGlow(e) {
+  const rect = e.currentTarget.getBoundingClientRect()
+  e.currentTarget.style.setProperty('--glow-x', `${((e.clientX - rect.left) / rect.width) * 100}%`)
+  e.currentTarget.style.setProperty('--glow-y', `${((e.clientY - rect.top) / rect.height) * 100}%`)
+}
+
 export default function Home() {
   return (
     <div className="home-page">
@@ -101,6 +107,7 @@ export default function Home() {
               className="card card--dark"
               variants={cardVariants}
               whileHover={{ boxShadow: '0px 4px 16px 4px rgba(24, 25, 26, 0.25)' }}
+              onMouseMove={handleCardGlow}
             >
               <div className="card-tag-row">
                 <span className="card-badge">
@@ -164,6 +171,9 @@ export default function Home() {
                 variants={cardVariants}
                 whileHover={{ boxShadow: '0px 4px 16px 4px rgba(24, 25, 26, 0.15)' }}
               >
+                <svg className="card-trace" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+                  <path d="M 100,0 L 100,100 L 0,100 L 0,0 L 100,0" pathLength="100" />
+                </svg>
                 <span className="card-episode-num card-episode-num--active">{card.id.replace('ep-', '')}</span>
                 <div className="card-tag-row card-tag-row--stacked">
                   <span className="eyebrow">Error class</span>

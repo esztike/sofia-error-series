@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu'
 import { ChevronDown, ArrowRight, Clock } from 'lucide-react'
@@ -8,6 +8,7 @@ import { foundationCards, episodeCards } from '../content/homepage.mdx'
 export default function Nav() {
   const [dropdownOpen, setDropdownOpen] = useState(false)
   const close = () => setDropdownOpen(false)
+  const isHome = useLocation().pathname === '/'
 
   return (
     <nav className="nav">
@@ -16,7 +17,13 @@ export default function Nav() {
       </Link>
 
       <div className="nav-actions">
-        <Link to="/" className="nav-hub-badge" onClick={close}>hub</Link>
+        <Link
+          to="/"
+          className={`nav-hub-badge${isHome ? ' nav-hub-badge--current' : ''}`}
+          onClick={close}
+        >
+          hub
+        </Link>
 
         <div className="nav-dropdown-wrapper">
           <DropdownMenu.Root open={dropdownOpen} onOpenChange={setDropdownOpen} modal={false}>

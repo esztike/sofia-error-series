@@ -126,21 +126,51 @@ em {
 }
 
 .nav-hub-badge {
+  position: relative;
+  z-index: 0;
   display: inline-flex;
   align-items: center;
   padding: 3px 10px;
-  background-color: var(--color-accent);
-  color: var(--color-light);
+  background-color: transparent;
+  border: 1px solid var(--color-accent);
+  color: var(--color-accent);
   font-family: var(--font-mono);
   font-size: var(--text-sm);
   font-weight: var(--weight-medium);
   letter-spacing: var(--tracking-wide);
   border-radius: 100px;
-  transition: opacity var(--transition-fast);
+  transition: color 0.3s ease;
+}
+
+.nav-hub-badge::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: -1px;
+  background: var(--color-accent);
+  border-radius: 100px;
+  clip-path: circle(0% at 0% 50%);
+  transition: clip-path 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .nav-hub-badge:hover {
-  opacity: 0.85;
+  color: var(--color-light);
+}
+
+.nav-hub-badge:hover::before {
+  clip-path: circle(150% at 0% 50%);
+}
+
+/* Homepage: badge shows the "current" state permanently — same filled
+   look the hover sweep reaches on other pages, just with no fill to run. */
+.nav-hub-badge--current {
+  border-color: transparent;
+  color: var(--color-light);
+}
+
+.nav-hub-badge--current::before {
+  clip-path: circle(150% at 0% 50%);
+  transition: none;
 }
 
 /* ── Layout ── */
