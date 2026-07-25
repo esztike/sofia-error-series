@@ -572,6 +572,10 @@ em {
   .page-header {
     padding: var(--space-8) 0 var(--space-6);
   }
+
+  .support-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 480px) {
@@ -589,9 +593,5 @@ em {
 
   .section-heading {
     font-size: var(--text-xl);
-  }
-
-  .support-grid {
-    grid-template-columns: 1fr;
   }
 }

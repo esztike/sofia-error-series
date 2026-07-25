@@ -73,9 +73,9 @@ export default function SofiaScreen5() {
         ))}
       </div>
 
-      {/* ── What Sofia learned ── */}
+      {/* ── What changes now ── */}
       <div className="sofia-learned-card">
-        <p className="sofia-learned-label"><span aria-hidden="true">✦</span> What Sofia learned</p>
+        <p className="sofia-learned-label"><span aria-hidden="true">✦</span> What changes now</p>
         <div className="sofia-learned-item">
           <span className="sofia-learned-ico" aria-hidden="true">✉</span>
           <p className="sofia-learned-text"><strong>The failure was a permission setting.</strong> Four people were waiting on the briefing doc.</p>
