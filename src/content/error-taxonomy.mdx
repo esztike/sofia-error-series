@@ -3,7 +3,7 @@ export const pageHeader = {
   title: "Error Taxonomy",
   subtitle: "For understanding how agentic AI fails.",
   intro:
-    "This taxonomy offers designers a map of how agentic AI fails, and what each failure demands from the interface. It organizes six ways that action can fail around what the user experiences, not what broke inside the system, so each class points to a clear design response.",
+    "This taxonomy offers designers a map of how agentic AI fails, and what each failure demands from the interface. It organizes six ways that action can fail around what the user experiences, so each class points to a clear design response.",
   tags: ["AGENTIC AI UX", "RESEARCH", "ERROR & RECOVERY"],
 };
 
@@ -12,21 +12,21 @@ export const cardHint = "Click any card to expand";
 export const introSection = {
   heading: "Why errors in agentic AI are different",
   paragraphs: [
-    "For most of the history of software design, errors were bounded. The system attempted one thing, it either succeeded or it didn't, and the user could see exactly where things stood. Error design was largely a communication problem: how do you tell someone what went wrong, and what they should do next?",
+    "For most of the history of software design, errors were contained. The system attempted one thing, it either succeeded or it didn't, and the user could see exactly where things stood. Error design was largely a communication problem: how do you tell someone what went wrong, and what they should do next?",
     "AI-assisted systems made errors more complex. A system could be working as intended while still not serving the user's actual needs. That gap generated a field response: frameworks for explainability (XAI), transparency, and calibrated trust. Google's People + AI Guidebook (2019), Microsoft's Guidelines for Human-AI Interaction (Amershi et al., 2019), and a growing body of XAI research gave designers tools for communicating uncertainty, setting expectations, and building appropriate reliance.",
     "Agentic AI systems change the problem again, more fundamentally than is widely understood.",
     "An agent does not return a result. It takes action. It pursues a goal across multiple steps, using tools, accessing external systems, and producing effects in the world that may be difficult or impossible to reverse. When a recommendation system fails, the user gets a bad suggestion. When an agentic system fails, people are already affected before the user knows anything went wrong.",
     "This shift, from AI as advisor to AI as actor, reframes the design problem entirely. Errors in agentic systems are not merely informational failures. They are consequential events with state, scope, and downstream effects. They affect not only the person who delegated the task but potentially many others who had no interaction with the system at all. And they unfold over time: a task that fails at step three has already changed the world in ways that step one and step two set in motion.",
     "Existing research on AI failure modes has grown rapidly since 2023. Empirical taxonomies have produced rigorous classifications of how agentic systems fail at a technical level. Industry frameworks from Microsoft, OWASP, and others have mapped failure modes from security and reliability perspectives.",
     "What remains largely unaddressed is the design question: when an agentic system fails, what does the user experience, and what does a designer need to build in response?",
-    "This taxonomy is an attempt to answer that question. It does not intend to replace the technical literature. It translates from it. The six error classes described here are organized not around which system component failed, but around the human experience of the failure: what went wrong from the user's perspective, what the consequences are, and what recovery requires. It is a designer's taxonomy, built for designers, grounded in research but oriented toward practice.",
+    "This taxonomy is an attempt to answer that question. The six error classes described here are organized not around which system component failed, but around the human experience of the failure: what went wrong from the user's perspective, what the consequences are, and what recovery requires. It is a designer's taxonomy, built for designers, grounded in research but oriented toward practice.",
   ],
 };
 
 export const howItWorksSection = {
   heading: "How this taxonomy works",
   paragraphs: [
-    "Most existing taxonomies of agentic AI failure are organized around causation: which component of the system broke, which module produced the wrong output, which integration failed. That framing is useful for engineers debugging systems, but less telling for designers building the experiences users encounter when something goes wrong.",
+    "Most existing taxonomies of agentic AI failure sort by cause: which component broke, which module produced the wrong output, which integration failed. That's useful for engineers debugging systems, less telling for designers building what users encounter when something goes wrong.",
     "This taxonomy is organized differently. Each error class is defined by the user's experience of the failure: what went wrong from the perspective of the person who delegated the task, what the consequences are in their world, and what recovery requires from a design standpoint. Two failures may belong to the same class regardless of their technical cause, and two failures with the same technical cause may belong to different classes if their consequences and recovery paths diverge.",
     "The distinction is deliberate. From an error recovery perspective, a designer does not need to know whether a failure originated in the language model's context window or in an API timeout. They need to know: did the task complete? Were external parties already affected? Was the failure foreseeable? Can it be undone? Those are the questions that determine what to build.",
   ],
@@ -126,11 +126,11 @@ export const taxonomyCards = [
     summary:
       "The agent misinterprets the goal and acts on that misinterpretation with confidence.",
     scenario:
-      '"Clear out my calendar for next week so I can focus." The user meant: decline non-essential meetings and block deep work time. Sofia cancelled everything, including a quarterly review with the executive team and a one-to-one the user had been waiting three weeks to have.',
+      '"Clear out my calendar for next week so I can focus." The user meant: decline non-essential meetings and block deep work time. Sofia canceled everything, including a quarterly review with the executive team and a one-to-one the user had been waiting three weeks to have.',
     userImpact:
       "The user discovers the error after recipients have already been notified. The damage is social and professional, not just logistical. Undoing it requires individual outreach to each affected party.",
     designOpportunity:
-      "Broad, ambiguous requests happen. That's exactly when the agent should surface its interpretation explicitly and invite correction. Not as a bureaucratic confirmation step, but as a natural part of taking on the task. \"I'm reading this as: decline all meetings under one hour and block mornings. Does that sound right?\" The cost of this friction is seconds. The cost of skipping it can be days.",
+      "Broad, ambiguous requests happen. That's exactly when the agent should surface its interpretation explicitly and invite correction, as a natural part of taking on the task. \"I'm reading this as: decline all meetings under one hour and block mornings. Does that sound right?\" The cost of this friction is seconds. The cost of skipping it can be days.",
     prevention:
       "Primary responsibility. Surface the agent's interpretation before any action is taken. Broad natural-language instructions always carry interpretive risk.",
     recovery:
@@ -144,7 +144,7 @@ export const taxonomyCards = [
     summary:
       "An external tool or integration breaks mid-task, and the agent has no path forward.",
     scenario:
-      "Sofia is queuing a series of follow-up emails after a client meeting. The OAuth token for the email integration expires silently mid-sequence. Three emails send. Two do not. In a poorly designed system, nothing surfaces.",
+      "Sofia is queuing a series of follow-up emails after a client meeting. The OAuth token for the email integration expires silently mid-sequence. Three emails sent. Two not. In a poorly designed system, nothing surfaces.",
     userImpact: (
       <>
         If the failure is silent, the user believes the task completed. They
@@ -261,7 +261,7 @@ export const taxonomyCards = [
     summary:
       "The agent acts on information that was accurate when the task started but has since changed.",
     scenario:
-      '"Book that flight for the London trip." The meeting the trip was built around was cancelled two hours ago. Sofia did not know. The non-refundable ticket is booked.',
+      '"Book that flight for the London trip." The meeting the trip was built around was canceled two hours ago. Sofia did not know. The non-refundable ticket is booked.',
     userImpact: (
       <>
         <strong>Stale context</strong> errors generate a specific frustration
@@ -306,7 +306,7 @@ export const taxonomyCards = [
       </>
     ),
     designOpportunity:
-      'The agent should surface its interpretive choices before acting, proportional to the stakes. Not an exhaustive disclosure of every inference, but a targeted statement of the assumptions most likely to be wrong and most costly if wrong. "I\'m basing this on your 2pm standup. Is that the meeting you meant?" This is not a confirmation dialog. It is the agent demonstrating that it knows the difference between what it was told and what it inferred.',
+      'The agent should surface its interpretive choices before acting, proportional to the stakes. A targeted statement of the assumptions most likely to be wrong and most costly if wrong. "I\'m basing this on your 2pm standup. Is that the meeting you meant?" This is not a confirmation dialog. It is the agent demonstrating that it knows the difference between what it was told and what it inferred.',
     prevention:
       "Primary responsibility. The agent needs a reliable sense of when to ask rather than guess. The calibration challenge: too many clarification requests and the agent becomes tedious; too few and it acts on silent assumptions with real consequences.",
     recovery: (
@@ -360,7 +360,7 @@ export const designProblemSection = {
     },
   },
   closingParagraph:
-    "Prevention and recovery aren't alternatives for any of them: they're responsibilities at different points in the same arc, one lowering how often things fail, the other determining what the failures that still happen actually cost, in effort, in trust, in impact on people who never interacted with the agent at all. Most classes need both running at once. A well-designed step log prevents silent failure while enabling faster recovery, and a pre-action confirmation prevents scope creep while building the evidence trail recovery may need.",
+    "As earlier said, prevention and recovery call for different interventions at different points. Seen across all six classes, that distinction sharpens into a pattern: every one of them needs both, prevention lowering how often failure happens, recovery determining what it costs when it still does, in effort, in trust, in impact on people who never interacted with the agent at all. A well-designed step log prevents silent failure while enabling faster recovery, and a pre-action confirmation prevents scope creep while building the evidence trail recovery may need.",
 };
 
 export const closingSection = {

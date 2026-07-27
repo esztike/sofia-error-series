@@ -106,7 +106,7 @@ export default function ErrorTaxonomy() {
 
           <div className="dp-visual">
             <div className="dp-visual__tier">
-              <BoneFracture className="dp-visual__icon" size={64} strokeWidth={1.25} aria-hidden="true" />
+              <BoneFracture className="dp-visual__icon" size={48} strokeWidth={1.25} aria-hidden="true" />
               <h3 className="dp-visual__label">{designProblemSection.visual.breaks.label}</h3>
               <motion.div
                 className="support-grid support-grid--quad"
@@ -140,7 +140,7 @@ export default function ErrorTaxonomy() {
             </div>
 
             <div className="dp-visual__tier">
-              <Bandage className="dp-visual__icon" size={64} strokeWidth={1.25} aria-hidden="true" />
+              <Bandage className="dp-visual__icon" size={48} strokeWidth={1.25} aria-hidden="true" />
               <h3 className="dp-visual__label">{designProblemSection.visual.works.label}</h3>
               <motion.div
                 className="dp-visual__works"
