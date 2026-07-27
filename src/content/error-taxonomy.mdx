@@ -326,78 +326,42 @@ export const designProblemSection = {
   heading: "What this taxonomy tells us about the design problem",
   paragraphs: [
     "Taken together, the six classes reveal something that individual error analysis tends to obscure. It's tempting to treat each one as a technical glitch that just needs a better error message. However, the pattern across all six says otherwise: what breaks, every time, is the relationship between a person and the agent acting on their behalf, and that calls for a design response, not just a communication fix.",
-    <>
-      Each class exposes a different point of fragility in that relationship.{" "}
-      <strong>Misread intent</strong> and <strong>wrong inference</strong> break
-      the shared understanding that delegation requires.{" "}
-      <strong>Tool failure</strong> and <strong>partial completion</strong>{" "}
-      break the reliability that trust is built on.{" "}
-      <strong>Scope exceeded</strong> breaks the boundaries that make delegation
-      feel safe. <strong>Stale context</strong> breaks the situational awareness
-      that consequential action demands.
-    </>,
-    "Prevention and recovery aren't alternatives for any of them: they're responsibilities at different points in the same arc, one lowering how often things fail, the other determining what the failures that still happen actually cost, in effort, in trust, in impact on people who never interacted with the agent at all. Most classes need both running at once. A well-designed step log prevents silent failure while enabling faster recovery, and a pre-action confirmation prevents scope creep while building the evidence trail recovery may need.",
-    <>
-      A final observation: four of the six classes have precedent in the
-      research literature, under various names and across different frameworks.
-      Two don't, in different ways. <strong>Partial completion</strong> is a
-      failure mode that the existing literature measures and observes but does
-      not yet name as a distinct design problem requiring a distinct design
-      response. <strong>Wrong inference</strong> is conceptually novel: it
-      overlaps several adjacent ideas in the hallucination and
-      underspecification literature without being cleanly captured by any of
-      them. Neither gap is a criticism of the research. It reflects the fact
-      that the field of agentic AI UX is genuinely new, and the design
-      frameworks available to practitioners were built for a different kind of
-      system. The work of building those frameworks is underway. This taxonomy
-      is one contribution to it.
-    </>,
+    "Look closely at the six classes. Each exposes a different point of fragility in that relationship.",
   ],
+  visual: {
+    breaks: {
+      label: "What breaks",
+      cards: [
+        {
+          title: "Shared understanding",
+          body: "Delegation depends on the agent's read of the goal matching the user's own.",
+          classes: ["01", "06"],
+        },
+        {
+          title: "Reliability",
+          body: "Trust depends on completed work landing the way it was promised.",
+          classes: ["02", "04"],
+        },
+        {
+          title: "Boundaries",
+          body: "Delegation feels safe when the agent stays inside what it was asked to do.",
+          classes: ["03"],
+        },
+        {
+          title: "Situational awareness",
+          body: "Consequential action depends on the world still looking like it did when the task began.",
+          classes: ["05"],
+        },
+      ],
+    },
+    works: {
+      label: "What works",
+      cards: ["Prevention", "Recovery"],
+    },
+  },
+  closingParagraph:
+    "Prevention and recovery aren't alternatives for any of them: they're responsibilities at different points in the same arc, one lowering how often things fail, the other determining what the failures that still happen actually cost, in effort, in trust, in impact on people who never interacted with the agent at all. Most classes need both running at once. A well-designed step log prevents silent failure while enabling faster recovery, and a pre-action confirmation prevents scope creep while building the evidence trail recovery may need.",
 };
-
-export const insightsLabel = "Key insights";
-
-export const insightCards = [
-  {
-    heading: "Design for the relationship",
-    body: "Agentic AI failure is not primarily a technical problem with a communication solution. It is a relationship problem with a design solution. The errors described in this taxonomy are not system glitches to be minimized and hidden. They are moments of breakdown in the relationship between a person and an agent acting on their behalf. Designing for them well requires understanding what that relationship depends on, and what each class of failure takes away from it.",
-  },
-  {
-    heading: "Each failure breaks something different",
-    body: (
-      <>
-        <strong>Misread intent</strong> and <strong>wrong inference</strong>{" "}
-        break the shared understanding that delegation requires.{" "}
-        <strong>Tool failure</strong> and <strong>partial completion</strong>{" "}
-        break the reliability that trust is built on.{" "}
-        <strong>Scope exceeded</strong> breaks the boundaries that make
-        delegation feel safe. <strong>Stale context</strong> breaks the
-        situational awareness that consequential action demands. Knowing which
-        dimension is broken tells you what the recovery experience needs to
-        restore.
-      </>
-    ),
-  },
-  {
-    heading: "Prevention and recovery are not alternatives",
-    body: "They are design responsibilities at different points in the same arc. Prevention reduces the frequency and severity of failures. Recovery determines what those failures cost: in user effort, in trust, in downstream impact on people who never interacted with the agent at all. Designing only for prevention produces systems that fail without grace. Designing only for recovery produces systems that fail too often. Most error classes require both, and for many they operate simultaneously: a step log prevents silent failure while enabling faster recovery; a pre-action confirmation prevents scope creep while establishing the evidence trail recovery may need.",
-  },
-  {
-    heading: "Named problems get designed for",
-    body: (
-      <>
-        Four of the six classes have precedent in the research literature, named
-        under different terminology across different frameworks.{" "}
-        <strong>Partial completion</strong> and <strong>wrong inference</strong>{" "}
-        don't, each for a different reason: one is observed but unnamed, the
-        other sits at an intersection no existing framework cleanly captures.
-        Neither gap is a criticism of the research. It reflects the fact that
-        existing frameworks were built for a different kind of system. Named
-        problems get designed for. This taxonomy is a starting point.
-      </>
-    ),
-  },
-];
 
 export const closingSection = {
   heading: "Conclusion",

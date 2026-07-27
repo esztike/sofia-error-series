@@ -9,18 +9,19 @@ const cardVariants = {
   },
 }
 
-export default function SupportCard({ icon: Icon, title, description, metric }) {
+export default function SupportCard({ icon: Icon, title, description, metric, children }) {
   return (
     <motion.div className="support-card" variants={cardVariants}>
       {Icon && <Icon className="support-card__icon" size={24} aria-hidden="true" />}
       <h4 className="support-card__title">{title}</h4>
-      <p className="support-card__desc">{description}</p>
+      {description && <p className="support-card__desc">{description}</p>}
       {metric && (
         <p className="support-card__metric">
           <span className="support-card__metric-label">Metric</span>
           {metric}
         </p>
       )}
+      {children}
     </motion.div>
   )
 }

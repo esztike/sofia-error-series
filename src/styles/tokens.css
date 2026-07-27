@@ -21,6 +21,9 @@
   --color-bg-light:         var(--color-light); /* page base color + hard-light photo blend only — not a general UI surface color */
   --color-bg-warm:          #F7F5F0; /* default light UI surface — cards, nav, overlays, section fills */
   --color-bg-inactive:      #FBFAF7; /* disabled/coming-soon card surfaces — lighter than --color-bg-warm */
+  --color-bg-raised:        #FCFCFA; /* cards stacked ON another filled surface — near-white, gives a value step
+                                        so nesting reads intentional. Close to --color-bg-inactive by value; kept
+                                        separate because the role differs (live content, not disabled). */
   --color-bg-dark:          var(--color-dark);
   --color-text-on-light:    var(--color-dark); /* primary ink color — full strength for body/titles, 0.85 opacity for labels/tags/eyebrows */
   --color-text-on-dark:     var(--color-bg-warm);

@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { BoneFracture, Bandage } from 'lucide-react'
 import '../styles/error-taxonomy.css'
 import Nav from '../components/Nav'
 import Footer from '../components/Footer'
@@ -13,8 +14,6 @@ import {
   failurePropertiesSection,
   taxonomyCards,
   designProblemSection,
-  insightsLabel,
-  insightCards,
   closingSection,
   researchFoundations,
 } from '../content/error-taxonomy.mdx'
@@ -104,24 +103,60 @@ export default function ErrorTaxonomy() {
         <div className="prose-column">
           <h2 className="section-heading">{designProblemSection.heading}</h2>
           {designProblemSection.paragraphs.map((p, i) => <p key={i}>{p}</p>)}
-        </div>
-      </section>
 
-      {/* ── Insight card strip ── */}
-      <section className="insight-strip">
-        <div className="insight-strip__inner">
-          <p className="hero-eyebrow">{insightsLabel}</p>
-          <motion.div
-            className="support-grid"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: '-60px' }}
-            variants={containerVariants}
-          >
-            {insightCards.map((card, i) => (
-              <SupportCard key={i} title={card.heading} description={card.body} />
-            ))}
-          </motion.div>
+          <div className="dp-visual">
+            <div className="dp-visual__tier">
+              <BoneFracture className="dp-visual__icon" size={64} strokeWidth={1.25} aria-hidden="true" />
+              <h3 className="dp-visual__label">{designProblemSection.visual.breaks.label}</h3>
+              <motion.div
+                className="support-grid support-grid--quad"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: '-60px' }}
+                variants={containerVariants}
+              >
+                {designProblemSection.visual.breaks.cards.map(card => (
+                  <SupportCard key={card.title} title={card.title} description={card.body}>
+                    <div className="dp-visual__pills">
+                      {card.classes.map(number => {
+                        const errorClass = taxonomyCards.find(c => c.number === number)
+                        return (
+                          <span
+                            key={number}
+                            className="taxonomy-card__badge"
+                            style={{
+                              backgroundColor: `var(--color-error-${number}-bg)`,
+                              color: `var(--color-error-${number}-text)`,
+                            }}
+                          >
+                            {number} · {errorClass.title}
+                          </span>
+                        )
+                      })}
+                    </div>
+                  </SupportCard>
+                ))}
+              </motion.div>
+            </div>
+
+            <div className="dp-visual__tier">
+              <Bandage className="dp-visual__icon" size={64} strokeWidth={1.25} aria-hidden="true" />
+              <h3 className="dp-visual__label">{designProblemSection.visual.works.label}</h3>
+              <motion.div
+                className="dp-visual__works"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: '-60px' }}
+                variants={containerVariants}
+              >
+                <SupportCard title={designProblemSection.visual.works.cards[0]} />
+                <span className="dp-visual__plus" aria-hidden="true">+</span>
+                <SupportCard title={designProblemSection.visual.works.cards[1]} />
+              </motion.div>
+            </div>
+          </div>
+
+          <p>{designProblemSection.closingParagraph}</p>
         </div>
       </section>
 

@@ -301,19 +301,120 @@
   border-color: rgba(243, 240, 233, 0.25);
 }
 
-/* ── Insight card strip ── */
+/* ── Design problem visual ── */
 
-.insight-strip {
-  padding: 0 0 var(--space-10);
+.dp-visual {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  padding: var(--space-8) var(--space-6);
+  background: var(--glass-bg-warm);
+  border-radius: var(--radius-lg);
 }
 
-.insight-strip__inner {
-  max-width: var(--content-width);
-  margin: 0 auto;
+.dp-visual__tier {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.insight-strip__inner > .hero-eyebrow {
-  padding: 0 var(--gutter);
+.dp-visual__icon {
+  color: var(--color-accent);
+  margin-bottom: var(--space-3);
+}
+
+.dp-visual__label {
+  font-family: var(--font-heading);
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-semibold);
+  line-height: var(--leading-snug);
+  text-align: center;
+  margin-bottom: var(--space-6);
+}
+
+.dp-visual__tier .support-grid--quad {
+  width: 100%;
+}
+
+/* Cards sit on the tier's filled ground, so they take the raised surface.
+   Scoped to .dp-visual so Design Principles' testing cards are unaffected. */
+.dp-visual .support-card {
+  background: var(--color-bg-raised);
+}
+
+/* In the 4-up layout the titles wrap to different line counts ("Reliability" vs.
+   "Situational awareness"), so body text starts at a different height in each card.
+   Reserve two lines of title so every description begins on the same baseline.
+   Only while 4-up — at 2 and 1 column the titles fit on one line and this would
+   just add dead space. Same approach as .testing-section .support-card__desc. */
+@media (min-width: 901px) {
+  .dp-visual .support-grid--quad .support-card__title {
+    min-height: 2.6em; /* 2 lines at --leading-snug (1.3) */
+  }
+}
+
+.dp-visual__pills {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: var(--space-2);
+  margin-top: auto;
+  padding-top: var(--space-2);
+}
+
+.dp-visual__works {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.dp-visual__works .support-card {
+  align-items: center;
+  justify-content: center;
+  min-width: 220px;
+}
+
+.dp-visual__plus {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-regular);
+  color: var(--color-inactive);
+}
+
+/* The pills are white-space: nowrap, and grid items default to min-width: auto — so a
+   card can't shrink below its widest pill (~164px) plus padding. min-width: 0 lets the
+   track win instead of the card overflowing it. */
+.dp-visual .support-card {
+  min-width: 0;
+}
+
+/* 2-up needs ~640px of viewport once container padding and the gutter are accounted for,
+   so drop to one column at 700 rather than riding 2-up down to 480. */
+@media (max-width: 700px) {
+  .dp-visual .support-grid--quad {
+    grid-template-columns: 1fr;
+  }
+
+  /* Prevention and Recovery stack, + sits between them. */
+  .dp-visual__works {
+    flex-direction: column;
+  }
+
+  .dp-visual__works .support-card {
+    width: 100%;
+    min-width: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .dp-visual {
+    padding: var(--space-6) var(--space-4);
+  }
 }
 
 /* ── Research foundations ── */

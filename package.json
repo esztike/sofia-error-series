@@ -16,7 +16,7 @@
     "@radix-ui/react-dropdown-menu": "^2.1.22",
     "@radix-ui/react-tabs": "^1.1.14",
     "framer-motion": "^12.39.0",
-    "lucide-react": "^1.16.0",
+    "lucide-react": "^1.27.0",
     "react": "^19.2.6",
     "react-dom": "^19.2.6",
     "react-router-dom": "^7.15.1"
