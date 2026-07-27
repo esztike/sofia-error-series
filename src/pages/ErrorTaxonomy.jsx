@@ -12,7 +12,7 @@ import {
   howItWorksSection,
   failurePropertiesSection,
   taxonomyCards,
-  conclusionSection,
+  designProblemSection,
   insightsLabel,
   insightCards,
   closingSection,
@@ -102,8 +102,8 @@ export default function ErrorTaxonomy() {
       {/* ── What this taxonomy tells us ── */}
       <section className="prose-section">
         <div className="prose-column">
-          <h2 className="section-heading">{conclusionSection.heading}</h2>
-          {conclusionSection.paragraphs.map((p, i) => <p key={i}>{p}</p>)}
+          <h2 className="section-heading">{designProblemSection.heading}</h2>
+          {designProblemSection.paragraphs.map((p, i) => <p key={i}>{p}</p>)}
         </div>
       </section>
 
