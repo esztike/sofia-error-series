@@ -371,9 +371,14 @@
 }
 
 .dp-visual__works .support-card {
+  flex: 1;
   align-items: center;
   justify-content: center;
   min-width: 220px;
+}
+
+.dp-visual__works .support-card__desc {
+  white-space: nowrap;
 }
 
 .dp-visual__plus {
@@ -408,6 +413,10 @@
   .dp-visual__works .support-card {
     width: 100%;
     min-width: 0;
+  }
+
+  .dp-visual__works .support-card__desc {
+    white-space: normal;
   }
 }
 

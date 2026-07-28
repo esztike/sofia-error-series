@@ -104,6 +104,8 @@ export default function ErrorTaxonomy() {
           <h2 className="section-heading">{designProblemSection.heading}</h2>
           {designProblemSection.paragraphs.map((p, i) => <p key={i}>{p}</p>)}
 
+          <p className="hero-eyebrow">Design for the relationship</p>
+
           <div className="dp-visual">
             <div className="dp-visual__tier">
               <BoneFracture className="dp-visual__icon" size={48} strokeWidth={1.25} aria-hidden="true" />
@@ -149,9 +151,15 @@ export default function ErrorTaxonomy() {
                 viewport={{ once: true, margin: '-60px' }}
                 variants={containerVariants}
               >
-                <SupportCard title={designProblemSection.visual.works.cards[0]} />
+                <SupportCard
+                  title={designProblemSection.visual.works.cards[0].title}
+                  description={designProblemSection.visual.works.cards[0].body}
+                />
                 <span className="dp-visual__plus" aria-hidden="true">+</span>
-                <SupportCard title={designProblemSection.visual.works.cards[1]} />
+                <SupportCard
+                  title={designProblemSection.visual.works.cards[1].title}
+                  description={designProblemSection.visual.works.cards[1].body}
+                />
               </motion.div>
             </div>
           </div>

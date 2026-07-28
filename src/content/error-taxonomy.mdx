@@ -54,12 +54,12 @@ export const howItWorksSection = {
     {
       heading: "How to use it",
       paragraphs: [
-        "Each error class is presented as a card with a consistent structure: a definition, a real scenario grounded in the Sofia case study, the user impact, a design opportunity, and a prevention vs recovery note. The design opportunity section is the most important for practice. It identifies the design responsibilities each error type generates: what the system owes the user, what information needs to be surfaced, and what recovery requires. It does not prescribe specific UI solutions. Those are developed in the design principles and prototype sections of this case study.",
+        "Each error class is presented as a card with a consistent structure: a definition, a real scenario grounded in this case study, the user impact, a design opportunity, and a prevention vs recovery note. The design opportunity section is the most important for practice. It identifies the design responsibilities each error type generates: what the system owes the user, what information needs to be surfaced, and what recovery requires. It does not prescribe specific UI solutions. Those are developed in the design principles and prototype sections of this case study.",
         "Each card also notes where design responsibility lies primarily in prevention or in recovery. These are not the same design problem. They require different interventions at different points in the task lifecycle. Most error classes require both, and knowing which is primary changes where you intervene.",
         <>
           This taxonomy is part of a larger argument and provides the
           foundation. The design principles that follow define the design
-          response. The Sofia scenario, a real-world walkthrough of a{" "}
+          response. The scenario in Episode 1, a real-world walkthrough of a{" "}
           <strong>partial completion</strong> failure and its recovery, is the
           demonstration. Together they make the case that designing for agentic
           AI error is not an edge case or an afterthought. On the contrary. It
@@ -74,12 +74,12 @@ export const howItWorksSection = {
 export const failurePropertiesSection = {
   heading: "Two failure properties: cascading and silent",
   intro:
-    "Two patterns appear throughout the research literature and are worth naming here as properties rather than error classes: cascading and silent failure. Neither describes what went wrong: cascading is about how far it reached, silent is about whether anyone knew.",
+    "Throughout the research literature, two patterns emerge that don't fit neatly as error classes, and are named here as properties instead. These are cascading and silent failures. Neither describes what went wrong: cascading is about how far it reached, silent is about whether anyone knew.",
   properties: [
     {
       heading: "Cascading failure",
       paragraphs: [
-        "A cascading failure occurs when one error triggers a chain of downstream actions that compound the original mistake at scale. The initiating failure may have been minor, but the cascade rarely is, since each step in the chain executed correctly given the state the previous step left behind. That correct execution is exactly what lets the error propagate.",
+        "A cascading failure starts small. One error happens, then a chain of downstream actions builds on top of it. The failure may have been minor at the start, but every step in the chain carries it forward, and it grows.",
         <>
           Any of the six error classes can cascade: a{" "}
           <strong>misread intent</strong> that triggers a bulk operation, a{" "}
@@ -88,7 +88,7 @@ export const failurePropertiesSection = {
           action that spreads across connected systems.
         </>,
         <>
-          That's why cascading failure isn't a card in this taxonomy. Placing it
+          That's why cascading failure isn't an error class of its own. Placing it
           alongside <strong>misread intent</strong> or{" "}
           <strong>tool failure</strong> would suggest it answers the same
           question, what went wrong, when it's really answering a different one,
@@ -96,7 +96,7 @@ export const failurePropertiesSection = {
           to build. The cascading property tells you how much blast radius that
           intervention needs to account for.
         </>,
-        'The research is clear about the severity. "From Spark to Fire" formally models how errors propagate through multi-agent systems as directed dependency graphs (arXiv:2603.04474, 2026), and separate analysis found unstructured multi-agent networks amplify errors up to 17.2 times compared to single-agent baselines. OWASP lists cascading failures among the highest-severity risk categories for agentic systems (ASI08, 2025). That\'s why the design response (staged execution, blast radius previews, undo campaigns) is the primary protection available for any operation with a high multiplier.',
+        'The research is clear about the severity. "From Spark to Fire" formally models how errors propagate through multi-agent systems as directed dependency graphs (arXiv:2603.04474, 2026), and separate analysis found unstructured multi-agent networks amplify errors up to 17.2 times compared to single-agent baselines. OWASP lists cascading failures among the highest-severity risk categories for agentic systems (ASI08, 2025). That\'s why the design response — staged execution, blast radius previews, and undo campaigns — is the primary protection available for any operation with a high multiplier.',
       ],
     },
     {
@@ -104,7 +104,8 @@ export const failurePropertiesSection = {
       paragraphs: [
         "A silent failure occurs when an error happens and the user is never told. The task stalls, halts, or produces a wrong result, and nothing surfaces. The user's mental model of what the agent did diverges from reality, sometimes for hours or days, until an external signal (a colleague asking about an email that never arrived, a new hire wondering about a missing brief) forces the gap into view.",
         <>
-          Like cascading, silent failure is a property rather than a class. Any
+          Similar to cascading, silent failure is a property rather than an
+          error class of its own. Any
           of the six error classes can be silent. A{" "}
           <strong>tool failure</strong> that produces no notification. A{" "}
           <strong>partial completion</strong> that reports success. A{" "}
@@ -244,7 +245,7 @@ export const taxonomyCards = [
         recovery path for the failures that remain. No major UX framework,
         including Google's PAIR Guidebook, addresses{" "}
         <strong>partial completion</strong> as a distinct design problem. This
-        class is the subject of the Sofia Episode 01 case study.
+        class is the subject of the Episode 1 case study.
       </>
     ),
     prevention:
@@ -306,7 +307,7 @@ export const taxonomyCards = [
       </>
     ),
     designOpportunity:
-      'The agent should surface its interpretive choices before acting, proportional to the stakes. A targeted statement of the assumptions most likely to be wrong and most costly if wrong. "I\'m basing this on your 2pm standup. Is that the meeting you meant?" This is not a confirmation dialog. It is the agent demonstrating that it knows the difference between what it was told and what it inferred.',
+      'Surfacing its interpretive choices before acting, proportional to the stakes, lets the agent show it knows the difference between what it was told and what it inferred. A targeted statement of the assumptions most likely to be wrong and most costly if wrong, for example: "I\'m basing this on your 2pm standup. Is that the meeting you meant?" This is not a confirmation dialog.',
     prevention:
       "Primary responsibility. The agent needs a reliable sense of when to ask rather than guess. The calibration challenge: too many clarification requests and the agent becomes tedious; too few and it acts on silent assumptions with real consequences.",
     recovery: (
@@ -356,7 +357,10 @@ export const designProblemSection = {
     },
     works: {
       label: "What works",
-      cards: ["Prevention", "Recovery"],
+      cards: [
+        { title: "Prevention", body: "Lowers how often failure happens." },
+        { title: "Recovery", body: "Determines what a failure costs." },
+      ],
     },
   },
   closingParagraph:
@@ -366,30 +370,29 @@ export const designProblemSection = {
 export const closingSection = {
   heading: "Conclusion",
   paragraphs: [
-    "Taxonomies are not ends in themselves. A classification of failure modes is only useful if it changes what gets designed.",
     <>
-      The value of naming these six classes is not academic. It is practical.
-      When a designer can identify that a failure is a{" "}
-      <strong>partial completion</strong> rather than a{" "}
-      <strong>tool failure</strong>, they know that the recovery experience
-      needs state visibility and resume logic, not just a retry button. When
-      they recognize a <strong>wrong inference</strong>, they know the
-      intervention point is before the action, not after it. Named problems get
-      designed for. Unnamed ones get handled with generic error messages and a
-      hope that users figure it out.
+      A taxonomy is only as useful as what it changes. The value of naming
+      these six classes is practical, not academic. When a designer can
+      identify that a failure is a <strong>partial completion</strong>{" "}
+      rather than a <strong>tool failure</strong>, they know the recovery
+      experience needs state visibility and resume logic, not just a retry
+      button. When they recognize a <strong>wrong inference</strong>, they
+      know the intervention point is before the action, not after it. Named
+      problems get designed for. Unnamed ones get handled with generic error
+      messages and a hope that users figure it out.
     </>,
     "The six classes also establish something that matters beyond individual design decisions: a shared vocabulary. Teams building agentic systems need a way to talk about failure that is specific enough to drive design choices and accessible enough to cross the boundary between engineering, product, and UX. That vocabulary does not yet exist in any standardized form. This taxonomy is a starting point.",
     <>
       What follows in this case study builds directly on these foundations. The
-      eight design principles translate the taxonomy into design positions: for
-      each class, a principle that names what the system owes the user when that
-      failure occurs. The Sofia scenario then demonstrates those principles in
+      eight design principles translate the taxonomy into design positions, one
+      principle per class, naming what the system owes the user when that
+      failure occurs. The scenario in Episode 1 then demonstrates those principles in
       practice, through a real walkthrough of a{" "}
-      <strong>partial completion</strong> failure and its recovery. And the
-      prototype shows what the designed response looks like as an actual
-      interface.
+      <strong>partial completion</strong> failure and its recovery. In
+      addition, the prototype shows what the designed response looks like as
+      an actual interface.
     </>,
-    "The argument across all three is the same one the taxonomy opens: errors in agentic AI are not edge cases to be minimized and hidden. They are a core part of the experience. Designing for them well is what separates a system users trust from one they eventually abandon.",
+    "The argument across all three is the same one the taxonomy opened with. Errors in agentic AI are not edge cases to be minimized and hidden. They are a core part of the experience. Designing for them well is what determines whether users trust the system, or eventually abandon it.",
   ],
 };
 
