@@ -23,7 +23,7 @@ export const principles = [
     tagline:
       "Every failure needs to be discoverable. Only the ones that need you say so.",
     antiPattern:
-      "Sofia tries to send an email, the OAuth token expires, and nothing happens. The user assumes the task is done. Days later they discover it wasn't. Alternatively: Sofia surfaces a notification for every minor retry, every brief API timeout, every background sync delay. Within a week the user ignores all of them, including the one about the meeting that never got booked.",
+      "Sofia tries to send an email, the OAuth token expires, and nothing happens. The user assumes the task is done. Days later they discover it was not. Alternatively: Sofia surfaces a notification for every minor retry, every brief API timeout, every background sync delay. Within a week the user ignores all of them, including the one about the meeting that never got booked.",
     principleInAction:
       "Every failure gets logged and classified, always. What changes is whether it interrupts. Sofia uses a four-level severity framework to decide: silent resolution for transient issues that self-correct; passive notification for minor failures the user should know about when they check; active notification for failures requiring user awareness or decision; immediate interrupt for failures with real-world consequences already in motion. The log is always accessible. The interrupt is rationed.",
     screenChips: [
@@ -52,7 +52,7 @@ export const principles = [
     tagline:
       "Sofia must show its reasoning before it acts. But showing is not enough. The design has to make engagement unavoidable.",
     antiPattern:
-      'Sofia drafts a follow-up email and shows a small banner: "Based on your 2pm meeting with Lena." The user glances at it and approves. They meant a different meeting, though. The banner was accurate about what Sofia assumed. It still didn\'t stop the mistake.',
+      'Sofia drafts a follow-up email and shows a small banner: "Based on your 2pm meeting with Lena." The user glances at it and approves. They meant a different meeting, though. The banner was accurate about what Sofia assumed. It still did not stop the mistake.',
     principleInAction:
       'Sofia surfaces its interpretive choices before acting, but selectively. When it does surface an assumption, the design forces engagement with the specific content. For example, a targeted question that requires reading: "I\'m treating this as a follow-up to your 2pm with Lena Chen on Thursday. Is that the meeting you meant?" The user has to process the detail to answer. The presentation varies enough across interactions to resist habituation.',
     screenChips: [
@@ -90,7 +90,7 @@ export const principles = [
       { number: "04", title: "Partial completion" },
     ],
     researchNote:
-      "The instinct to resume is reliable: users consistently want to continue from where things stopped. The risk is that they often lack the cognitive resources to verify whether the partial state is actually safe to resume from. Resume is the right default only when three conditions hold: the state is auditable, the remaining steps are safe to re-run, and what's already been done is reversible or acceptable to leave as-is. The step log handles the first directly, making the state auditable before the user commits to a path. The other two recovery options on this card exist for when resume alone isn't enough: restart with pre-fill when steps aren't safe to simply continue, and rollback when completed effects can't be left standing.",
+      "The instinct to resume is reliable: users consistently want to continue from where things stopped. The risk is that they often lack the cognitive resources to verify whether the partial state is actually safe to resume from. Resume is the right default only when three conditions hold: the state is auditable, the remaining steps are safe to re-run, and what has already been done is reversible or acceptable to leave as-is. The step log handles the first directly, making the state auditable before the user commits to a path. The other two recovery options on this card exist for when resume alone is not enough: restart with pre-fill when steps are not safe to simply continue, and rollback when completed effects cannot be left standing.",
   },
   {
     number: "P4",
@@ -253,11 +253,11 @@ export const testingSection = {
 export const furtherConsiderationsSection = {
   heading: "Further considerations",
   intro:
-    "Some ideas don't fit inside a single principle. They cut across all eight, and they're worth naming.",
+    "Some ideas do not fit inside a single principle. They cut across all eight, and they are worth naming.",
   subsections: [
     {
       heading: "Trust is a curve, not a threshold",
-      body: "Parasuraman's automation levels established that the appropriate degree of human oversight changes as reliability is demonstrated. Sofia starts conservative: more visible, more checkpoints, more friction. That's not a permanent state. It's the beginning of a relationship. As Sofia earns autonomy by using it well, the friction can ease. The design has to allow for that, and the system has to demonstrate it. Users who are told \"Sofia will learn your preferences\" and then experience a failure are worse off than users who were told nothing. The promise is the trap.",
+      body: "Parasuraman's automation levels established that the appropriate degree of human oversight changes as reliability is demonstrated. Sofia starts conservative: more visible, more checkpoints, more friction. That is not a permanent state. It is the beginning of a relationship. As Sofia earns autonomy by using it well, the friction can ease. The design has to allow for that, and the system has to demonstrate it. Users who are told \"Sofia will learn your preferences\" and then experience a failure are worse off than users who were told nothing. The promise is the trap.",
     },
     {
       heading: "Incentive alignment",

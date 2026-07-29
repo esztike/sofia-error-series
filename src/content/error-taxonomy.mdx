@@ -12,7 +12,7 @@ export const cardHint = "Click any card to expand";
 export const introSection = {
   heading: "Why errors in agentic AI are different",
   paragraphs: [
-    "For most of the history of software design, errors were contained. The system attempted one thing, it either succeeded or it didn't, and the user could see exactly where things stood. Error design was largely a communication problem: how do you tell someone what went wrong, and what they should do next?",
+    "For most of the history of software design, errors were contained. The system attempted one thing, it either succeeded or it did not, and the user could see exactly where things stood. Error design was largely a communication problem: how do you tell someone what went wrong, and what they should do next?",
     "AI-assisted systems made errors more complex. A system could be working as intended while still not serving the user's actual needs. That gap generated a field response: frameworks for explainability (XAI), transparency, and calibrated trust. Google's People + AI Guidebook (2019), Microsoft's Guidelines for Human-AI Interaction (Amershi et al., 2019), and a growing body of XAI research gave designers tools for communicating uncertainty, setting expectations, and building appropriate reliance.",
     "Agentic AI systems change the problem again, more fundamentally than is widely understood.",
     "An agent does not return a result. It takes action. It pursues a goal across multiple steps, using tools, accessing external systems, and producing effects in the world that may be difficult or impossible to reverse. When a recommendation system fails, the user gets a bad suggestion. When an agentic system fails, people are already affected before the user knows anything went wrong.",
@@ -74,7 +74,7 @@ export const howItWorksSection = {
 export const failurePropertiesSection = {
   heading: "Two failure properties: cascading and silent",
   intro:
-    "Throughout the research literature, two patterns emerge that don't fit neatly as error classes, and are named here as properties instead. These are cascading and silent failures. Neither describes what went wrong: cascading is about how far it reached, silent is about whether anyone knew.",
+    "Throughout the research literature, two patterns emerge that do not fit neatly as error classes, and are named here as properties instead. These are cascading and silent failures. Neither describes what went wrong: cascading is about how far it reached, silent is about whether anyone knew.",
   properties: [
     {
       heading: "Cascading failure",
@@ -88,15 +88,15 @@ export const failurePropertiesSection = {
           action that spreads across connected systems.
         </>,
         <>
-          That's why cascading failure isn't an error class of its own. Placing it
+          That is why cascading failure is not an error class of its own. Placing it
           alongside <strong>misread intent</strong> or{" "}
           <strong>tool failure</strong> would suggest it answers the same
-          question, what went wrong, when it's really answering a different one,
+          question, what went wrong, when it is really answering a different one,
           namely how far did it go. The root class tells you what intervention
           to build. The cascading property tells you how much blast radius that
           intervention needs to account for.
         </>,
-        'The research is clear about the severity. "From Spark to Fire" formally models how errors propagate through multi-agent systems as directed dependency graphs (arXiv:2603.04474, 2026), and separate analysis found unstructured multi-agent networks amplify errors up to 17.2 times compared to single-agent baselines. OWASP lists cascading failures among the highest-severity risk categories for agentic systems (ASI08, 2025). That\'s why the design response — staged execution, blast radius previews, and undo campaigns — is the primary protection available for any operation with a high multiplier.',
+        'The research is clear about the severity. "From Spark to Fire" formally models how errors propagate through multi-agent systems as directed dependency graphs (arXiv:2603.04474, 2026), and separate analysis found unstructured multi-agent networks amplify errors up to 17.2 times compared to single-agent baselines. OWASP lists cascading failures among the highest-severity risk categories for agentic systems (ASI08, 2025). That is why the design response — staged execution, blast radius previews, and undo campaigns — is the primary protection available for any operation with a high multiplier.',
       ],
     },
     {
@@ -131,7 +131,7 @@ export const taxonomyCards = [
     userImpact:
       "The user discovers the error after recipients have already been notified. The damage is social and professional, not just logistical. Undoing it requires individual outreach to each affected party.",
     designOpportunity:
-      "Broad, ambiguous requests happen. That's exactly when the agent should surface its interpretation explicitly and invite correction, as a natural part of taking on the task. \"I'm reading this as: decline all meetings under one hour and block mornings. Does that sound right?\" The cost of this friction is seconds. The cost of skipping it can be days.",
+      "Broad, ambiguous requests happen. That is exactly when the agent should surface its interpretation explicitly and invite correction, as a natural part of taking on the task. \"I'm reading this as: decline all meetings under one hour and block mornings. Does that sound right?\" The cost of this friction is seconds. The cost of skipping it can be days.",
     prevention:
       "Primary responsibility. Surface the agent's interpretation before any action is taken. Broad natural-language instructions always carry interpretive risk.",
     recovery:
@@ -241,7 +241,7 @@ export const taxonomyCards = [
         frameworks. Even top-performing agents show it: a CMU benchmark found
         the best-performing model tested fully completed only 24 percent of
         multi-step tasks. That number will rise as models improve, but it
-        doesn't close the design gap: a model that fails rarely still needs a
+        does not close the design gap: a model that fails rarely still needs a
         recovery path for the failures that remain. No major UX framework,
         including Google's PAIR Guidebook, addresses{" "}
         <strong>partial completion</strong> as a distinct design problem. This
@@ -326,7 +326,7 @@ export const taxonomyCards = [
 export const designProblemSection = {
   heading: "What this taxonomy tells us about the design problem",
   paragraphs: [
-    "Taken together, the six classes reveal something that individual error analysis tends to obscure. It's tempting to treat each one as a technical glitch that just needs a better error message. However, the pattern across all six says otherwise: what breaks, every time, is the relationship between a person and the agent acting on their behalf, and that calls for a design response, not just a communication fix.",
+    "Taken together, the six classes reveal something that individual error analysis tends to obscure. It is tempting to treat each one as a technical glitch that just needs a better error message. However, the pattern across all six says otherwise: what breaks, every time, is the relationship between a person and the agent acting on their behalf, and that calls for a design response, not just a communication fix.",
     "Look closely at the six classes. Each exposes a different point of fragility in that relationship.",
   ],
   visual: {
