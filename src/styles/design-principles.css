@@ -185,67 +185,6 @@
   min-height: 4.5em;
 }
 
-
-/* ── Trust cycle (reciprocity diagram, inside the closing section) ── */
-
-.trust-cycle {
-  border: 1px solid var(--glass-border);
-  border-radius: var(--radius-md);
-  overflow: hidden;
-}
-
-.trust-cycle__labels {
-  display: grid;
-  grid-template-columns: 1fr 56px 1fr;
-  gap: var(--space-4);
-  padding: var(--space-5) var(--space-5) 0;
-}
-
-.trust-cycle__label {
-  font-family: var(--font-mono);
-  font-size: var(--text-xs);
-  letter-spacing: var(--tracking-wide);
-  text-transform: uppercase;
-  color: var(--color-text-on-light);
-  opacity: 0.85;
-}
-
-
-.trust-cycle__rows {
-  margin-top: var(--space-3);
-}
-
-.trust-row {
-  display: grid;
-  grid-template-columns: 1fr 56px 1fr;
-  align-items: center;
-  gap: var(--space-4);
-  padding: var(--space-4) var(--space-5);
-  border-top: 1px solid var(--glass-border);
-}
-
-.trust-row:first-child {
-  border-top: none;
-}
-
-.trust-row__user,
-.trust-row__commitment {
-  font-size: var(--text-base);
-  line-height: var(--leading-normal);
-  color: var(--color-text-on-light);
-}
-
-.trust-row__commitment {
-  font-weight: var(--weight-medium);
-}
-
-.trust-row__arrow {
-  text-align: center;
-  font-family: var(--font-mono);
-  font-size: var(--text-lg);
-  color: var(--color-accent);
-}
-
 /* ── Responsive ── */
 
 @media (max-width: 900px) {
@@ -261,21 +200,6 @@
 
   .principle-content__inner {
     padding: 0 var(--space-5) var(--space-5);
-  }
-
-  .trust-cycle__labels {
-    display: none;
-  }
-
-  .trust-row {
-    grid-template-columns: 1fr;
-    gap: var(--space-2);
-    padding: var(--space-4);
-  }
-
-  .trust-row__arrow {
-    transform: rotate(90deg);
-    text-align: left;
   }
 }
 

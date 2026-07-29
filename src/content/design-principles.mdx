@@ -196,9 +196,9 @@ export const principles = [
       'Trust repair requires two things together. First, an explanation of what happened, why, and what it meant for the people affected. A human account. Second, expressed regret for the impact, not just for the error. The distinction matters: "I encountered a permissions error" is an explanation. "I sent incomplete invites to four people who needed to prepare" is an acknowledgment of what that cost. Sofia offers both. Then it demonstrates, through subsequent behavior, that it understood. It does not promise to do better. It does better, and the user sees it.',
     screenChips: [
       "Impact acknowledgment",
-      "Human-readable error account",
+      "Human-readable account",
       "Expressed regret",
-      "Subsequent behavior signal",
+      "Demonstrated behavior",
     ],
     addressesErrors: [
       { number: "01", title: "Misread intent" },
@@ -215,14 +215,15 @@ export const principles = [
 
 export const testingSection = {
   heading: "Possible ways to test them",
-  intro: "The principles above are grounded in research.",
+  intro:
+    "The principles above are grounded in research, but research about how people behave in general isn't the same as evidence that a specific interface works for your specific users. These four methods are from standard UX research methodology. They're looking for trust and delegation that match what Sofia can actually do, which sometimes means less of both.",
   methodsLabel: "Testing methods",
   cards: [
     {
       icon: "drama",
       title: "Error scenario walkthroughs",
       description:
-        "Give users a specific failure scenario and ask them to narrate what they'd do next. Look for hesitation and confusion.",
+        "Give users a specific failure scenario and ask them to choose a recovery path while narrating their thinking. Hesitation and misreadings show where the design stalls them.",
       metric: "Time-to-recovery decision",
     },
     {
@@ -236,15 +237,15 @@ export const testingSection = {
       icon: "bar-chart-3",
       title: "Trust calibration survey",
       description:
-        "Measure trust before and after a failure scenario. Good recovery design should restore trust to baseline or above.",
-      metric: "Trust delta pre/post error",
+        "Measure trust before a failure scenario, then after. Ask users how often they'd expect Sofia to complete a similar task successfully. Compare that estimate to Sofia's actual reliability.",
+      metric: "Gap between expected and actual reliability",
     },
     {
       icon: "repeat",
       title: "Delegation willingness",
       description:
-        "After experiencing an error and recovery, would the user delegate a similar task again? Measures real behavioral trust.",
-      metric: "Re-delegation rate",
+        "After experiencing an error and recovery, ask whether the user would delegate a similar task again, and what they'd change about how they'd frame it.",
+      metric: "Stated willingness to re-delegate",
     },
   ],
 };
@@ -256,11 +257,11 @@ export const furtherConsiderationsSection = {
   subsections: [
     {
       heading: "Trust is a curve, not a threshold",
-      body: "Parasuraman's automation levels established that the appropriate degree of human oversight changes as reliability is demonstrated. Sofia starts conservative: more visible, more checkpoints, more friction. That's not a permanent state. It's the beginning of a relationship. As Sofia earns autonomy by using it well, the friction can ease. The design has to allow for that. And the system has to demonstrate it, never announce it. Users who are told \"Sofia will learn your preferences\" and then experience a failure are worse off than users who were told nothing. The promise is the trap.",
+      body: "Parasuraman's automation levels established that the appropriate degree of human oversight changes as reliability is demonstrated. Sofia starts conservative: more visible, more checkpoints, more friction. That's not a permanent state. It's the beginning of a relationship. As Sofia earns autonomy by using it well, the friction can ease. The design has to allow for that, and the system has to demonstrate it. Users who are told \"Sofia will learn your preferences\" and then experience a failure are worse off than users who were told nothing. The promise is the trap.",
     },
     {
       heading: "Incentive alignment",
-      body: "Trust in a delegating system depends on whose interests it serves. A system whose business model depends on your attention or your data cannot fully earn delegation. The incentives are misaligned before the first interaction begins. Every principle in this series assumes that Sofia exists to serve the person using it. Where that assumption breaks, the principles break with it. That is not a design problem with a design solution. It is a reminder that the most honest thing a designer can do is name the conditions their work depends on.",
+      body: "Trust in a delegating system depends on whose interests it serves. A system whose business model depends on your attention or your data cannot fully earn delegation. The incentives are misaligned before the first interaction begins. Every principle in this series assumes that Sofia exists to serve the person using it. Where that assumption breaks, the principles break with it. Design has no answer to that. What a designer can do is name the conditions their work depends on.",
     },
   ],
 };
@@ -269,34 +270,9 @@ export const closingSection = {
   heading: "Where the principles point",
   paragraphs: [
     "Sofia is not designed to be perfect. It is designed to be transparent about when it is not.",
-    "Every failure surfaces: visibly, legibly, at the right level of urgency. Partial work is preserved and shown. Irreversible actions are slowed down. Recovery is a real choice. The people affected by a failure are named. And when something goes wrong, Sofia says so, with an account of what happened and an acknowledgment of what it cost.",
+    "Assumptions are surfaced before they are acted on. Stale context is caught, and what changed is shown. Irreversible actions are slowed down.",
+    "Every failure surfaces: visibly, legibly, at the right level of urgency. Partial work is preserved and shown. Recovery is a real choice. The people affected by a failure are named. And when something goes wrong, Sofia says so, with an account of what happened and an acknowledgment of what it cost.",
   ],
-  commitments: {
-    labelUser: "User provides",
-    labelCommitment: "Sofia's commitment",
-    rows: [
-      {
-        user: "A goal or task to complete",
-        commitment: "An account of what was done, what wasn't, and why",
-      },
-      {
-        user: "Delegation and trust",
-        commitment: "Transparency about the assumptions made along the way",
-      },
-      {
-        user: "Tolerance for imperfection",
-        commitment: "Every failure surfaced, not hidden",
-      },
-      {
-        user: "Permission to act on their behalf",
-        commitment: "A gate before every irreversible action",
-      },
-      {
-        user: "Patience during recovery",
-        commitment: "A real choice, not just a retry button",
-      },
-    ],
-  },
   closingParagraph:
-    "These are design commitments. Not guarantees. The difference matters. A guarantee claims a future no system can promise. A commitment describes what the system is built to do, and what it owes the people it acts for when it falls short.",
+    "These are design commitments, not guarantees. A guarantee claims a future no system can promise. A commitment describes what the system is built to do, and what it owes the people it acts for when it falls short.",
 };

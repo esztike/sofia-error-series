@@ -119,24 +119,6 @@ export default function DesignPrinciples() {
         <div className="prose-column">
           <h2 className="section-heading">{closingSection.heading}</h2>
           {closingSection.paragraphs.map((p, i) => <p key={i}>{p}</p>)}
-
-          <div className="trust-cycle">
-            <div className="trust-cycle__labels">
-              <span className="trust-cycle__label">{closingSection.commitments.labelUser}</span>
-              <span />
-              <span className="trust-cycle__label">{closingSection.commitments.labelCommitment}</span>
-            </div>
-            <div className="trust-cycle__rows">
-              {closingSection.commitments.rows.map(row => (
-                <div className="trust-row" key={row.user}>
-                  <div className="trust-row__user">{row.user}</div>
-                  <div className="trust-row__arrow">⇄</div>
-                  <div className="trust-row__commitment">{row.commitment}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-
           <p>{closingSection.closingParagraph}</p>
         </div>
       </section>
