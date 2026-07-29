@@ -6,31 +6,6 @@
 
 @import "./globals.css";
 
-/* ── Page header bottom border (matches homepage hero) ── */
-
-.inner-page .page-header {
-  padding-bottom: 0;
-}
-
-.page-header .prose-column {
-  position: relative;
-  padding-bottom: var(--space-8);
-}
-
-.page-header .prose-column::after {
-  content: "";
-  position: absolute;
-  left: var(--gutter);
-  right: var(--gutter);
-  bottom: 0;
-  height: 1px;
-  background: var(--color-inactive);
-}
-
-.page-header + .prose-section {
-  border-top: none;
-}
-
 /* ── Taxonomy section (card grid) ── */
 
 .taxonomy-section {
@@ -233,34 +208,6 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-5);
-}
-
-.overlay-section {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-2);
-}
-
-.overlay-section--research {
-  background: rgba(247, 245, 240, 0.06);
-  border-radius: var(--radius-md);
-  padding: var(--space-4) var(--space-5);
-}
-
-.overlay-label {
-  font-family: var(--font-mono);
-  font-size: var(--text-xs);
-  font-weight: var(--weight-medium);
-  letter-spacing: var(--tracking-wider);
-  text-transform: uppercase;
-  color: var(--color-text-on-dark);
-  opacity: 0.85;
-}
-
-.overlay-text {
-  font-size: var(--text-base);
-  line-height: var(--leading-loose);
-  color: var(--color-text-on-dark);
 }
 
 .overlay-prevention-recovery {
