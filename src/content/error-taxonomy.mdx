@@ -136,7 +136,7 @@ export const taxonomyCards = [
       "Primary responsibility. Surface the agent's interpretation before any action is taken. Broad natural-language instructions always carry interpretive risk.",
     recovery:
       "Harder, because actions have already affected others. Recovery must address the social dimension: not just undoing calendar events, but supporting communication to affected parties.",
-    relatedPrinciples: ["P2", "P8"],
+    relatedPrinciples: ["P1", "P2", "P6", "P8"],
     isCaseStudy: false,
   },
   {
@@ -171,7 +171,7 @@ export const taxonomyCards = [
       "Limited. External integrations will fail. The design responsibility is to anticipate failure points and build detection into the execution flow.",
     recovery:
       "Primary responsibility. State visibility, partial work preservation, and clear differentiation between retryable and non-retryable failures.",
-    relatedPrinciples: ["P1", "P5", "P8"],
+    relatedPrinciples: ["P1", "P3", "P5", "P8"],
     isCaseStudy: false,
   },
   {
@@ -201,7 +201,7 @@ export const taxonomyCards = [
         management.
       </>
     ),
-    relatedPrinciples: ["P4", "P6", "P8"],
+    relatedPrinciples: ["P1", "P4", "P6", "P8"],
     isCaseStudy: false,
   },
   {
@@ -288,7 +288,7 @@ export const taxonomyCards = [
       "Primary responsibility. Pre-action context verification, staleness warnings, and user-configurable freshness thresholds for high-stakes action types. These failures are foreseeable and therefore preventable, though the specific pattern this card focuses on (context changing mid-task) is newer territory than other staleness research, which mostly concerns outdated training data or stale retrieval indexes.",
     recovery:
       "Constrained by reversibility. Recovery design should be proportional to how irreversible the action was. The higher the stakes, the more friction prevention should have imposed.",
-    relatedPrinciples: ["P4", "P7", "P8"],
+    relatedPrinciples: ["P1", "P4", "P7", "P8"],
     isCaseStudy: false,
   },
   {
@@ -318,7 +318,7 @@ export const taxonomyCards = [
         effects.
       </>
     ),
-    relatedPrinciples: ["P2", "P8"],
+    relatedPrinciples: ["P1", "P2", "P8"],
     isCaseStudy: false,
   },
 ];

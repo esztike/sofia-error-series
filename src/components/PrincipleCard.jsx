@@ -39,7 +39,7 @@ export default function PrincipleCard({ principle }) {
             </div>
 
             <div className="overlay-section">
-              <h4 className="overlay-label">Screen chips</h4>
+              <h4 className="overlay-label">Design requirements</h4>
               <div className="dp-screen-chips">
                 {principle.screenChips.map(chip => (
                   <span key={chip} className="dp-screen-chip">{chip}</span>
@@ -48,7 +48,7 @@ export default function PrincipleCard({ principle }) {
             </div>
 
             <div className="overlay-section">
-              <h4 className="overlay-label">Addresses errors</h4>
+              <h4 className="overlay-label">Errors addressed</h4>
               <div className="dp-error-refs">
                 {principle.addressesErrors.map(err => (
                   <Link
