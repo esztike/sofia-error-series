@@ -4,7 +4,7 @@ import '../styles/sofia-screens.css'
 const SNAPSHOT_STEPS = [
   { status: 'ok',      name: 'Create calendar event',    detail: 'Done',                    detailVariant: 'ok'   },
   { status: 'ok',      name: 'Send invitation',          detail: 'Done',                    detailVariant: 'ok'   },
-  { status: 'fail',    name: 'Attach briefing document', detail: 'Drive permission error',  detailVariant: 'fail' },
+  { status: 'fail',    name: 'Attach onboarding document', detail: 'Drive permission error',  detailVariant: 'fail' },
   { status: 'pending', name: 'Send confirmation summary', detail: 'Not started',             detailVariant: null   },
 ]
 
@@ -26,7 +26,7 @@ export default function SofiaScreen2() {
       <div className="sofia-error-sheet">
         <div className="sofia-error-badge">Task paused</div>
         <p className="sofia-error-headline">Step 3 of 4 <em>failed</em></p>
-        <p className="sofia-error-summary">Sofia couldn't attach the briefing document due to a Drive permission error. The task is paused. Your new hires have a calendar invite but no attached material.</p>
+        <p className="sofia-error-summary">Sofia couldn't attach the onboarding document due to a Drive permission error. The task is paused. Your new hires have a calendar invite but no attached material.</p>
         <div className="sofia-error-impact-row">
           <div className="sofia-impact-chip">
             <p className="sofia-impact-chip-label">Completed</p>

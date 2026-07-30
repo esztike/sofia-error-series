@@ -4,7 +4,7 @@ import '../styles/sofia-screens.css'
 const STEP_LOG = [
   { status: 'ok', name: 'Create calendar event',    detail: '1 event · unchanged throughout',        detailVariant: 'ok' },
   { status: 'ok', name: 'Send invitation',          detail: '1 invite · delivered, 4 recipients',    detailVariant: 'ok' },
-  { status: 'ok', name: 'Share briefing document',  detail: 'View-only link · tested before sending', detailVariant: 'ok' },
+  { status: 'ok', name: 'Share onboarding document',  detail: 'View-only link · tested before sending', detailVariant: 'ok' },
   { status: 'ok', name: 'Send follow-up',           detail: 'Delivered to all 4 invitees',            detailVariant: 'ok' },
 ]
 
@@ -49,7 +49,7 @@ export default function SofiaScreen5() {
       <div className="sofia-resolution-hero">
         <div className="sofia-resolution-check" aria-hidden="true">✓</div>
         <p className="sofia-resolution-title">Task complete</p>
-        <p className="sofia-resolution-desc">The follow-up went to all four new hires. Everyone has the briefing doc for Monday.</p>
+        <p className="sofia-resolution-desc">The follow-up went to all four new hires. Everyone has the onboarding doc for Monday.</p>
       </div>
 
       {/* ── Step log ── */}
@@ -78,7 +78,7 @@ export default function SofiaScreen5() {
         <p className="sofia-learned-label"><span aria-hidden="true">✦</span> What changes now</p>
         <div className="sofia-learned-item">
           <span className="sofia-learned-ico" aria-hidden="true">✉</span>
-          <p className="sofia-learned-text"><strong>The failure was a permission setting.</strong> Four people were waiting on the briefing doc.</p>
+          <p className="sofia-learned-text"><strong>The failure was a permission setting.</strong> Four people were waiting on the onboarding doc.</p>
         </div>
         <p className="sofia-learned-note">Sofia proposes one change to prevent the same mistake.</p>
 

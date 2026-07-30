@@ -13,7 +13,7 @@ const LOG_STEPS = [
   },
   {
     status: 'fail',
-    title: 'Attach briefing document',
+    title: 'Attach onboarding document',
     note: <>Drive API returned 403 Forbidden<br />File: Onboarding 2025.pdf<br />"Insufficient permissions to share with external users"</>,
   },
   {
@@ -66,7 +66,7 @@ export default function SofiaScreen3() {
           <span aria-hidden="true">↗</span> Third-party impact
         </p>
         <p className="sofia-thirdparty-text">
-          <strong>4 new hires received the calendar invite.</strong> They'll have no briefing material Monday unless you take action.
+          <strong>4 new hires received the calendar invite.</strong> They'll have no onboarding doc Monday unless you take action.
         </p>
       </div>
 

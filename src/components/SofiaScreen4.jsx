@@ -8,7 +8,7 @@ const RECOVERY_OPTIONS = [
     title: 'Send follow-up with view-only link',
     subtitle: 'Recommended',
     recommended: true,
-    desc: 'Sofia sends a follow-up email to all four with a view-only link to the briefing doc. Bypasses the Drive permission issue. The calendar invite stays exactly as it is.',
+    desc: 'Sofia sends a follow-up email to all four with a view-only link to the onboarding doc. Bypasses the Drive permission issue. The calendar invite stays exactly as it is.',
     tags: ['All 4 get the doc', 'Invite unchanged', '~2 min'],
   },
   {
@@ -18,7 +18,7 @@ const RECOVERY_OPTIONS = [
     title: 'Update the invite with the doc attached',
     subtitle: 'Needs a permissions fix first',
     recommended: false,
-    desc: 'Sofia re-sends the calendar invite with the briefing doc attached. Requires you to fix the Drive permission issue.',
+    desc: 'Sofia re-sends the calendar invite with the onboarding doc attached. Requires you to fix the Drive permission issue.',
     tags: ['Fix required first', 'Invite updates for all 4', '10–15 min'],
   },
   {
@@ -57,7 +57,7 @@ export default function SofiaScreen4() {
           </div>
           <p className="sofia-jamie-notif-from">Jamie Rodriguez</p>
           <p className="sofia-jamie-notif-subject">Re: Onboarding Kickoff · Monday 9am</p>
-          <p className="sofia-jamie-notif-preview">Hi Maya — I got the invite for Monday but don't see the briefing doc…</p>
+          <p className="sofia-jamie-notif-preview">Hi Maya — I got the invite for Monday but don't see the onboarding doc…</p>
         </div>
       </div>
 

@@ -69,7 +69,7 @@ export default function JamieScreen3() {
               </div>
               <p className="jamie-t3-row-label">Notes</p>
             </div>
-            <p className="jamie-t3-notes-text">Agenda and Q1 briefing doc attached. Please review before Monday.</p>
+            <p className="jamie-t3-notes-text">Agenda and onboarding doc attached. Please review before Monday.</p>
           </div>
 
           {/* ── Attachment (absent) ── */}

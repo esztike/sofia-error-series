@@ -4,14 +4,14 @@ import '../styles/sofia-screens.css'
 const STEPS = [
   { status: 'ok',      name: 'Create calendar event',    detail: '1 event created · Mon 9am–5pm',        detailVariant: 'ok'  },
   { status: 'ok',      name: 'Send invitation',          detail: '1 invite sent · delivered, 4 recipients', detailVariant: 'ok'  },
-  { status: 'running', name: 'Attach briefing document', detail: 'Accessing Drive · please wait',        detailVariant: null  },
+  { status: 'running', name: 'Attach onboarding document', detail: 'Accessing Drive · please wait',        detailVariant: null  },
   { status: 'pending', name: 'Send confirmation summary', detail: 'Pending',                              detailVariant: null  },
 ]
 
 const ASSUMPTIONS = [
   { key: 'Start date',   value: 'Monday, March 24 · based on your last message' },
   { key: 'Invites to',   value: '4 people in "New Hires Q1" contact group' },
-  { key: 'Briefing doc', value: '"Onboarding 2025.pdf" · most recent onboarding doc' },
+  { key: 'Onboarding doc', value: '"Onboarding 2025.pdf" · most recent onboarding doc' },
 ]
 
 export default function SofiaScreen1() {
@@ -28,7 +28,7 @@ export default function SofiaScreen1() {
           </svg>
         </div>
         <p className="sofia-task-name">Schedule onboarding sequence</p>
-        <p className="sofia-task-desc">Setting up the calendar event, sending the invite, and attaching the briefing doc for 4 new hires starting Monday.</p>
+        <p className="sofia-task-desc">Setting up the calendar event, sending the invite, and attaching the onboarding doc for 4 new hires starting Monday.</p>
         <div className="sofia-progress-track">
           <div className="sofia-progress-fill" />
         </div>

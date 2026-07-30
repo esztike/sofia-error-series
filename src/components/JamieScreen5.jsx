@@ -40,7 +40,7 @@ export default function JamieScreen5() {
             </div>
             <p className="jamie-t5-notif-subject">Onboarding Kickoff · updated doc link</p>
             <p className="jamie-t5-notif-preview">
-              Hi Jamie — thanks for flagging that. Here's the Q1 briefing doc: <span className="jamie-t5-notif-link">Onboarding 2025.pdf</span>
+              Hi Jamie — thanks for flagging that. Here's the onboarding doc: <span className="jamie-t5-notif-link">Onboarding 2025.pdf</span>
             </p>
           </div>
         </div>

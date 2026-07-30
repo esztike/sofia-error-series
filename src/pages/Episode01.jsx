@@ -83,24 +83,20 @@ export default function Episode01() {
           {section1.paragraphs.map((p, i) => (
             <p key={i}>{p}</p>
           ))}
-        </div>
-      </section>
 
-      {/* ── Transition / episode context ── */}
-      <section className="prose-section">
-        <div className="prose-column">
-          {section2.paragraphs.map((p, i) => (
-            <p key={i}>{p}</p>
-          ))}
-        </div>
-      </section>
+          <div className="prose-subsection">
+            <h3 className="subsection-heading">{section2.heading}</h3>
+            {section2.paragraphs.map((p, i) => (
+              <p key={i}>{p}</p>
+            ))}
+          </div>
 
-      {/* ── Sofia & Maya setup ── */}
-      <section className="prose-section">
-        <div className="prose-column">
-          {section3.paragraphs.map((p, i) => (
-            <p key={i}>{p}</p>
-          ))}
+          <div className="prose-subsection">
+            <h3 className="subsection-heading">{section3.heading}</h3>
+            {section3.paragraphs.map((p, i) => (
+              <p key={i}>{p}</p>
+            ))}
+          </div>
         </div>
       </section>
 
