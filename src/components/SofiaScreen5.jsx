@@ -62,8 +62,8 @@ export default function SofiaScreen5() {
         </div>
       </div>
 
-      {/* ── What changed ── */}
-      <p className="sofia-section-label">What changed</p>
+      {/* ── Recovery log ── */}
+      <p className="sofia-section-label">Recovery log</p>
       <div className="sofia-what-changed">
         {WHAT_CHANGED.map((row, i) => (
           <div key={i} className="sofia-changed-row">
@@ -73,15 +73,16 @@ export default function SofiaScreen5() {
         ))}
       </div>
 
-      {/* ── What changes now ── */}
+      {/* ── Prevention log ── */}
+      <p className="sofia-section-label">Prevention log</p>
       <div className="sofia-learned-card">
-        <p className="sofia-learned-label"><span aria-hidden="true">✦</span> What changes now</p>
+        <p className="sofia-learned-sublabel">Problem</p>
         <div className="sofia-learned-item">
           <span className="sofia-learned-ico" aria-hidden="true">✉</span>
-          <p className="sofia-learned-text"><strong>The failure was a permission setting.</strong> Four people were waiting on the onboarding doc.</p>
+          <p className="sofia-learned-text"><strong>The failure was a permission setting</strong> causing four people to wait on the onboarding doc.</p>
         </div>
-        <p className="sofia-learned-note">Sofia proposes one change to prevent the same mistake.</p>
 
+        <p className="sofia-learned-sublabel">Preference</p>
         <div className="sofia-pref-prompt">
           <p className="sofia-pref-question">Use view-only links for external recipients by default?</p>
           {PREF_CHOICES.map((choice) => (

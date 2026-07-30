@@ -5,6 +5,37 @@
 /* ============================================================ */
 
 
+/* ── Status bar (shared, ported from sofia-jamie-companion.html) ── */
+
+.jamie-status-bar {
+  height: 48px;
+  padding: 14px 24px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+  color: var(--phone-jamie-text);
+}
+
+.jamie-status-time {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: var(--weight-bold);
+}
+
+.jamie-status-icons {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.jamie-status-icons svg {
+  width: 14px;
+  height: 14px;
+  opacity: 0.85;
+  fill: currentColor;
+}
+
 /* ── Screen 3: Calendar invite ── */
 
 .jamie-t3-header {

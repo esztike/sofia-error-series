@@ -61,9 +61,8 @@ export const walkthroughTabs = [
   {
     number: 1,
     title: "Delegation",
-    subtitle: "Maya delegates, Sofia interprets before acting",
     storyBeat:
-      "Maya delegates a four-step onboarding task: calendar invite for four new hires, with onboarding document attached. Sofia rereads the task before acting. Maya confirms. The task begins.",
+      "Maya delegates a four-step onboarding task. A calendar invite goes to four new hires, with the onboarding document attached. Sofia reads back the task. Maya confirms. The task begins.",
     annotation: {
       designDecisions: [
         {
@@ -72,7 +71,7 @@ export const walkthroughTabs = [
         },
         {
           label: "Assumptions surfaced",
-          body: "Sofia reads back the task before acting. P2 in motion.",
+          body: "Sofia reads back the task before acting. P2 is in motion.",
         },
         {
           label: "Progress is concrete",
@@ -85,7 +84,6 @@ export const walkthroughTabs = [
   {
     number: 2,
     title: "Error surfaces",
-    subtitle: "Sofia stops, preserves state",
     storyBeat:
       "The task paused at step 3 of 4. Sofia surfaces this immediately. Maya does not have to go looking.",
     annotation: {
@@ -109,18 +107,17 @@ export const walkthroughTabs = [
   {
     number: 3,
     title: "Error detail",
-    subtitle: "Full transparency, assumptions exposed. Jamie's phone appears.",
     storyBeat:
       "Maya taps 'See full error detail.' This screen is a complete forensic record.",
     annotation: {
       designDecisions: [
         {
           label: "Step log with receipts",
-          body: "Detailed log for auditability: event ID, timestamp, actual API error string.",
+          body: "Details logged for auditability: event ID, timestamp, actual API error string.",
         },
         {
-          label: "Third-party flag",
-          body: "Unseen users are indirect users. When the error reaches them, the screen says so.",
+          label: "Unseen user impact",
+          body: "Unseen users are indirect users. When the error reaches them, Sofia surfaces it.",
         },
         {
           label: "Assumption audit",
@@ -130,31 +127,30 @@ export const walkthroughTabs = [
       principlesAtWork: ["P3", "P6", "P7"],
     },
     unseenUser:
-      "Jamie's phone. A calendar invite for Onboarding Kickoff · Monday 9am. Event title, date, time, attendees. An RSVP prompt. Nothing else. No onboarding doc. No attachment. The absence is visible without being labeled.",
+      "Jamie's phone. A calendar invite for Onboarding Kickoff · Monday 9am. Event title, date, time, attendees. An RSVP prompt. No onboarding doc attached. The absence is visible without being labeled.",
   },
   {
     number: 4,
     title: "Recovery options",
-    subtitle: "Sofia presents the paths forward. Jamie's email arrives.",
     storyBeat:
-      'The invite is sent. Sofia presents four recovery paths. Each one honest about what it costs and what it fixes. Maya chooses.',
+      'The invite is sent. Sofia presents four recovery paths. Each one upfront about what it costs and what it fixes. Maya chooses.',
     annotation: {
       designDecisions: [
         {
           label: "Forward-only framing",
-          body: "Recovery means choosing what happens next, not reversing what already did. The design reflects that constraint honestly.",
+          body: "Recovery means choosing what happens next. The design reflects that constraint honestly.",
         },
         {
           label: "Recommended but not pre-selected",
-          body: "Option A is labeled recommended. It is not pre-selected. The choice belongs to the user.",
+          body: "The first option is labeled 'Recommended.' The choice belongs to the user.",
         },
         {
           label: "Trade-offs visible per option",
           body: "Time, effort, and what each path fixes are shown inline.",
         },
         {
-          label: "Jamie's notification makes it real",
-          body: "A person is already waiting. The human cost is not abstract.",
+          label: "Cost to the unseen user",
+          body: "A person is already waiting. The human cost is not abstract anymore.",
         },
       ],
       principlesAtWork: ["P5", "P6"],
@@ -163,43 +159,36 @@ export const walkthroughTabs = [
   {
     number: 5,
     title: "Resolution",
-    subtitle:
-      "Task complete. But recovery is not done until the relationship is repaired.",
     storyBeat:
       "Task complete. But recovery is not done until the relationship is repaired.",
     annotation: {
       designDecisions: [
         {
-          label: "All green, specifically",
-          body: 'Not just "done." Each step confirmed with what was fixed and how. The user can verify.',
+          label: "Recovery → Execution",
+          body: "Recovery results in verified execution. The recovery log shows exactly what was fixed and how.",
         },
         {
-          label: "Expressed regret for impact, not just failure",
-          body: "Sofia acknowledges the impact on unseen users, and names the cause. Regret for impact, in place of apology for failure. That distinction is what P8 turns on.",
+          label: "Rebuild trust after failure",
+          body: "Sofia acknowledges the impact on unseen users. Regret for impact. P8 is in action.",
         },
         {
-          label: "One preference prompt, not a settings page",
-          body: "A specific adjustment offered in the What changes now section. Concrete and immediately actionable.",
-        },
-        {
-          label: "Behavior change demonstrated",
-          body: "Sofia cannot promise to do better, but it can propose a specific change the user can confirm now. Trust is rebuilt through action.",
+          label: "Preference prompted",
+          body: "One specific adjustment offered in Prevention log. Concrete and actionable.",
         },
       ],
-      principlesAtWork: ["P8", "P2"],
+      principlesAtWork: ["P2", "P8"],
     },
     unseenUser:
-      "Jamie's phone again. The follow-up email arrives. He opens the onboarding doc. The view-only link works. He has what he needs before Monday. No chase email. No confusion. The quiet version of things going right.",
+      "Jamie's phone again. The follow-up email arrives. He opens the onboarding doc. The view-only link works. He has what he needs before Monday.",
   },
 ];
 
 export const unseenUserSection = {
-  heading: "The unseen user",
+  heading: "The unseen user: being inside the consequences of a failure",
   paragraphs: [
-    "Jamie emailed. The others waited. Four people had calendar invites, no onboarding doc, and no way to know whether the missing attachment was a mistake or something they were supposed to chase. They were inside the consequences of a failure they had no part in causing.",
-    "Errors in agentic systems are not edge cases. They are not failures of good design. They are the nature of systems that act in a complex world on behalf of people. The design question is never whether they will happen. It is what the system owes everyone they touch when they do.",
-    "That is a harder question than it sounds. Most error design is built around one assumption: that the person experiencing the failure is the person who caused it, or at least the one who chose to use the system. Parasuraman's automation trust research, the foundational work on how humans calibrate reliance on automated systems, makes exactly that assumption. You are the operator. You have context. You have agency. You can adjust.",
-    "Jamie has none of that. He did not delegate anything. He did not choose Sofia. He received a calendar invite from a system he has never interacted with, and when something was missing he did the only thing available to him: he sent an email and hoped someone would respond.",
+    "Errors in agentic systems are not edge cases or failures of good design. They are the nature of systems that act in a complex world on behalf of people. The system owes something to everyone it acts on, not only the person who asked it to act.",
+    "Most error design is built around the assumption that the person experiencing the failure is the person who caused it, or at least the one who chose to use the system. Parasuraman's automation trust research, the foundational work on how humans calibrate reliance on automated systems, makes exactly that assumption. You are the operator. You have context. You have agency. You can adjust.",
+    "Jamie Rodriguez, the scenario's unseen user, has none of that. He did not delegate anything. He did not choose Sofia. He received a calendar invite from a system he has never interacted with, and when something was missing he did the only thing available to him: sending an email and hoping someone would respond.",
     "That asymmetry is what makes the unseen user a distinct design problem: not a harder version of the delegating user's problem, but a different one entirely. Transparency and recovery have to reach further than the person who issued the request. The blast radius of an agentic error includes everyone the system acted on, not just everyone who asked it to act. Designing for that is not optional complexity. It is what it means to build systems that are responsible about what they do in the world.",
   ],
 };

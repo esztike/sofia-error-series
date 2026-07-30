@@ -39,7 +39,7 @@ export default function SofiaScreen1() {
       </div>
 
       {/* ── Steps ── */}
-      <p className="sofia-section-label">Task steps</p>
+      <p className="sofia-section-label">Step log</p>
       <div className="sofia-card">
         <div className="sofia-steps-list">
           {STEPS.map((step, i) => (

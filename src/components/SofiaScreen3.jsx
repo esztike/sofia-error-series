@@ -37,7 +37,7 @@ export default function SofiaScreen3() {
       {/* ── Step-by-step log ── */}
       <div className="sofia-log-card">
         <div className="sofia-log-header">
-          <p className="sofia-log-header-title">Step-by-step log</p>
+          <p className="sofia-log-header-title">Step log</p>
           <p className="sofia-log-header-count">4 steps</p>
         </div>
         <div className="sofia-log-body">
@@ -60,10 +60,10 @@ export default function SofiaScreen3() {
         </div>
       </div>
 
-      {/* ── Third-party impact ── */}
+      {/* ── Unseen user impact ── */}
       <div className="sofia-thirdparty-card">
         <p className="sofia-thirdparty-label">
-          <span aria-hidden="true">↗</span> Third-party impact
+          <span aria-hidden="true">↗</span> Unseen user impact
         </p>
         <p className="sofia-thirdparty-text">
           <strong>4 new hires received the calendar invite.</strong> They'll have no onboarding doc Monday unless you take action.

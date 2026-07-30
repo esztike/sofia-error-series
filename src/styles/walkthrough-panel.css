@@ -68,15 +68,6 @@
   margin-bottom: var(--space-5);
 }
 
-.walkthrough__story-label {
-  font-family: var(--font-body);
-  font-size: var(--text-sm);
-  font-weight: var(--weight-medium);
-  color: var(--color-text-on-light);
-  opacity: 0.85;
-  margin-bottom: var(--space-2);
-}
-
 .walkthrough__beat {
   font-family: var(--font-body);
   font-size: var(--text-base);
@@ -93,18 +84,32 @@
   row-gap: var(--space-8);
 }
 
-.walkthrough__phone {
-  justify-self: center;
+.walkthrough__phone .phone-mockup {
+  margin: 0 auto;
+}
+
+.walkthrough__eyebrow--sofia {
+  grid-column: 1;
+  grid-row: 1;
+  margin-top: var(--space-8);
+  margin-bottom: 0;
 }
 
 .walkthrough__phone--sofia {
   grid-column: 1;
-  grid-row: 1;
+  grid-row: 2;
+}
+
+.walkthrough__eyebrow--unseen {
+  grid-column: 1;
+  grid-row: 3;
+  margin-top: var(--space-8);
+  margin-bottom: 0;
 }
 
 .walkthrough__phone--unseen {
-  grid-column: 2;
-  grid-row: 1;
+  grid-column: 1;
+  grid-row: 4;
 }
 
 /* ── Card shell — shared by the annotation and unseen-user cards ── */
@@ -122,15 +127,10 @@
 
 .walkthrough__annotation {
   grid-column: 2;
-  grid-row: 1;
+  grid-row: 2;
   display: flex;
   flex-direction: column;
   gap: 0;
-}
-
-.walkthrough__annotation--paired {
-  grid-column: 1;
-  grid-row: 2;
 }
 
 .walkthrough__scenario {
@@ -200,7 +200,7 @@
 
 .walkthrough__unseen-card {
   grid-column: 2;
-  grid-row: 2;
+  grid-row: 4;
 }
 
 .walkthrough__unseen-text {
@@ -290,7 +290,7 @@
 }
 
 .phone-mockup--jamie::before {
-  content: none;
+  background: var(--phone-jamie-text);
 }
 
 /* ── App header ── */
@@ -309,12 +309,6 @@
 .phone-mockup--sofia .phone-header {
   background: var(--phone-sofia-bg-2);
   border-bottom: 1px solid var(--phone-sofia-border);
-}
-
-.phone-mockup--jamie .phone-header {
-  background: var(--phone-jamie-bg-2);
-  border-bottom: 1px solid var(--phone-jamie-border);
-  padding-top: 16px;
 }
 
 .phone-back {

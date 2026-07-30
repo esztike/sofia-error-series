@@ -923,7 +923,7 @@
 }
 
 
-/* ── What changed (screen 5) ── */
+/* ── Recovery log (screen 5) ── */
 
 .sofia-what-changed {
   background: var(--phone-sofia-bg-2);
@@ -970,7 +970,7 @@
 }
 
 
-/* ── What Sofia learned (screen 5) ── */
+/* ── Prevention log (screen 5) ── */
 
 .sofia-learned-card {
   background: linear-gradient(135deg, rgba(176, 126, 245, 0.05), rgba(123, 156, 245, 0.05));
@@ -978,18 +978,6 @@
   border-radius: 16px;
   padding: 14px 16px;
   margin-bottom: 12px;
-}
-
-.sofia-learned-label {
-  font-family: var(--font-mono);
-  font-size: 9px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--phone-accent-learned);
-  margin-bottom: 10px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
 }
 
 .sofia-learned-item {
@@ -1019,12 +1007,13 @@
   color: var(--phone-sofia-text);
 }
 
-.sofia-learned-note {
-  font-family: var(--font-body);
-  font-size: 12px;
-  color: var(--phone-sofia-muted);
-  line-height: var(--leading-normal);
-  margin: 10px 2px;
+.sofia-learned-sublabel {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--phone-accent-learned);
+  margin: 10px 0 6px;
 }
 
 

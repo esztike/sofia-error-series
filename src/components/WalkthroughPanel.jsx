@@ -45,12 +45,14 @@ export default function WalkthroughPanel() {
 
             {/* ── Story beat — full width ── */}
             <div className="walkthrough__story">
-              <p className="walkthrough__story-label">Story beat</p>
+              <p className="walkthrough__section-label">Story beat</p>
               <p className="walkthrough__beat">{tab.storyBeat}</p>
             </div>
 
             {/* ── 2×2 grid: Sofia phone/annotation, unseen phone/annotation ── */}
             <div className="walkthrough-grid">
+
+              <p className="hero-eyebrow walkthrough__eyebrow--sofia">User's screen</p>
 
               <div className="walkthrough__phone walkthrough__phone--sofia">
                 <PhoneMockup variant="sofia">
@@ -60,7 +62,7 @@ export default function WalkthroughPanel() {
                 </PhoneMockup>
               </div>
 
-              <div className={`walkthrough__card walkthrough__annotation${hasUnseen ? ' walkthrough__annotation--paired' : ''}`}>
+              <div className="walkthrough__card walkthrough__annotation">
                 <div className="walkthrough__decisions">
                   <p className="walkthrough__section-label">Design decisions</p>
                   {tab.annotation.designDecisions.map((d, i) => (
@@ -82,6 +84,8 @@ export default function WalkthroughPanel() {
                   </div>
                 </div>
               </div>
+
+              {hasUnseen && <p className="hero-eyebrow walkthrough__eyebrow--unseen">Unseen user's screen</p>}
 
               {hasUnseen && (
                 <div className="walkthrough__phone walkthrough__phone--unseen">
