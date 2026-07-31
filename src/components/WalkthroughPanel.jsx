@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import * as Tabs from '@radix-ui/react-tabs'
 import * as Accordion from '@radix-ui/react-accordion'
 import { ChevronDown } from 'lucide-react'
@@ -8,6 +8,14 @@ import '../styles/walkthrough-panel.css'
 
 export default function WalkthroughPanel() {
   const [activeTab, setActiveTab] = useState('tab-1')
+  const triggerRefs = useRef({})
+
+  const handleAccordionChange = (value) => {
+    setActiveTab(value)
+    requestAnimationFrame(() => {
+      triggerRefs.current[value]?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    })
+  }
 
   return (
     <>
@@ -45,7 +53,7 @@ export default function WalkthroughPanel() {
         type="single"
         className="walkthrough walkthrough-accordion"
         value={activeTab}
-        onValueChange={setActiveTab}
+        onValueChange={handleAccordionChange}
       >
         {walkthroughTabs.map(tab => (
           <Accordion.Item
@@ -54,7 +62,10 @@ export default function WalkthroughPanel() {
             className="walkthrough-accordion-item"
           >
             <Accordion.Header>
-              <Accordion.Trigger className="walkthrough-accordion-trigger">
+              <Accordion.Trigger
+                ref={el => { triggerRefs.current[`tab-${tab.number}`] = el }}
+                className="walkthrough-accordion-trigger"
+              >
                 <span className="walkthrough-accordion-number">{String(tab.number).padStart(2, '0')}</span>
                 <span className="walkthrough-accordion-title">{tab.title}</span>
                 <ChevronDown className="walkthrough-accordion-chevron" size={18} aria-hidden="true" />
