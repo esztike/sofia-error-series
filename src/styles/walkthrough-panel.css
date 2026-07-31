@@ -470,7 +470,6 @@
   align-items: center;
   gap: var(--space-3);
   padding: var(--space-4) var(--space-5);
-  scroll-margin-top: 68px;
   background: none;
   border: none;
   cursor: pointer;
