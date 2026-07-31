@@ -426,10 +426,11 @@
   }
 
   .walkthrough-accordion .walkthrough__card {
-    background-color: none;
+    background: none;
     border: none;
-    border-radius: none;
+    border-radius: 0;
     box-shadow: none;
+    padding: 0;
   }
 
   .walkthrough-accordion .walkthrough__annotation {
