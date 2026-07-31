@@ -12,9 +12,11 @@ export default function WalkthroughPanel() {
 
   const handleAccordionChange = (value) => {
     setActiveTab(value)
-    requestAnimationFrame(() => {
+    // Wait for the 350ms collapse animation on the previously-open item to finish —
+    // scrolling any earlier races the layout shift and can land mid-animation.
+    setTimeout(() => {
       triggerRefs.current[value]?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-    })
+    }, 360)
   }
 
   return (
