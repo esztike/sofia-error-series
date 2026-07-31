@@ -65,6 +65,7 @@
 /* ── Story beat — full width above grid ── */
 
 .walkthrough__story {
+  margin-top: var(--space-5);
   margin-bottom: var(--space-5);
 }
 
@@ -91,7 +92,7 @@
 .walkthrough__eyebrow--sofia {
   grid-column: 1;
   grid-row: 1;
-  margin-top: var(--space-8);
+  margin-top: var(--space-4);
   margin-bottom: 0;
 }
 
@@ -103,8 +104,8 @@
 .walkthrough__eyebrow--unseen {
   grid-column: 1;
   grid-row: 3;
-  margin-top: var(--space-8);
-  margin-bottom: 0;
+  margin-top: var(--space-4);
+  margin-bottom: calc(-1 * var(--space-6) + var(--space-6));
 }
 
 .walkthrough__phone--unseen {
@@ -116,7 +117,7 @@
 
 .walkthrough__card {
   align-self: start;
-  background-color: var(--color-bg-warm);
+  background-color: var(--glass-bg-warm);
   border: 1px solid var(--glass-border);
   border-radius: 6px;
   box-shadow: 0px 8px 8px rgba(24, 25, 26, 0.15);
@@ -401,23 +402,142 @@
   opacity: 1;
 }
 
-/* ── Responsive ── */
+/* ── Shell switch — desktop tabs vs. mobile accordion ── */
+/* Both shells render; this is the only thing deciding which one shows. */
+
+.walkthrough-accordion {
+  display: none;
+}
 
 @media (max-width: 900px) {
-  .walkthrough-tabs {
-    overflow-x: auto;
-    scrollbar-width: none;
-  }
-
-  .walkthrough-tabs::-webkit-scrollbar {
+  .walkthrough-desktop {
     display: none;
   }
 
-  .walkthrough-tab {
-    flex: 0 0 auto;
+  .walkthrough-accordion {
+    display: block;
   }
 
-  .walkthrough-grid {
-    flex-direction: column;
+  /* Scoped to the accordion shell specifically, not the breakpoint alone —
+     the desktop grid's own column-2 placements stay untouched. */
+  .walkthrough-accordion .walkthrough-grid {
+    grid-template-columns: 1fr;
+    row-gap: var(--space-6);
   }
+
+  .walkthrough-accordion .walkthrough__card {
+    background-color: none;
+    border: none;
+    border-radius: none;
+    box-shadow: none;
+  }
+
+  .walkthrough-accordion .walkthrough__annotation {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  .walkthrough-accordion .walkthrough__eyebrow--unseen {
+    grid-column: 1;
+    grid-row: 4;
+  }
+
+  .walkthrough-accordion .walkthrough__phone--unseen {
+    grid-column: 1;
+    grid-row: 5;
+  }
+
+  .walkthrough-accordion .walkthrough__unseen-card {
+    grid-column: 1;
+    grid-row: 6;
+  }
+}
+
+/* ── Mobile accordion — numbered, single-open, matches Design Principles ── */
+
+.walkthrough-accordion-item {
+  background-color: var(--glass-bg-warm);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: var(--space-3);
+  box-shadow: 0px 8px 8px rgba(24, 25, 26, 0.15);
+}
+
+.walkthrough-accordion-trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-5);
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+}
+
+.walkthrough-accordion-number {
+  font-family: var(--font-mono);
+  font-size: var(--text-lg);
+  color: var(--color-text-on-light);
+  font-weight: var(--weight-medium);
+  flex-shrink: 0;
+}
+
+.walkthrough-accordion-title {
+  flex: 1;
+  font-family: var(--font-mono);
+  font-size: var(--text-lg);
+  font-weight: var(--weight-medium);
+  color: var(--color-text-on-light);
+}
+
+.walkthrough-accordion-chevron {
+  flex-shrink: 0;
+  color: var(--color-text-on-light);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.walkthrough-accordion-trigger[data-state="open"]
+  .walkthrough-accordion-chevron {
+  transform: rotate(180deg);
+}
+
+.walkthrough-accordion-trigger[data-state="open"] {
+  border-bottom: 2px solid var(--color-accent);
+}
+
+.walkthrough-accordion-content {
+  overflow: hidden;
+}
+
+.walkthrough-accordion-content[data-state="open"] {
+  animation: walkthrough-accordion-slide-down 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.walkthrough-accordion-content[data-state="closed"] {
+  animation: walkthrough-accordion-slide-up 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes walkthrough-accordion-slide-down {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+
+@keyframes walkthrough-accordion-slide-up {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
+}
+
+.walkthrough-accordion-content__inner {
+  padding: 0 var(--space-5) var(--space-5);
 }

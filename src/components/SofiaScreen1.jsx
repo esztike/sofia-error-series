@@ -49,9 +49,8 @@ export default function SofiaScreen1() {
       </div>
 
       {/* ── Assumptions ── */}
-      <p className="sofia-section-label">Sofia's interpretation</p>
+      <p className="sofia-section-label">Assumptions</p>
       <div className="sofia-assumption-card">
-        <p className="sofia-assumption-heading">Assumptions made</p>
         {ASSUMPTIONS.map(({ key, value }) => (
           <div key={key} className="sofia-assumption-row">
             <span className="sofia-assumption-key">{key}</span>

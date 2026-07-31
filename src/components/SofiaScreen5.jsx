@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import StepRow from './StepRow'
 import '../styles/sofia-screens.css'
 
@@ -42,6 +43,8 @@ const PREF_CHOICES = [
 ]
 
 export default function SofiaScreen5() {
+  const [selectedChoice, setSelectedChoice] = useState(null)
+
   return (
     <div className="sofia-screen-content">
 
@@ -86,8 +89,12 @@ export default function SofiaScreen5() {
         <div className="sofia-pref-prompt">
           <p className="sofia-pref-question">Use view-only links for external recipients by default?</p>
           {PREF_CHOICES.map((choice) => (
-            <div key={choice.title} className="sofia-pref-choice">
-              <div className="sofia-choice-radio" />
+            <div
+              key={choice.title}
+              className={`sofia-pref-choice${selectedChoice === choice.title ? ' sofia-pref-choice--selected' : ''}`}
+              onClick={() => setSelectedChoice(choice.title)}
+            >
+              <div className={`sofia-choice-radio${selectedChoice === choice.title ? ' sofia-choice-radio--selected' : ''}`} />
               <div className="sofia-choice-text">
                 <p className="sofia-choice-title">{choice.title}</p>
                 <p className="sofia-choice-sub">{choice.sub}</p>
@@ -98,7 +105,12 @@ export default function SofiaScreen5() {
         </div>
       </div>
 
-      <div className="sofia-btn sofia-btn--primary" style={{ marginTop: '4px' }}>Done</div>
+      <div
+        className={`sofia-btn ${selectedChoice ? 'sofia-btn--primary' : 'sofia-btn--disabled'}`}
+        style={{ marginTop: '4px' }}
+      >
+        Done
+      </div>
 
     </div>
   )

@@ -19,7 +19,6 @@ export default function SofiaScreen2() {
           <p className="sofia-notif-title">Sofia paused · action required</p>
           <p className="sofia-notif-time">Just now · Onboarding sequence</p>
         </div>
-        <div className="sofia-notif-chevron" aria-hidden="true">›</div>
       </div>
 
       {/* ── Error sheet ── */}

@@ -1,0 +1,87 @@
+import { principles } from '../content/design-principles.mdx'
+import PhoneMockup from './PhoneMockup'
+import SofiaScreen1 from './SofiaScreen1'
+import SofiaScreen2 from './SofiaScreen2'
+import SofiaScreen3 from './SofiaScreen3'
+import SofiaScreen4 from './SofiaScreen4'
+import SofiaScreen5 from './SofiaScreen5'
+import JamieScreen3 from './JamieScreen3'
+import JamieScreen5 from './JamieScreen5'
+
+const SOFIA_SCREENS = { 1: SofiaScreen1, 2: SofiaScreen2, 3: SofiaScreen3, 4: SofiaScreen4, 5: SofiaScreen5 }
+const JAMIE_SCREENS = { 3: JamieScreen3, 5: JamieScreen5 }
+
+const principleByNumber = Object.fromEntries(principles.map(p => [p.number, p]))
+
+export default function WalkthroughStepContent({ tab }) {
+  const hasUnseen = !!tab.unseenUser
+  const SofiaScreenComponent = SOFIA_SCREENS[tab.number]
+  const JamieScreenComponent = JAMIE_SCREENS[tab.number]
+
+  return (
+    <>
+      {/* ── Story beat — full width ── */}
+      <div className="walkthrough__story">
+        <p className="walkthrough__section-label">Story beat</p>
+        <p className="walkthrough__beat">{tab.storyBeat}</p>
+      </div>
+
+      {/* ── Grid: Sofia phone/annotation, unseen phone/annotation ── */}
+      <div className="walkthrough-grid">
+
+        <p className="hero-eyebrow walkthrough__eyebrow--sofia">User's screen</p>
+
+        <div className="walkthrough__phone walkthrough__phone--sofia">
+          <PhoneMockup variant="sofia">
+            {SofiaScreenComponent
+              ? <SofiaScreenComponent />
+              : <p className="walkthrough-placeholder">Screen {tab.number}</p>}
+          </PhoneMockup>
+        </div>
+
+        <div className="walkthrough__card walkthrough__annotation">
+          <div className="walkthrough__decisions">
+            <p className="walkthrough__section-label">Design decisions</p>
+            {tab.annotation.designDecisions.map((d, i) => (
+              <div key={i} className="walkthrough__decision">
+                <p className="walkthrough__decision-label">{d.label}</p>
+                <p className="walkthrough__decision-body">{d.body}</p>
+              </div>
+            ))}
+          </div>
+          <div className="walkthrough__principles">
+            <p className="walkthrough__section-label">Principles at work</p>
+            <div className="walkthrough__chips">
+              {tab.annotation.principlesAtWork.map(p => (
+                <span key={p} className="principle-chip">
+                  <span className="principle-chip-dot" style={{ backgroundColor: `var(--color-principle-${p.toLowerCase()})` }} />
+                  {p} · {principleByNumber[p]?.shortLabel}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {hasUnseen && <p className="hero-eyebrow walkthrough__eyebrow--unseen">Unseen user's screen</p>}
+
+        {hasUnseen && (
+          <div className="walkthrough__phone walkthrough__phone--unseen">
+            <PhoneMockup variant="jamie">
+              {JamieScreenComponent
+                ? <JamieScreenComponent />
+                : <p className="walkthrough-placeholder">Jamie's screen</p>}
+            </PhoneMockup>
+          </div>
+        )}
+
+        {hasUnseen && (
+          <div className="walkthrough__card walkthrough__unseen-card">
+            <p className="walkthrough__section-label">Unseen user</p>
+            <p className="walkthrough__unseen-text">{tab.unseenUser}</p>
+          </div>
+        )}
+
+      </div>
+    </>
+  )
+}
