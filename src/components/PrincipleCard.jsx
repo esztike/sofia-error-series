@@ -9,11 +9,14 @@ export default function PrincipleCard({ principle, triggerRef, onContentAnimatio
         <Accordion.Trigger ref={triggerRef} className="principle-trigger">
           <div className="principle-trigger__text">
             <span className="principle-chip">
-              <span
-                className="principle-chip-dot"
-                style={{ backgroundColor: `var(--color-principle-${principle.number.toLowerCase()})` }}
-              />
-              {principle.number} {principle.shortLabel}
+              <span className="principle-chip-id">
+                <span
+                  className="principle-chip-dot"
+                  style={{ backgroundColor: `var(--color-principle-${principle.number.toLowerCase()})` }}
+                />
+                {principle.number}
+              </span>
+              {principle.shortLabel}
             </span>
             <p className="principle-trigger__title">{principle.title}</p>
           </div>
