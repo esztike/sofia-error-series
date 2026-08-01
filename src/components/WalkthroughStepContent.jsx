@@ -55,7 +55,7 @@ export default function WalkthroughStepContent({ tab }) {
               {tab.annotation.principlesAtWork.map(p => (
                 <span key={p} className="principle-chip">
                   <span className="principle-chip-dot" style={{ backgroundColor: `var(--color-principle-${p.toLowerCase()})` }} />
-                  {p} · {principleByNumber[p]?.shortLabel}
+                  {p} {principleByNumber[p]?.shortLabel}
                 </span>
               ))}
             </div>

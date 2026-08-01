@@ -13,7 +13,7 @@ export default function PrincipleCard({ principle, triggerRef, onContentAnimatio
                 className="principle-chip-dot"
                 style={{ backgroundColor: `var(--color-principle-${principle.number.toLowerCase()})` }}
               />
-              {principle.number} · {principle.shortLabel}
+              {principle.number} {principle.shortLabel}
             </span>
             <p className="principle-trigger__title">{principle.title}</p>
           </div>

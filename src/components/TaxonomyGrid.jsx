@@ -144,7 +144,7 @@ export default function TaxonomyGrid({ cards, hint }) {
                           {openCard.relatedPrinciples.map(p => (
                             <span key={p} className="principle-chip">
                               <span className="principle-chip-dot" style={{ backgroundColor: `var(--color-principle-${p.toLowerCase()})` }} />
-                              {p} · {principleByNumber[p]?.shortLabel}
+                              {p} {principleByNumber[p]?.shortLabel}
                             </span>
                           ))}
                         </div>
