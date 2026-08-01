@@ -78,7 +78,6 @@
 
 .principle-trigger .principle-chip {
   color: var(--color-text-on-dark);
-  border-color: rgba(243, 240, 233, 0.25);
 }
 
 .principle-trigger[data-state="open"] .principle-chevron {

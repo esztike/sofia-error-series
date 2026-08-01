@@ -576,16 +576,12 @@ em {
   align-items: center;
   gap: 6px;
   height: 32px;
-  padding: 6px 16px 6px 8px;
-  border: 0.5px solid rgba(61, 61, 61, 0.25);
-  border-radius: 8px;
+  padding: 6px 16px 6px 0;
   font-family: var(--font-mono);
   font-size: var(--text-sm);
   letter-spacing: 0.1px;
   color: var(--color-text-on-light);
   opacity: 1;
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
 }
 
 .principle-chip-dot {

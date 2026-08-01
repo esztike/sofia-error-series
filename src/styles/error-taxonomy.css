@@ -245,7 +245,6 @@
 
 .overlay-principles__chips .principle-chip {
   color: var(--color-text-on-dark);
-  border-color: rgba(243, 240, 233, 0.25);
 }
 
 /* ── Design problem visual ── */
