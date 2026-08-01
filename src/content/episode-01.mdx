@@ -133,7 +133,7 @@ export const walkthroughTabs = [
     number: 4,
     title: "Recovery options",
     storyBeat:
-      'The invite is sent. Sofia presents four recovery paths. Each one upfront about what it costs and what it fixes. Maya chooses.',
+      "The invite is sent. Sofia presents four recovery paths. Each one upfront about what it costs and what it fixes. Maya chooses.",
     annotation: {
       designDecisions: [
         {
@@ -184,20 +184,19 @@ export const walkthroughTabs = [
 ];
 
 export const unseenUserSection = {
-  heading: "The unseen user: being inside the consequences of a failure",
+  heading: "Being inside the consequences of a failure",
   paragraphs: [
-    "Errors in agentic systems are not edge cases or failures of good design. They are the nature of systems that act in a complex world on behalf of people. The system owes something to everyone it acts on, not only the person who asked it to act.",
-    "Most error design is built around the assumption that the person experiencing the failure is the person who caused it, or at least the one who chose to use the system. Parasuraman's automation trust research, the foundational work on how humans calibrate reliance on automated systems, makes exactly that assumption. You are the operator. You have context. You have agency. You can adjust.",
-    "Jamie Rodriguez, the scenario's unseen user, has none of that. He did not delegate anything. He did not choose Sofia. He received a calendar invite from a system he has never interacted with, and when something was missing he did the only thing available to him: sending an email and hoping someone would respond.",
-    "That asymmetry is what makes the unseen user a distinct design problem: not a harder version of the delegating user's problem, but a different one entirely. Transparency and recovery have to reach further than the person who issued the request. The blast radius of an agentic error includes everyone the system acted on, not just everyone who asked it to act. Designing for that is not optional complexity. It is what it means to build systems that are responsible about what they do in the world.",
+    "Parasuraman's research on automation trust, the foundation for how people calibrate reliance on automated systems, imagines an operator who has context for what happens and can act on it.",
+    "Jamie Rodriguez received a calendar invite from a system that was new to him, and answered the gap the only way he could, with an email, hoping someone would reply.",
+    "Whoever the failure reaches has to be part of the design.",
   ],
 };
 
 export const designersSection = {
   heading: "What this means for designers",
   paragraphs: [
-    "The first thing it means is that the blast radius is a design surface. Not a side effect to acknowledge in a post-mortem, but something to map before a task runs, surface when something goes wrong, and address as part of recovery. Jamie's name appearing in Sofia's error detail was not incidental. It was a design decision. Knowing who was affected, and offering Maya a path to reach them, is what separates a recovery flow from a closed loop that only serves the person holding the phone.",
-    "The second is that recovery is not a feature. It is a responsibility, and its scope has to match the scope of the failure. A recovery flow that restores Maya's task to green while Jamie is still waiting for the onboarding doc is technically complete and humanly incomplete. Designing for recovery means asking: who did this reach, and what do they need now?",
-    "The third is perhaps the most uncomfortable for a field that has always prized prevention. In agentic AI, recovery is not the fallback when prevention fails. It is equally primary. These systems act in a complex world, across tools and permissions and people who never opted in. Prevention reduces the frequency of failure. It does not change the fact that failures will happen, that they will have consequences, and that someone has to design for what comes after. That someone is us.",
+    "First, a failure reaches further than the person who asked for the task, and design has to follow it there. That means knowing who could be affected before a task runs, naming them the moment something breaks, and building them into the recovery itself. Sofia surfacing the impact on all four new hires was a design choice. It gave Maya people to reach, beyond the task itself",
+    "Second, recovery has to match the size of what broke. A flow can turn Maya's task green while Jamie is still waiting on the document, and call itself done. Real recovery keeps asking who this reached and what they still need, even once the task shows complete.",
+    "Third, prevention has been the field's focus of attention for good reason. These systems act across tools and permissions extending past a person's control, involving people who did not choose to be there. Prevention lowers how often failure happens, but some chance of it remains regardless. Consequently, recovery deserves as much attention from the start. Someone has to be ready when failure happens. And that's us.",
   ],
 };

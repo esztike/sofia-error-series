@@ -1,13 +1,13 @@
-import { useState } from 'react'
-import * as Tabs from '@radix-ui/react-tabs'
-import * as Accordion from '@radix-ui/react-accordion'
-import { ChevronDown } from 'lucide-react'
-import { walkthroughTabs } from '../content/episode-01.mdx'
-import WalkthroughStepContent from './WalkthroughStepContent'
-import '../styles/walkthrough-panel.css'
+import { useState } from "react";
+import * as Tabs from "@radix-ui/react-tabs";
+import * as Accordion from "@radix-ui/react-accordion";
+import { ChevronDown } from "lucide-react";
+import { walkthroughTabs } from "../content/episode-01.mdx";
+import WalkthroughStepContent from "./WalkthroughStepContent";
+import "../styles/walkthrough-panel.css";
 
 export default function WalkthroughPanel() {
-  const [activeTab, setActiveTab] = useState('tab-1')
+  const [activeTab, setActiveTab] = useState("tab-1");
 
   return (
     <>
@@ -18,18 +18,18 @@ export default function WalkthroughPanel() {
         onValueChange={setActiveTab}
       >
         <Tabs.List className="walkthrough-tabs" aria-label="Walkthrough steps">
-          {walkthroughTabs.map(tab => (
+          {walkthroughTabs.map((tab) => (
             <Tabs.Trigger
               key={tab.number}
               value={`tab-${tab.number}`}
               className="walkthrough-tab"
             >
-              {tab.title}
+              {tab.number}. {tab.title}
             </Tabs.Trigger>
           ))}
         </Tabs.List>
 
-        {walkthroughTabs.map(tab => (
+        {walkthroughTabs.map((tab) => (
           <Tabs.Content
             key={tab.number}
             value={`tab-${tab.number}`}
@@ -47,7 +47,7 @@ export default function WalkthroughPanel() {
         value={activeTab}
         onValueChange={setActiveTab}
       >
-        {walkthroughTabs.map(tab => (
+        {walkthroughTabs.map((tab) => (
           <Accordion.Item
             key={tab.number}
             value={`tab-${tab.number}`}
@@ -55,9 +55,15 @@ export default function WalkthroughPanel() {
           >
             <Accordion.Header>
               <Accordion.Trigger className="walkthrough-accordion-trigger">
-                <span className="walkthrough-accordion-number">{String(tab.number).padStart(2, '0')}</span>
+                <span className="walkthrough-accordion-number">
+                  {`${tab.number}.`}
+                </span>
                 <span className="walkthrough-accordion-title">{tab.title}</span>
-                <ChevronDown className="walkthrough-accordion-chevron" size={18} aria-hidden="true" />
+                <ChevronDown
+                  className="walkthrough-accordion-chevron"
+                  size={18}
+                  aria-hidden="true"
+                />
               </Accordion.Trigger>
             </Accordion.Header>
 
@@ -70,5 +76,5 @@ export default function WalkthroughPanel() {
         ))}
       </Accordion.Root>
     </>
-  )
+  );
 }

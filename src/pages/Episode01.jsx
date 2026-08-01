@@ -107,15 +107,13 @@ export default function Episode01() {
           <p className="eyebrow">{walkthroughMeta.subtitle}</p>
         </div>
         <WalkthroughPanel />
-      </section>
-
-      {/* ── The unseen user ── */}
-      <section className="prose-section">
         <div className="prose-column">
-          <h2 className="section-heading">{unseenUserSection.heading}</h2>
-          {unseenUserSection.paragraphs.map((p, i) => (
-            <p key={i}>{p}</p>
-          ))}
+          <div className="prose-subsection">
+            <h3 className="subsection-heading">{unseenUserSection.heading}</h3>
+            {unseenUserSection.paragraphs.map((p, i) => (
+              <p key={i}>{p}</p>
+            ))}
+          </div>
         </div>
       </section>
 
