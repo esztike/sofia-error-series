@@ -87,6 +87,7 @@
 
 .principle-content {
   overflow: hidden;
+  overflow-anchor: auto;
 }
 
 .principle-content[data-state="open"] {

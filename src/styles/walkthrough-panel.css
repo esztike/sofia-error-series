@@ -511,6 +511,7 @@
 
 .walkthrough-accordion-content {
   overflow: hidden;
+  overflow-anchor: auto;
 }
 
 .walkthrough-accordion-content[data-state="open"] {

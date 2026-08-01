@@ -2,11 +2,11 @@ import * as Accordion from '@radix-ui/react-accordion'
 import { ChevronDown } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
-export default function PrincipleCard({ principle }) {
+export default function PrincipleCard({ principle, triggerRef, onContentAnimationEnd }) {
   return (
     <Accordion.Item value={principle.number} className="principle-item">
       <Accordion.Header>
-        <Accordion.Trigger className="principle-trigger">
+        <Accordion.Trigger ref={triggerRef} className="principle-trigger">
           <div className="principle-trigger__text">
             <span className="principle-chip">
               <span
@@ -21,7 +21,7 @@ export default function PrincipleCard({ principle }) {
         </Accordion.Trigger>
       </Accordion.Header>
 
-      <Accordion.Content className="principle-content">
+      <Accordion.Content className="principle-content" onAnimationEnd={onContentAnimationEnd}>
         <div className="principle-content__inner">
           <div className="dp-overlay__header">
             <p className="dp-overlay__tagline">{principle.tagline}</p>
