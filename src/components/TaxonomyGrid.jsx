@@ -145,7 +145,7 @@ export default function TaxonomyGrid({ cards, hint }) {
                             <span key={p} className="principle-chip">
                               <span className="principle-chip-id">
                                 <span className="principle-chip-dot" style={{ backgroundColor: `var(--color-principle-${p.toLowerCase()})` }} />
-                                {p}
+                                {p} ·
                               </span>
                               {principleByNumber[p]?.shortLabel}
                             </span>
