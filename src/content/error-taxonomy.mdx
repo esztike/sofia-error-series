@@ -370,42 +370,19 @@ export const designProblemSection = {
 export const closingSection = {
   heading: "Conclusion",
   paragraphs: [
-    <>
-      A taxonomy is only as useful as what it changes. The value of naming
-      these six classes is practical, not academic. When a designer can
-      identify that a failure is a <strong>partial completion</strong>{" "}
-      rather than a <strong>tool failure</strong>, they know the recovery
-      experience needs state visibility and resume logic, not just a retry
-      button. When they recognize a <strong>wrong inference</strong>, they
-      know the intervention point is before the action, not after it. Named
-      problems get designed for. Unnamed ones get handled with generic error
-      messages and a hope that users figure it out.
-    </>,
-    "The six classes also establish something that matters beyond individual design decisions: a shared vocabulary. Teams building agentic systems need a way to talk about failure that is specific enough to drive design choices and accessible enough to cross the boundary between engineering, product, and UX. That vocabulary does not yet exist in any standardized form. This taxonomy is a starting point.",
-    <>
-      What follows in this case study builds directly on these foundations. The
-      eight design principles translate the taxonomy into design positions, one
-      principle per class, naming what the system owes the user when that
-      failure occurs. The scenario in Episode 1 then demonstrates those principles in
-      practice, through a real walkthrough of a{" "}
-      <strong>partial completion</strong> failure and its recovery. In
-      addition, the prototype shows what the designed response looks like as
-      an actual interface.
-    </>,
-    "The argument across all three is the same one the taxonomy opened with. Errors in agentic AI are not edge cases to be minimized and hidden. They are a core part of the experience. Designing for them well is what determines whether users trust the system, or eventually abandon it.",
+    "The six classes establish something that matters beyond individual design decisions: a shared vocabulary. Teams building agentic systems need a way to talk about failure that is specific enough to drive design choices and accessible enough to cross the boundary between engineering, product, and UX. That vocabulary does not yet exist in any standardized form. This taxonomy is a starting point.",
+    "Errors in agentic AI are not edge cases to be minimized and hidden. They are a core part of the experience. Designing for them well is what determines whether users trust the system, or eventually abandon it.",
   ],
 };
 
 export const researchFoundations = {
-  heading: "Research foundations",
-  intro: "Sources cited directly in this document, organized by theme.",
+  heading: "Inspired by",
+  intro: "The sources that most shaped this taxonomy's thinking, organized by theme.",
   groups: [
     {
       heading: "Agentic AI failure taxonomies",
       sources: [
         'Cemri, M., Pan, M. Z., Yang, S., et al. "Why Do Multi-Agent LLM Systems Fail?" (MAST). UC Berkeley, NeurIPS Datasets and Benchmarks spotlight, 2025. arXiv:2503.13657',
-        'Shah, et al. "Characterizing Faults in Agentic AI: A Taxonomy of Types, Symptoms, and Root Causes." 2026. arXiv:2603.06847',
-        'Microsoft AI Red Team. "Taxonomy of Failure Modes in Agentic AI Systems." Microsoft Security Blog, April 2025.',
         'OWASP GenAI Security Project. "Top 10 for Agentic Applications 2026." December 2025. genai.owasp.org',
       ],
     },
@@ -413,42 +390,13 @@ export const researchFoundations = {
       heading: "Partial completion and cascading failure",
       sources: [
         'Xu, J., et al. "TheAgentCompany: Benchmarking LLM Agents on Consequential Real World Tasks." CMU, 2024. arXiv:2412.14161',
-        '"Atomix: Timely, Transactional Tool Use for Reliable Agentic Workflows." 2026. arXiv:2602.14849',
         '"From Spark to Fire: Modeling and Mitigating Error Cascades in LLM-Based Multi-Agent Collaboration." 2026. arXiv:2603.04474',
-      ],
-    },
-    {
-      heading: "Wrong inference and underspecification",
-      sources: [
-        'Yang, et al. "What Prompts Don\'t Say: Understanding and Managing Underspecification." CMU, 2025. arXiv:2505.13360',
-        'Kobalczyk, et al. "Active Task Disambiguation with LLMs." ICLR 2025 spotlight.',
-      ],
-    },
-    {
-      heading: "Automation trust and reliance",
-      sources: [
-        'Parasuraman, R., Sheridan, T. B., and Wickens, C. D. "A Model for Types and Levels of Human Interaction with Automation." IEEE Transactions on Systems, Man, and Cybernetics — Part A: Systems and Humans, 30(3), 2000.',
-      ],
-    },
-    {
-      heading: "Trust repair",
-      sources: [
-        'Kox, E., et al. "Trust Repair in Human-Agent Teams: The Effectiveness of Explanations and Expressing Regret." Autonomous Agents and Multi-Agent Systems, Springer, 2021.',
-      ],
-    },
-    {
-      heading: "Transparency and explainability",
-      sources: [
-        'Arrieta, A. B., et al. "Explainable Artificial Intelligence (XAI): Concepts, Taxonomies, Opportunities and Challenges." Information Fusion, 2020. arXiv:1910.10045',
-        'Miller, T. "Explanation in Artificial Intelligence: Insights from the Social Sciences." Artificial Intelligence, 2019. arXiv:1706.07269',
-        'Liao, Q. V. and Vaughan, J. W. "AI Transparency in the Age of LLMs: A Human-Centered Research Roadmap." Harvard Data Science Review, 2023. arXiv:2306.01941',
       ],
     },
     {
       heading: "Design frameworks",
       sources: [
         'Amershi, S., et al. "Guidelines for Human-AI Interaction." CHI, 2019. Microsoft Research.',
-        'Google PAIR. "People + AI Guidebook." 2019, updated 2021. pair.withgoogle.com',
       ],
     },
   ],

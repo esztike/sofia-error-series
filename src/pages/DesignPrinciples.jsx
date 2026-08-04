@@ -13,6 +13,7 @@ import {
   testingSection,
   furtherConsiderationsSection,
   closingSection,
+  researchFoundations,
 } from '../content/design-principles.mdx'
 
 const TEST_ICONS = {
@@ -120,6 +121,24 @@ export default function DesignPrinciples() {
           <h2 className="section-heading">{closingSection.heading}</h2>
           {closingSection.paragraphs.map((p, i) => <p key={i}>{p}</p>)}
           <p>{closingSection.closingParagraph}</p>
+        </div>
+      </section>
+
+      {/* ── Inspired by ── */}
+      <section className="research-section">
+        <div className="prose-column">
+          <h2 className="section-heading">{researchFoundations.heading}</h2>
+          <p className="research-intro">{researchFoundations.intro}</p>
+          {researchFoundations.groups.map(group => (
+            <div key={group.heading} className="research-group">
+              <h4 className="research-group__heading">{group.heading}</h4>
+              <ul className="research-group__list">
+                {group.sources.map((source, i) => (
+                  <li key={i} className="research-source">{source}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
       </section>
 
