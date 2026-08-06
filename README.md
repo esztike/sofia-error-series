@@ -1,16 +1,41 @@
-# React + Vite
+# Sofia, an error series
+by Eszti Hollenback, UX Designer and Design Engineer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+*Sofia means wisdom in Greek.*
 
-Currently, two official plugins are available:
+Sofia is a personal productivity agent, and the subject of a design case study exploring error and recovery UX for agentic AI. As more of what we do gets delegated to systems that can act on our behalf, the distance between a person and an outcome grows. This project is an attempt to take the shift seriously: to map how agents fail, and to design for what happens after.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+**Live:** [sofia-error-series.vercel.app](https://sofia-error-series.vercel.app)
+Also linked from my portfolio at [esztihollenback.com](https://esztihollenback.com)
 
-## React Compiler
+## Stack 
+- React
+- Vite
+- MDX (@mdx-js/rollup)
+- Lucide React
+- Built with Claude Code
+- CSS approach ?
+- React Router ?
+- else ?
+- Deployed on Vercel, auto-deploy from GitHub
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Notable decisions
+- Design and copy by me, code by Claude Code: Finishing up my full-stack dev studies, I had two project ideas in mind: a hand-coded rebuild of my UX portfolio, and a project that would test what I'd learned about working with Claude Code. That meant planning ahead, reasoning through the code, writing specifications, and recovering when a build did not match the intent. Funnily, the process echoes the case study itself. Not what it's based on, but a fitting parallel. 
+- MDX living editorial source: Content and layout can change independently. Writing can be revised without touching the build, and the build can adapt without touching the writing. 
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## What's inside
+- **An error taxonomy** — six error classes covering how agents fail 
+  (misread intent, tool failure, scope exceeded, partial completion, stale 
+  context, wrong inference), plus two cross-cutting failure properties 
+  (cascading failure, silent failure)
+- **Eight design principles** — derived from the taxonomy, each mapped to 
+  the error classes it addresses
+- **Episode 1** — the full case study: Partial Completion, told through 
+  Maya, Sofia, and the people affected by what Sofia got wrong. Live now.
+- **An interactive prototype** — a working walkthrough of one failure, 
+  end to end
+
+## Status
+Episode 1 is published. Episode 2 and 3 are planned.
+
