@@ -267,19 +267,6 @@ em {
   cursor: default;
 }
 
-/* ── Layout ── */
-
-.page-wrapper {
-  max-width: var(--max-width);
-  margin: 0 auto;
-}
-
-.content-wrapper {
-  max-width: var(--content-width);
-  margin: 0 auto;
-  padding: 0 var(--gutter);
-}
-
 /* ── Tags / labels ── */
 
 .tag {
@@ -348,15 +335,6 @@ em {
 }
 
 /* ── Shared utilities ── */
-
-.caption {
-  margin-top: var(--space-2);
-  font-family: var(--font-mono);
-  font-size: var(--text-xs);
-  color: var(--color-inactive);
-  text-align: center;
-  line-height: var(--leading-loose);
-}
 
 .sr-only {
   position: absolute;

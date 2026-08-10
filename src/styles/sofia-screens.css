@@ -272,15 +272,6 @@
   margin-bottom: 12px;
 }
 
-.sofia-assumption-heading {
-  font-family: var(--font-mono);
-  font-size: 9px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--phone-status-warn);
-  margin-bottom: 8px;
-}
-
 .sofia-assumption-row {
   display: flex;
   gap: 8px;
