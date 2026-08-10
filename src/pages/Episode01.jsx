@@ -3,6 +3,7 @@ import "../styles/globals.css";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import PageHero from "../components/PageHero";
+import BackToTop from "../components/BackToTop";
 import WalkthroughPanel from "../components/WalkthroughPanel";
 import {
   pageHeader,
@@ -128,6 +129,7 @@ export default function Episode01() {
       </section>
 
       <Footer />
+      <BackToTop />
     </div>
   );
 }

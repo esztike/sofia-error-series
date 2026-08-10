@@ -4,6 +4,7 @@ import '../styles/error-taxonomy.css'
 import Nav from '../components/Nav'
 import Footer from '../components/Footer'
 import PageHero from '../components/PageHero'
+import BackToTop from '../components/BackToTop'
 import TaxonomyGrid from '../components/TaxonomyGrid'
 import SupportCard from '../components/SupportCard'
 import {
@@ -195,6 +196,7 @@ export default function ErrorTaxonomy() {
       </section>
 
       <Footer />
+      <BackToTop />
     </div>
   )
 }

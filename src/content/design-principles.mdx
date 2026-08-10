@@ -3,14 +3,14 @@ export const pageHeader = {
   title: "Design Principles",
   subtitle: "For designing wise error recovery.",
   intro:
-    "Agentic AI systems act on your behalf, often while you're not watching. When something goes wrong, the designer's job is to make that recoverable. These eight principles are the response, grounded in the error taxonomy, tested against research, and revised where the research disagreed.",
+    "Agentic AI systems act on your behalf, often while you're not watching. When something goes wrong, the designer's job is to make that recoverable. These eight principles outline how to do that, drawing from the error taxonomy.",
   tags: ["AGENTIC AI UX", "RESEARCH", "ERROR & RECOVERY"],
 };
 
 export const howToUseSection = {
   heading: "How to use them",
   paragraphs: [
-    "Each principle connects to one or more error classes in the taxonomy. Those links run both ways: from failure to design response, and back again. If you're deep in a specific error class, the principle cards will tell you what the design needs to do. If you're working from a principle, the error references will show you what failure it's answering.",
+    "Each principle connects to one or more error classes in the taxonomy. Those links run both ways: from failure to design response, and back again. If you're immersed in a specific error class, the principle cards will tell you what the design needs to do. If you're working from a principle, the error references will show you what failure it's answering.",
     "The taxonomy establishes the role of prevention and recovery. The principles take this further. They build a concrete mechanism for one or the other (a severity classifier, a gate, a recovery-options panel). The cards below show exactly how.",
   ],
 };
@@ -253,15 +253,15 @@ export const testingSection = {
 export const furtherConsiderationsSection = {
   heading: "Further considerations",
   intro:
-    "Some ideas do not fit inside a single principle. They cut across all eight, and they are worth naming.",
+    "Some ideas do not fit inside a single principle. They cut across all eight, and they are worth naming separately.",
   subsections: [
     {
       heading: "Trust is a curve, not a threshold",
-      body: "Parasuraman's automation levels established that the appropriate degree of human oversight changes as reliability is demonstrated. Sofia starts conservative: more visible, more checkpoints, more friction. That is not a permanent state. It is the beginning of a relationship. As Sofia earns autonomy by using it well, the friction can ease. The design has to allow for that, and the system has to demonstrate it. Users who are told \"Sofia will learn your preferences\" and then experience a failure are worse off than users who were told nothing. The promise is the trap.",
+      body: 'Parasuraman\'s automation levels established that the appropriate degree of human oversight changes as reliability is demonstrated. Sofia starts conservative: more visible, more checkpoints, more friction. That is not a permanent state. It is the beginning of a relationship. As Sofia earns autonomy by using it well, the friction can ease. The design has to allow for that, and the system has to demonstrate it. Users who are told "Sofia will learn your preferences" and then experience a failure are worse off than users who were told nothing. The promise is the trap.',
     },
     {
-      heading: "Incentive alignment",
-      body: "Trust in a delegating system depends on whose interests it serves. A system whose business model depends on your attention or your data cannot fully earn delegation. The incentives are misaligned before the first interaction begins. Every principle in this series assumes that Sofia exists to serve the person using it. Where that assumption breaks, the principles break with it. Design has no answer to that. What a designer can do is name the conditions their work depends on.",
+      heading: "Trust has a ceiling",
+      body: "Trust in a delegating system depends on whose interests it serves. A system whose business model depends on the attention or the data of the people using it cannot fully earn delegation. The incentives are misaligned before the first interaction begins. Every principle in this series assumes that Sofia exists to serve the person using it. Where that assumption breaks, the principles break with it. Design has no answer to that. What a designer can do is name the conditions their work depends on.",
     },
   ],
 };
@@ -279,7 +279,8 @@ export const closingSection = {
 
 export const researchFoundations = {
   heading: "Inspired by",
-  intro: "The sources that most shaped these principles' thinking, organized by theme.",
+  intro:
+    "The sources that most shaped these principles' thinking, organized by theme.",
   groups: [
     {
       heading: "Automation trust",

@@ -12,22 +12,22 @@ export const cardHint = "Click any card to expand";
 export const introSection = {
   heading: "Why errors in agentic AI are different",
   paragraphs: [
-    "For most of the history of software design, errors were contained. The system attempted one thing, it either succeeded or it did not, and the user could see exactly where things stood. Error design was largely a communication problem: how do you tell someone what went wrong, and what they should do next?",
+    "For most of the history of software design, errors were contained. The system attempted one thing, it either succeeded or it did not, and the user could see exactly where things stood. Error design was largely a communication problem of how to tell someone what went wrong, and what they should do next.",
     "AI-assisted systems made errors more complex. A system could be working as intended while still not serving the user's actual needs. That gap generated a field response: frameworks for explainability (XAI), transparency, and calibrated trust. Google's People + AI Guidebook (2019), Microsoft's Guidelines for Human-AI Interaction (Amershi et al., 2019), and a growing body of XAI research gave designers tools for communicating uncertainty, setting expectations, and building appropriate reliance.",
     "Agentic AI systems change the problem again, more fundamentally than is widely understood.",
     "An agent does not return a result. It takes action. It pursues a goal across multiple steps, using tools, accessing external systems, and producing effects in the world that may be difficult or impossible to reverse. When a recommendation system fails, the user gets a bad suggestion. When an agentic system fails, people are already affected before the user knows anything went wrong.",
-    "This shift, from AI as advisor to AI as actor, reframes the design problem entirely. Errors in agentic systems are not merely informational failures. They are consequential events with state, scope, and downstream effects. They affect not only the person who delegated the task but potentially many others who had no interaction with the system at all. And they unfold over time: a task that fails at step three has already changed the world in ways that step one and step two set in motion.",
+    "This shift, from AI as advisor to AI as actor, reframes the design problem entirely. Errors in agentic systems are not merely informational failures. They are consequential events with state, scope, and downstream effects. They affect not only the person who delegated the task but potentially many others who had no interaction with the system at all. On the top of that, they unfold over time. A task that fails at step three has already changed the world in ways that step one and step two set in motion.",
     "Existing research on AI failure modes has grown rapidly since 2023. Empirical taxonomies have produced rigorous classifications of how agentic systems fail at a technical level. Industry frameworks from Microsoft, OWASP, and others have mapped failure modes from security and reliability perspectives.",
-    "What remains largely unaddressed is the design question: when an agentic system fails, what does the user experience, and what does a designer need to build in response?",
-    "This taxonomy is an attempt to answer that question. The six error classes described here are organized not around which system component failed, but around the human experience of the failure: what went wrong from the user's perspective, what the consequences are, and what recovery requires. It is a designer's taxonomy, built for designers, grounded in research but oriented toward practice.",
+    "What remains largely unaddressed is the design question. When an agentic system fails, what does the user experience, and what does a designer need to build in response?",
+    "This taxonomy is an attempt to come up with an answer. The six error classes described here are organized around the human experience of the failure: what went wrong from the user's perspective, what the consequences are, and what recovery requires. It is a designer's taxonomy, rooted in research but oriented toward practice.",
   ],
 };
 
 export const howItWorksSection = {
   heading: "How this taxonomy works",
   paragraphs: [
-    "Most existing taxonomies of agentic AI failure sort by cause: which component broke, which module produced the wrong output, which integration failed. That's useful for engineers debugging systems, less telling for designers building what users encounter when something goes wrong.",
-    "This taxonomy is organized differently. Each error class is defined by the user's experience of the failure: what went wrong from the perspective of the person who delegated the task, what the consequences are in their world, and what recovery requires from a design standpoint. Two failures may belong to the same class regardless of their technical cause, and two failures with the same technical cause may belong to different classes if their consequences and recovery paths diverge.",
+    "Most existing taxonomies of agentic AI failure sort by cause: which component broke, which module produced the wrong output, which integration failed. That's useful for engineers debugging systems, but less telling for designers building what users encounter when something goes wrong.",
+    "This taxonomy approaches error classes based on how users experience failure. Two failures may belong to the same class regardless of their technical cause, and two failures with the same technical cause may belong to different classes if their consequences and recovery paths diverge.",
     "The distinction is deliberate. From an error recovery perspective, a designer does not need to know whether a failure originated in the language model's context window or in an API timeout. They need to know: did the task complete? Were external parties already affected? Was the failure foreseeable? Can it be undone? Those are the questions that determine what to build.",
   ],
   subsections: [
@@ -35,19 +35,20 @@ export const howItWorksSection = {
       heading: "Research foundations and gaps",
       paragraphs: [
         <>
-          Four of the six classes have clear precedent in existing research,
-          named under different terminology across different frameworks. Two
-          occupy less settled territory, for different reasons.{" "}
-          <strong>Partial completion</strong> is a pattern the literature
-          observes and measures but does not name as a distinct design problem.{" "}
-          <strong>Wrong inference</strong> sits at an intersection of several
-          adjacent concepts (hallucination, underspecification, disambiguation
-          failure) that no single existing framework cleanly captures. Neither
-          gap is incidental. Existing frameworks were built for technical and
-          security purposes, not for the design of recovery experiences. This
-          taxonomy makes pragmatic choices where the research leaves open
-          questions, optimized for designer usability rather than taxonomic
-          precision.
+          <strong>Partial completion</strong> - observed and measured as a
+          pattern but not named as a distinct design problem.{" "}
+        </>,
+        <>
+          <strong>Wrong inference</strong> - treated as fragmented, living in
+          different adjacent concepts (hallucination, underspecification,
+          disambiguation failure).
+        </>,
+        <>
+          Neither gap is incidental. Existing frameworks were built for
+          technical and security purposes, not for the design of recovery
+          experiences. This taxonomy makes pragmatic choices where the research
+          leaves open questions, optimized for designer usability rather than
+          taxonomic precision.
         </>,
       ],
     },
@@ -88,13 +89,13 @@ export const failurePropertiesSection = {
           action that spreads across connected systems.
         </>,
         <>
-          That is why cascading failure is not an error class of its own. Placing it
-          alongside <strong>misread intent</strong> or{" "}
+          That is why cascading failure is not an error class of its own.
+          Placing it alongside <strong>misread intent</strong> or{" "}
           <strong>tool failure</strong> would suggest it answers the same
-          question, what went wrong, when it is really answering a different one,
-          namely how far did it go. The root class tells you what intervention
-          to build. The cascading property tells you how much blast radius that
-          intervention needs to account for.
+          question, what went wrong, when it is really answering a different
+          one, namely how far did it go. The root class tells you what
+          intervention to build. The cascading property tells you how much blast
+          radius that intervention needs to account for.
         </>,
         'The research is clear about the severity. "From Spark to Fire" formally models how errors propagate through multi-agent systems as directed dependency graphs (arXiv:2603.04474, 2026), and separate analysis found unstructured multi-agent networks amplify errors up to 17.2 times compared to single-agent baselines. OWASP lists cascading failures among the highest-severity risk categories for agentic systems (ASI08, 2025). That is why the design response — staged execution, blast radius previews, and undo campaigns — is the primary protection available for any operation with a high multiplier.',
       ],
@@ -105,8 +106,7 @@ export const failurePropertiesSection = {
         "A silent failure occurs when an error happens and the user is never told. The task stalls, halts, or produces a wrong result, and nothing surfaces. The user's mental model of what the agent did diverges from reality, sometimes for hours or days, until an external signal (a colleague asking about an email that never arrived, a new hire wondering about a missing brief) forces the gap into view.",
         <>
           Similar to cascading, silent failure is a property rather than an
-          error class of its own. Any
-          of the six error classes can be silent. A{" "}
+          error class of its own. Any of the six error classes can be silent. A{" "}
           <strong>tool failure</strong> that produces no notification. A{" "}
           <strong>partial completion</strong> that reports success. A{" "}
           <strong>wrong inference</strong> that acts confidently and logs
@@ -131,7 +131,7 @@ export const taxonomyCards = [
     userImpact:
       "The user discovers the error after recipients have already been notified. The damage is social and professional, not just logistical. Undoing it requires individual outreach to each affected party.",
     designOpportunity:
-      "Broad, ambiguous requests happen. That is exactly when the agent should surface its interpretation explicitly and invite correction, as a natural part of taking on the task. \"I'm reading this as: decline all meetings under one hour and block mornings. Does that sound right?\" The cost of this friction is seconds. The cost of skipping it can be days.",
+      'Broad, ambiguous requests happen. That is exactly when the agent should surface its interpretation explicitly and invite correction, as a natural part of taking on the task. "I\'m reading this as: decline all meetings under one hour and block mornings. Does that sound right?" The cost of this friction is seconds. The cost of skipping it can be days.',
     prevention:
       "Primary responsibility. Surface the agent's interpretation before any action is taken. Broad natural-language instructions always carry interpretive risk.",
     recovery:
@@ -240,8 +240,8 @@ export const taxonomyCards = [
         This is the most practically important gap in existing agentic AI design
         frameworks. Even top-performing agents show it: a CMU benchmark found
         the best-performing model tested fully completed only 24 percent of
-        multi-step tasks. That number will rise as models improve, but it
-        does not close the design gap: a model that fails rarely still needs a
+        multi-step tasks. That number will rise as models improve, but it does
+        not close the design gap: a model that fails rarely still needs a
         recovery path for the failures that remain. No major UX framework,
         including Google's PAIR Guidebook, addresses{" "}
         <strong>partial completion</strong> as a distinct design problem. This
@@ -377,7 +377,8 @@ export const closingSection = {
 
 export const researchFoundations = {
   heading: "Inspired by",
-  intro: "The sources that most shaped this taxonomy's thinking, organized by theme.",
+  intro:
+    "The sources that most shaped this taxonomy's thinking, organized by theme.",
   groups: [
     {
       heading: "Agentic AI failure taxonomies",

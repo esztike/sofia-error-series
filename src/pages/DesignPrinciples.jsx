@@ -4,6 +4,7 @@ import '../styles/design-principles.css'
 import Nav from '../components/Nav'
 import Footer from '../components/Footer'
 import PageHero from '../components/PageHero'
+import BackToTop from '../components/BackToTop'
 import PrincipleList from '../components/PrincipleList'
 import SupportCard from '../components/SupportCard'
 import {
@@ -143,6 +144,7 @@ export default function DesignPrinciples() {
       </section>
 
       <Footer />
+      <BackToTop />
     </div>
   )
 }
