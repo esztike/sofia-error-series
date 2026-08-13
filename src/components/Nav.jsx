@@ -13,7 +13,7 @@ export default function Nav() {
   return (
     <nav className="nav">
       <Link to="/" className="nav-wordmark" onClick={close}>
-        Sofia, an error series
+        Sofia Error Series
       </Link>
 
       <div className="nav-actions">

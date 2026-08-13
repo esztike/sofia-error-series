@@ -1,4 +1,4 @@
-# Sofia, an error series
+# Sofia Error Series
 
 by Eszti Hollenback, UX Designer and Design Engineer
 
