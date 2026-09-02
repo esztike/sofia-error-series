@@ -36,6 +36,10 @@ body {
   padding-top: 52px; /* nav height */
 }
 
+body:has(.inner-page) {
+  padding-top: 0;
+}
+
 img,
 video {
   max-width: 100%;
@@ -430,8 +434,7 @@ em {
 }
 
 .inner-page > .nav {
-  position: fixed;
-  z-index: 100;
+  position: static;
 }
 
 /* ── Page header ── */

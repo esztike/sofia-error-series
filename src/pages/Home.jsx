@@ -158,7 +158,6 @@ export default function Home() {
                       {card.errorClassNumber} · {card.errorClassTitle}
                     </span>
                   </div>
-                  <h3 className="card-title card-title--inactive">{card.title}</h3>
                   <p className="coming-soon-label">Coming soon ...</p>
                 </motion.div>
               )

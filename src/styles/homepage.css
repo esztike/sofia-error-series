@@ -231,7 +231,7 @@
 
 .episodes-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 2fr 1fr;
   gap: 3px;
 }
 
@@ -253,7 +253,7 @@
   background-color: var(--color-bg-inactive);
   border: 1px solid var(--glass-border);
   border-radius: 0;
-  padding: var(--space-6);
+  padding: var(--space-4);
   pointer-events: none;
   display: flex;
   flex-direction: column;
@@ -325,6 +325,7 @@
 .card--episode-active {
   position: relative;
   border-color: transparent;
+  grid-row: span 2;
 }
 
 /* Card 1's title runs to 2 lines while cards 2/3's short "Episode N"
@@ -362,13 +363,6 @@
 }
 
 
-/* ── Card title inactive ── */
-
-.card-title--inactive {
-  color: var(--color-inactive);
-}
-
-
 /* ── Coming soon label ── */
 
 .coming-soon-label {
@@ -393,6 +387,10 @@
 
   .episodes-grid {
     grid-template-columns: 1fr;
+  }
+
+  .card--episode-active {
+    grid-row: auto;
   }
 }
 
