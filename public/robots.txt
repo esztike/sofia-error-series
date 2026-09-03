@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sofia-error-series.vercel.app/sitemap.xml
