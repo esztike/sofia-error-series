@@ -6,6 +6,7 @@ const Home = lazy(() => import('./pages/Home'))
 const ErrorTaxonomy = lazy(() => import('./pages/ErrorTaxonomy'))
 const DesignPrinciples = lazy(() => import('./pages/DesignPrinciples'))
 const Episode01 = lazy(() => import('./pages/Episode01'))
+const NotFound = lazy(() => import('./pages/NotFound'))
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
           <Route path="/error-taxonomy" element={<ErrorTaxonomy />} />
           <Route path="/design-principles" element={<DesignPrinciples />} />
           <Route path="/episode-01" element={<Episode01 />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>
     </BrowserRouter>
