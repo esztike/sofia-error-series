@@ -16,10 +16,10 @@ export default function NotFound() {
     <div className="inner-page not-found-page">
       <main className="not-found">
         <p className="not-found-code">404</p>
-        <h1 className="not-found-heading">Page not found</h1>
+        <h1 className="not-found-heading">This is a dead end</h1>
         <p className="not-found-body">
-          The link may be broken, or the page may have moved. Everything
-          published is reachable from the hub.
+          A broken link or a page that moved. Nothing dramatic. The hub has
+          everything that's actually published.
         </p>
         <Link to="/" className="not-found-home">
           <ArrowLeft size={14} />
