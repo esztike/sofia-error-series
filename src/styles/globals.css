@@ -432,7 +432,7 @@ em {
 }
 
 .inner-page > .nav {
-  position: static;
+  position: relative;
 }
 
 /* ── Page header ── */
