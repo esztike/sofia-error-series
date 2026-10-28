@@ -402,6 +402,22 @@ em {
   }
 }
 
+/* Reduced motion: near-zero durations instead of `animation: none`,
+   so animationend still fires (WalkthroughPanel scrolls on it). */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 /* ── Inner page (shared background pattern) ── */
 /* Used by Error Taxonomy, Design Principles, Episode pages. */
 

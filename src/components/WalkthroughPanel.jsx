@@ -29,9 +29,12 @@ export default function WalkthroughPanel() {
       event.animationName === "walkthrough-accordion-slide-down" &&
       tabValue === accordionValue
     ) {
+      const reduceMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      ).matches;
       triggerRefs.current[tabValue]?.scrollIntoView({
         block: "start",
-        behavior: "smooth",
+        behavior: reduceMotion ? "auto" : "smooth",
       });
     }
   };
